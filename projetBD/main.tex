@@ -1,0 +1,72 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{longtable} % Ajoutez cette ligne au préambule pour activer longtable
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{array}
+\usepackage{graphicx} % For \resizebox
+\setlength{\arrayrulewidth}{0.6mm}
+\renewcommand{\arraystretch}{1.5}
+
+\title{Documentation projet BD}
+\author{BOON Yi Jun \\ DIMASSI Mehdi \\ MOHD NOOR Nur Hakimi \\ NAIR Sritesh \\ TRAORÉ Fiè Victor \date{}}
+
+\begin{document}
+\maketitle
+
+
+\section{Analyse}
+
+Nous avons commencé d'abord par l'analyse du sujet afin d'identifier les données élémentaires, les dépendances fonctionnelles, les contraintes contextuelles et de multiplicité. On a modélisé l'analyse par le tableau ci-dessous:
+
+
+\begin{table}[h!]
+    \centering
+    \resizebox{\textwidth}{!}{ 
+    \begin{tabular}{|m{5cm}|m{2cm}|m{6cm}|}
+        \hline
+        \textbf{DF} & \textbf{Contraintes valeur} & \textbf{Contraintes de multiplicité} \\ \hline
+        utilisateur $\rightarrow$ produit & quantité $\geq$ 0 & Un utilisateur peut avoir plusieurs produits \\ \hline
+        Catégorie,TypeVente $\rightarrow$ salleVente & prixOffre $\geq$ 0 & Une salle de vente contient plusieurs ventes \\ \hline
+        idVente $\rightarrow$ produit,salleVente & prixRevient $\geq$ 0 & Un produit a plusieurs caractéristiques \\ \hline
+        nomCatégorie $\rightarrow$ descriptionCatégorie & stockVente $\geq$ 0 & Une vente a un seul produit \\ \hline
+        idProduit $\rightarrow$ nomProduit,prixRevient,stockVente & prixDépart $>$ 0 & Une vente est dans une seule salle \\ \hline
+        idProduit $\rightarrow$ nomCaractéristique &  & Une salle de vente a une seule catégorie \\ \hline
+        nomCaractéristique $\rightarrow$ valeurCaractéristique &  & Une offre a un seul utilisateur \\ \hline
+        idVente $\rightarrow$ prixDépart,offreMultiple, durée,révocable &  & Un utilisateur peut avoir plusieurs offres \\ \hline
+        utilisateur,dateOffre,heureOffre $\rightarrow$ prixOffre,quantité &  &  \\ \hline
+        email $\rightarrow$ nom, prénom, adresse &  & \\ \hline
+    \end{tabular}}
+    \caption{Tableau analyse des dépendances fonctionnelles}
+\end{table}
+
+\hspace{10mm}
+
+Les contraintes contextuelles sont :
+\begin{itemize}
+    \item Accepter l'offre si le prix n'est pas inférieur au prix d'enchère.
+    \item Toutes les ventes dans une salle sont du même type.
+    \item Si la vente est en offre unique, respecter la contrainte.
+    \item La quantité demandé est inférieur au stock.
+\end{itemize}
+
+Nous avons ensuite identifiés les entités de la base de données et traduit les DF en schéma entité association suivant :
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\linewidth]{EA.PNG}
+    \caption{Schéma entité association}
+    \label{fig:enter-label}
+\end{figure}
+
+
+\end{document}
