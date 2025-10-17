@@ -1,0 +1,47 @@
+/*******************************************************************************
+ * Test 6
+ *
+ * Waitpid multiple.
+ * Creation de processus avec differentes tailles de piles.
+ *******************************************************************************/
+
+#include "sysapi.h"
+
+int proc6_1(void *arg);
+int proc6_2(void *arg);
+int proc6_3(void *arg);
+
+int test6(void *arg)
+{
+        int pid1, pid2, pid3;
+        int ret;
+
+        (void)arg;
+        printf("1 \n");
+        assert(getprio(getpid()) == 128);
+        pid1 = start(proc6_1, 4000, 64, "proc6_1", 0);
+        assert(pid1 > 0);
+        pid2 = start(proc6_2, 4000, 66, "proc6_2", (void *)4);
+        assert(pid2 > 0);
+        pid3 = start(proc6_3, 0xffffffff, 65, "proc6_3", (void *)5);
+        assert(pid3 < 0);
+        pid3 = start(proc6_3, 4000, 65, "proc6_3", (void *)5);
+        assert(pid3 > 0);
+        assert(waitpid(-1, &ret) == pid2);
+         printf("1 \n");
+        assert(ret == 4);
+        assert(waitpid(-1, &ret) == pid3);
+         printf("1 \n");
+        assert(ret == 5);
+        assert(waitpid(-1, &ret) == pid1);
+         printf("1 \n");
+        assert(ret == 3);
+        assert(waitpid(pid1, 0) < 0);
+         printf("1 \n");
+        assert(waitpid(-1, 0) < 0);
+         printf("1 \n");
+        assert(waitpid(getpid(), 0) < 0);
+         printf("1 \n");
+        printf("ok.\n");
+        return 0;
+}
