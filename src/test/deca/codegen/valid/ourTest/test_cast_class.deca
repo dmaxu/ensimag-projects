@@ -1,0 +1,28 @@
+// Description :
+//    Ce test vérifie le comportement du polymorphisme et du casting entre une classe
+//    de base (A) et une classe dérivée (B). La méthode `Print` est redéfinie dans B.
+//
+// Resultats:
+// BBB
+
+class A {
+    void Print() {
+        print("A");
+    }
+}
+
+class B extends A {
+    void Print() {
+        print("B");
+    }
+}
+
+
+{
+
+    B b = new B();
+    A a = (A)(b);
+    b.Print(); 
+    b.Print(); 
+    a.Print();
+}

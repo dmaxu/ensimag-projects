@@ -1,0 +1,21 @@
+{
+    // Test 29: Multiple reassignments
+
+    int x = 1;
+    float y = 1.5;
+    boolean flag = false;
+
+    // Première réassignation
+    x = x + 2;
+    y = y * 2.0;
+    flag = !flag;
+
+    // Deuxième réassignation
+    x = x * 3;
+    y = y - 1.0;
+    flag = flag || true;
+
+    println(x);
+    println(y);
+    println("Start");
+}

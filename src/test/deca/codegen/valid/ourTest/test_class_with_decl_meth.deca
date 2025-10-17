@@ -1,0 +1,31 @@
+// Description :
+//    Test pour vérifier l'initialisation par défaut des attributs d'une classe en Deca.
+//    Les valeurs par défaut sont attendues : 
+//      - 0 pour les types int
+//      - 0.0 pour les types float
+//      - false pour les types boolean.
+//
+// Resultats:
+//    0 0.0 false
+class A {
+    int x;
+    float f;
+    boolean b;
+    int getX() {
+        return x;
+    }
+    float getF() {
+        return f;
+    }
+    boolean getB() {
+        return b;
+    }
+}
+{
+    A a = new A();
+    print(a.getX()," ");   // Imprime 0
+    print(a.getF()," ");   // Imprime 0.0
+    if (a.getB() == false) {
+        print("false");      // Imprime 0 si b est false
+    }
+}

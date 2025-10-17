@@ -1,0 +1,14 @@
+// Description:
+//    Test d'une boucle `while` pour afficher un compte à rebours à partir de 3 jusqu'à 0 inclus.
+//    La boucle décrémente la valeur de `i` et l'affiche à chaque itération.
+//
+// Resultats:
+//    3 2 1 0
+
+{
+    int i = 3;
+    while (i >= 0) {
+        print(i, " ");
+        i = i - 1;
+    }
+}

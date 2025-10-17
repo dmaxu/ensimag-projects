@@ -1,0 +1,12 @@
+{
+    boolean [] trues = [true, true, true];
+    boolean[][] falses = [[false, false], [false, false]];
+    boolean[][][] alterns = [[[true, false],[true, false]],[[true, false],[true, false]]];
+    if(alterns[0][0][1]==true){
+        print("ok");
+    }
+}
+
+
+
+

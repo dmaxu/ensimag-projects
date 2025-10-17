@@ -1,0 +1,38 @@
+// Teste pour tester les index des méthodes
+// Resultats:
+// 0
+// 10
+// 10 10
+// 70
+
+
+class A{
+    int x;
+        void afficheH(){
+        println(70);
+    }
+    void setX(int g){
+        this.x = g;
+        println(g, " ", this.x);
+    }
+}
+
+class B extends A{
+    int h;
+    void setX(int h){
+        this.h = h;
+    }
+    void afficheH(){
+        println(h);
+    }
+}
+
+{
+    B b = new B();
+    A a = new A();
+    b.afficheH();
+    b.setX(10);
+    b.afficheH();
+    a.setX(10);
+   a.afficheH();
+}

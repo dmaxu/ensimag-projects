@@ -1,0 +1,12 @@
+//Descriptif:Combinaison avec des chaînes de caractères
+
+{
+  int  s1 = 1;
+  int  s2 = 2;
+
+  // Comparaison des chaînes 
+  (s1 == 1) && (s2 == 2); // true
+  (s1 != 4) || (s2 != 2); // true
+  (s1 == 4) && (s2 != 2); // false
+  !(s1 == 1) || (s2 == 2); // true
+}

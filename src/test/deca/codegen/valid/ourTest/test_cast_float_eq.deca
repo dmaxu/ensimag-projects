@@ -1,0 +1,9 @@
+// Description:
+//    Test de comparaison entre un flottant et un entier avec conversion implicite.
+//    Vérifie si l'égalité logique entre un booléen et une expression mixte fonctionne correctement.
+//
+// Resultats:
+//ok
+{
+    if (true==(47.0==47)){print("ok");}else{print("ok");}
+}

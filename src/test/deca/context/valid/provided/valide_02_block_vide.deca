@@ -1,0 +1,8 @@
+// nom: valide_02_block_vide.deca
+// Objectif : Un main sous la forme d'un bloc vide { }
+// Dérivation (simplifiée) :
+//  main -> block
+//  block -> '{' list_decl list_inst '}'
+//  list_decl -> ε
+//  list_inst -> ε
+{ }

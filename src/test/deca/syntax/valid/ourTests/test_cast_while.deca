@@ -1,0 +1,6 @@
+// Cast explicite dans une boucle conditionnelle.
+{
+    while ((int) (5) == 3) {
+        // Résultat attendu : la boucle ne s'exécute jamais
+    }
+}

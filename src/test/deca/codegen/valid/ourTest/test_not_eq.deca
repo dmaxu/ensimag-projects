@@ -1,0 +1,18 @@
+// Description :
+//    Test des opérateurs de comparaison (égalité et inégalité) sur des types et expressions variés,
+//    incluant des conversions implicites entre int et float, et des combinaisons avec des booléens.
+//
+// Resultats:
+//   "one more time, our groupe is the best."
+{
+    int x=1;
+    boolean y=true;
+    if (y!=true){}else{print("one ");}
+    if (x!=1){}else{print("more ");}
+    if (x!=1.0){}else{print("time, ");}
+    if (x!=(2/2)){}else{print("our ");}
+    if (x!=(0.5*2.0)){}else{print("groupe ");}
+    if (x!=(2.0/2)){}else{print("is ");}
+    if (x!=(2.0/2.0*1.000)|| x!=(5)){print("the ");}else{print("not the ");}
+    if(y!=true||y!=false){print("best.");}else{}
+}

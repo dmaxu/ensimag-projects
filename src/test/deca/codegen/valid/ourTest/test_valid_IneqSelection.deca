@@ -1,0 +1,30 @@
+// Teste des inégualités avec des selections
+// Resultats:
+//  it is wirking
+
+class A{
+    int x;
+}
+
+class B{
+    A a = new A();
+}
+
+class C{
+    B b = new B();
+}
+
+class D{
+    C c = new C();
+}
+
+{
+    D d1 = new D();
+    D d2 = new D();
+
+    if (d1.c.b.a.x >= d2.c.b.a.x){
+        println("it is working");
+    }else{
+        println("it is not working");
+    }
+}

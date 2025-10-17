@@ -1,0 +1,21 @@
+// ---------------------------------------------------------
+// Test #37 : Utilisation de 'this' dans une classe
+// ---------------------------------------------------------
+//
+//  primary_expr -> 'this'
+//  On utilise this pour distinguer le champ "x" du paramètre "x".
+//
+
+class Point {
+  float x;
+
+  void setX(float p) {
+    this.x = p; // 
+  }
+}
+
+{
+  Point p = new Point();
+  p.setX(1.5);
+  println(p.x);
+}

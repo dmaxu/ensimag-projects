@@ -1,0 +1,22 @@
+// Description:
+//    Test de l'utilisation de l'affectation dans les conditions `if`. Dans chaque condition, la variable `b` est affectée par une expression booléenne, 
+//    puis utilisée pour déterminer l'exécution du bloc associé.
+//
+// Resultats:
+// 1 1
+
+{
+    boolean b;
+    int x = 47;
+    if(b = (x == 1)){
+        print("0 ");
+    }
+
+    if(b = x - 2 >= 45){
+        print("1 ");
+    }
+
+    if(b = x * 2.0 == 94){
+        print("1 ");
+    }
+}

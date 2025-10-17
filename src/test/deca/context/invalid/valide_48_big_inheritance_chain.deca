@@ -1,0 +1,45 @@
+// ---------------------------------------------------------
+// Test #48 : Grande chaîne d'héritage à 4 niveaux
+// ---------------------------------------------------------
+//
+//  A -> B -> C -> D
+//  On utilise des champs protected pour voir si D y accède
+//
+
+class A {
+  protected int valA;
+  void setValA(int x) {
+    valA = x;
+  }
+}
+
+class B extends A {
+  protected int valB;
+  void setValB(int y) {
+    valB = y;
+  }
+}
+
+class C extends B {
+  protected int valC;
+  void setValC(int z) {
+    valC = z;
+  }
+}
+
+class D extends C {
+  void tripleAll() {
+    valA = valA * 3;
+    valB = valB * 3;
+    valC = valC * 3;
+  }
+}
+
+{
+  D d = new D();
+  d.setValA(1);
+  d.setValB(2);
+  d.setValC(3);
+  d.tripleAll();
+  println(d.valA + d.valB + d.valC); // 18
+}

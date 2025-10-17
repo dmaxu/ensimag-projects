@@ -1,0 +1,33 @@
+// ---------------------------------------------------------
+// Test #33 : Champ protected et accès autorisé en sous-classe
+// ---------------------------------------------------------
+//
+// Dérivation (simplifiée) :
+//  class_decl -> 'class' ident 'extends' ident '{' class_body '}'
+//  decl_field_set -> visibility type list_decl_field ';'
+//  visibility -> 'protected'
+//
+// La sous-classe B hérite de A et peut accéder au champ protected "val".
+//
+
+class A {
+  protected float val;
+
+  void init(float x) {
+    val = x;
+  }
+}
+
+class B extends A {
+  void resetVal() {
+    // Accès direct car B est sous-classe de A, et "val" est protected
+    val = 0.0;
+  }
+}
+
+{
+  B b = new B();
+  b.init(3.14);
+  b.resetVal();
+  println("Fin du test #33 !");
+}

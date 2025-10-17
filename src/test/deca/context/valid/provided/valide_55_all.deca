@@ -1,0 +1,37 @@
+// Déclaration de la classe Livre
+class Livre {
+    // Champs de la classe
+
+    int nombrePages;
+    boolean estDisponible;
+    
+    // Méthode pour initialiser les détails du livre
+    void initialiser(int pages) {
+        this.nombrePages = pages;
+        this.estDisponible = true;
+    }
+    
+    // Méthode pour emprunter le livre
+    void emprunter(){
+        if (this.estDisponible) {
+            this.estDisponible = false;
+            println("Le livre a été emprunté.");
+        } 
+    }
+    
+    // Méthode pour retourner le livre
+    void retourner() {
+        this.estDisponible = true;
+        println("Le livre  a été retourné.");
+    }
+    
+    // Méthode pour afficher les informations du livre
+    void afficherInformations() {
+        println("Nombre de pages: ", this.nombrePages);
+        if (this.estDisponible) {
+            println("Disponibilité: Disponible");
+        } else {
+            println("Disponibilité: Emprunté");
+        }
+    }
+}

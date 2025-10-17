@@ -1,0 +1,15 @@
+// Description :
+//    Ce test vérifie si une instance de la classe `A`, qui hérite de `B`, est reconnue comme une instance
+//    de la classe parente `B` à l'aide de l'opérateur `instanceof`.
+//
+// Resultats
+//   "ok".
+class B {}
+class A extends B{}
+
+{
+    A a = new A();
+    if (a instanceof B) {
+        println("ok");
+    }
+}

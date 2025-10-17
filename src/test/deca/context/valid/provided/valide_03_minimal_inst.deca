@@ -1,0 +1,5 @@
+// nom: valide_03_minimal_inst.deca
+// Objectif : Couvrir l'instruction vide ';'
+{
+    ;
+}

@@ -1,0 +1,47 @@
+class A{
+    float[] liste;
+    int size;
+    int capacity;
+
+    void init(int taille){
+        liste = new float[taille];
+        capacity = taille;
+        size = 0;
+    }
+
+    // Ajouter un élément à la liste
+    void add(float valeur) {
+        if (size < capacity) {
+            liste[size] = valeur;
+            size = size + 1;
+        }else {
+            print("Erreur : La liste est pleine, impossible d'ajouter un élément.");
+        }
+    }
+    void printList(){
+        int i;
+        i = 0;
+        print("Liste : ");
+        while (i < size) {
+            print(" ", liste[i]);
+            i = i + 1;
+        }
+        println();
+    }
+}
+
+{
+    A a = new A();
+    int i = 0;
+    float[] m;
+    a.init(10);
+    a.add(10);
+    i = 0;
+    print("Liste : ");
+    m = a.liste;
+    while (i < a.size) {
+        print(" ", m[i]);
+        i = i + 1;
+    }
+    println();
+}

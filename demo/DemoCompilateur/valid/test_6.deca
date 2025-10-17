@@ -1,0 +1,28 @@
+class A{
+    int x = 10;
+
+    void g1(){}
+    void g2(){}
+    void g3(){}
+    void g4(){}
+    void g5(){}
+    void g6(){}
+    void g7(){}
+}
+
+class B extends A{
+    float y = 11.0;
+
+    void g2(){}
+    void Print(){
+        println("hello world");
+    }
+    void g4(){}
+    void g5(){}
+    void g7(){}
+}
+
+{
+    B b = new B();
+    b.Print();
+}

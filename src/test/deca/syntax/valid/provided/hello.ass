@@ -1,0 +1,33 @@
+; Main program
+	TSTO #1
+	ADDSP #0
+	BOV pile_pleine
+; start main program
+; Variable declarations:
+; End declarations:
+; Insts:
+	WSTR "Hello"
+	WNL
+; End insts:
+; End Main program
+	HALT
+pile_pleine:
+	WSTR "Erreur : Debordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR

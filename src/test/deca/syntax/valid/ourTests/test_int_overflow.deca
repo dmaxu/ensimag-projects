@@ -1,0 +1,4 @@
+{
+    int x;
+    x = 2147483647 + 1;  // Cela devrait produire une erreur, car cela dépasse la limite du type int.
+}

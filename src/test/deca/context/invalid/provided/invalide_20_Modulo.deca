@@ -1,0 +1,8 @@
+// Description : un teste invalid , calcule du modulo
+// Sortie:
+// ERROR : L'opérand à gauche doit étre de type Int et pas de type float.
+
+{
+    float x = 10;
+    int y = x%10;
+}

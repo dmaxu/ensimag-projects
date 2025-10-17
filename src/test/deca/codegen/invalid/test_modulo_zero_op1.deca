@@ -1,0 +1,9 @@
+// Description :
+//    Test de l'opération modulo avec un diviseur nul résultant d'une opération
+//
+// Resultats:
+//    Erreur : Modulo par zero
+
+{
+    int x=2%(2-2);
+}

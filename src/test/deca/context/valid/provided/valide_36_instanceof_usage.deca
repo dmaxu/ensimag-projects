@@ -1,0 +1,19 @@
+// ---------------------------------------------------------
+// Test #36 : Usage de 'instanceof'
+// ---------------------------------------------------------
+//
+//  expr -> expr 'instanceof' type
+//
+// On vérifie que A est un sous-type de Object via instanceof, etc.
+//
+
+class A {
+  int foo() { return 0; }
+}
+
+{
+  A a;
+  a = new A();
+  a instanceof A;     
+
+}

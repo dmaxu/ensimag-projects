@@ -1,0 +1,8 @@
+// Test de l'opérateur NOT avec une variable boolean
+{
+    boolean x;       // Déclaration de la variable x
+    boolean y;       // Déclaration de la variable y
+    x = true;        // Assignation de la valeur true à x
+    y = !x;          // Utilisation de l'opérateur NOT sur x et assignation à y
+    // Vérification attendue : y doit être égal à false
+}

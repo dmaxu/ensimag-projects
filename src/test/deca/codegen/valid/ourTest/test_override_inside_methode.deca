@@ -1,0 +1,15 @@
+// Resultats:
+//  9
+class A {
+    int a;
+    int b;
+    int somme(int b){
+        int a = 8;
+        return a + b;
+    }
+}
+
+{
+    A a = new A();
+    println(a.somme(1));
+}

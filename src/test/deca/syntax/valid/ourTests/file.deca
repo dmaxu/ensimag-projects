@@ -1,0 +1,28 @@
+// Desciption :
+// test heritage complexe
+// Resultats:
+// 100
+
+class A{
+    int x;
+
+    void set(int g){
+        this.x = g;
+        println(g, " ", this.x);
+    }
+}
+
+class B extends A{
+    int h;
+    int get(){
+        return this.x;
+    }
+}
+
+{
+    B b = new B();
+    println(b.get());
+    b.set(100);
+    println(b.get());
+}
+

@@ -1,0 +1,11 @@
+// Description : test sur l'application d'une méthode à un type prédéfinie dans l'environment.
+// Sortie:
+//  Invalide type! (int), , l'utilisation des méthodes est valable seulement pour les classes.
+
+class A{
+    protected int x;
+    
+    void function(){
+        x.f(3);
+    }
+}

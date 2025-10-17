@@ -1,0 +1,9 @@
+// Description:
+//    Test de lecture d'un float `x` à partir de l'entrée utilisateur, puis affichage du double de cette valeur.
+//
+// Resultats:
+// 4.0
+{
+    float x = readFloat();
+    print(x*2);
+}

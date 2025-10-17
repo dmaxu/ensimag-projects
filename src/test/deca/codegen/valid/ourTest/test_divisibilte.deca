@@ -1,0 +1,17 @@
+// Description:
+//    Test d'une boucle `while` pour afficher tous les diviseurs d'un entier `b` (ici 10).
+//    Affiche une ligne indiquant les diviseurs de `b`.
+//
+// Resultats:
+//10 divisible par: 1 2 5 10 
+{
+    int b = 10;
+    int i = 1;
+    print(b," divisible par: ");
+    while (i <= b) {
+        if (b % i == 0) {
+            print(i," ");
+        }
+        i = i + 1;
+    }
+}

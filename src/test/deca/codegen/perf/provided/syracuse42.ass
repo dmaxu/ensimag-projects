@@ -1,0 +1,109 @@
+	TSTO #5
+	ADDSP #4
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	LOAD #42, R15
+	STORE R15, 3(GB)
+	LOAD #0, R15
+	STORE R15, 4(GB)
+; End declarations:
+; Insts:
+	BRA E_Cond.0
+E_Debut.0:
+	LOAD 3(GB), R15
+	REM #2, R15
+	CMP #0, R15
+	BNE else.0
+	LOAD 3(GB), R15
+	SHR R15
+	STORE R15, 3(GB)
+	BRA end.0
+else.0:
+	LOAD 3(GB), R15
+	LOAD 3(GB), R14
+	SHL R14
+	ADD R15, R14
+	ADD #1, R14
+	STORE R14, 3(GB)
+end.0:
+	LOAD 4(GB), R15
+	ADD #1, R15
+	STORE R15, 4(GB)
+E_Cond.0:
+	LOAD 3(GB), R15
+	CMP #1, R15
+	BNE E_Debut.0
+	LOAD 4(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

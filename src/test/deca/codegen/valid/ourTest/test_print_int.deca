@@ -1,0 +1,9 @@
+// Description:
+//    tests simple print int
+//
+// Resultats:
+//    1
+
+{
+    print(1);
+}

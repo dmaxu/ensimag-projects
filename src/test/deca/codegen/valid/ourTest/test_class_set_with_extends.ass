@@ -1,0 +1,483 @@
+	TSTO #15
+	ADDSP #14
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Construction de la table des methodes de A
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.A.getX, R0
+	STORE R0, 5(GB)
+	LOAD code.A.setX, R0
+	STORE R0, 6(GB)
+	LOAD code.A.incrX, R0
+	STORE R0, 7(GB)
+; Construction de la table des methodes de B
+	LEA 3(GB), R0
+	STORE R0, 8(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 9(GB)
+	LOAD code.A.incrX, R0
+	STORE R0, 10(GB)
+	LOAD code.B.getX, R0
+	STORE R0, 11(GB)
+	LOAD code.B.setX, R0
+	STORE R0, 12(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	NEW #3, R15
+	BOV heap_overflow
+	LEA 3(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.A
+	POP R15
+	STORE R15, 13(GB)
+	NEW #4, R15
+	BOV heap_overflow
+	LEA 8(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.B
+	POP R15
+	STORE R15, 14(GB)
+; End declarations:
+; Insts:
+	ADDSP #2
+	LOAD 13(GB), R15
+	STORE R15, 0(SP)
+	LOAD #2, R15
+	STORE R15, -1(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 3(R15)
+	SUBSP #2
+	ADDSP #1
+	LOAD 13(GB), R15
+	STORE R15, 0(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 2(R15)
+	SUBSP #1
+	LOAD R0, R15
+	LOAD R15, R1
+	WINT
+	WNL
+	ADDSP #2
+	LOAD 14(GB), R15
+	STORE R15, 0(SP)
+	LOAD #3, R15
+	STORE R15, -1(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 4(R15)
+	SUBSP #2
+	ADDSP #1
+	LOAD 14(GB), R15
+	STORE R15, 0(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 3(R15)
+	SUBSP #1
+	LOAD R0, R15
+	LOAD R15, R1
+	WINT
+	WNL
+	ADDSP #1
+	LOAD 14(GB), R15
+	STORE R15, 0(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 2(R15)
+	SUBSP #1
+	ADDSP #1
+	LOAD 14(GB), R15
+	STORE R15, 0(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 3(R15)
+	SUBSP #1
+	LOAD R0, R15
+	LOAD R15, R1
+	WINT
+	WNL
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; --------------------------------------------------
+; Classe A
+; --------------------------------------------------
+; Initialisation des champs de A
+init.A:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #0, R15
+	LOAD -2(LB), R14
+	STORE R15, 1(R14)
+	LOAD #0, R15
+	LOAD -2(LB), R14
+	STORE R15, 2(R14)
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.A.getX:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	LOAD R15, R0
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+fin.A.getX:
+	BRA missing_return
+code.A.setX:
+	TSTO #16
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -3(LB), R15
+	LOAD -2(LB), R14
+	STORE R15, 1(R14)
+fin.A.setX:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.A.incrX:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	ADD #1, R15
+	LOAD -2(LB), R14
+	STORE R15, 1(R14)
+fin.A.incrX:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe B
+; --------------------------------------------------
+; Initialisation des champs de B
+init.B:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #0, R15
+	LOAD -2(LB), R14
+	STORE R15, 3(R14)
+; Init des champs hérités de A
+	LOAD -2(LB), R15
+	PUSH R15
+	BSR init.A
+	SUBSP #1
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.B.getX:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	LOAD R15, R0
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+fin.B.getX:
+	BRA missing_return
+code.B.setX:
+	TSTO #16
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -3(LB), R15
+	LOAD -2(LB), R14
+	STORE R15, 1(R14)
+fin.B.setX:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

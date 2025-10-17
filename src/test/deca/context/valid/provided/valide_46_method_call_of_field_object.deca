@@ -1,0 +1,28 @@
+// ---------------------------------------------------------
+// Test #46 : Champ-objet et appel de méthodes en cascade
+// ---------------------------------------------------------
+//
+//  select_expr -> select_expr '.' ident '(' list_expr ')'
+//
+
+class Inner {
+  int x;
+  void setX(int val) {
+    x = val;
+  }
+}
+
+class Outer {
+  Inner in;
+
+  void initInner() {
+    in = new Inner();
+  }
+}
+
+{
+  Outer o = new Outer();
+  o.initInner();
+  o.in.setX(123); // appel en cascade
+  println(o.in.x); 
+}

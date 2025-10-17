@@ -1,0 +1,9 @@
+// nom: valide_09_nested_expressions_full.deca
+// Objectif : Mélanger arithmétique, logique, comparaisons
+{
+    (1 + 2) * (3 - 4) < 5;
+    !(6 > 7) || (8 <= 9);
+    (true && false) || (10 == 10);
+    5.0*2 == 10 && 3 < 4;
+    (2.5 + 2.5) != 5 || 2 >= 1;
+}

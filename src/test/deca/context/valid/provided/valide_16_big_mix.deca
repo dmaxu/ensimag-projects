@@ -1,0 +1,47 @@
+// nom: valide_16_big_mix.deca
+// Objectif : mélanger un maximum de constructions validées
+{
+    // Instruction vide
+    ;
+
+    // Expressions simples
+    42;
+    (1 + 2) * 3 == 9;
+
+    // Fonctions de lecture
+    readInt();
+    readFloat();
+
+    // Print/println
+    print(2.0 + 3);
+    println( " - Done" );
+
+    // if sans else
+    if ( true && !(5 < 3) ) {
+        println("Condition in if is true");
+    }
+
+    // if else
+    if ( (readInt() % 2) == 0 ) {
+        print("Even");
+    } else {
+        println("Odd");
+    }
+
+    // if/else if/else
+    if ( 10 < 5 ) {
+        println("Impossible branch");
+    } else if ( (3.14 * 2) > 5 ) {
+        println("Pi scenario");
+    } else {
+        println("Nope");
+    }
+
+    // while
+    while ( (1 + 2) < 10 ) {
+        printlnx("Looping..");
+        // pas de break standard, donc on boucle
+        // illimité en pratique.
+        // Syntaxiquement correct, sémant. pas de problème
+    }
+}

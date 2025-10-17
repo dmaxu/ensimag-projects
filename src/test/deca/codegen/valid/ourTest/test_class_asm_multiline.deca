@@ -1,0 +1,18 @@
+// Description :
+//    Ce test vérifie l'utilisation de l'annotation 'asm' pour inclure des instructions d'assemblage
+//    dans une méthode de classe. Les instructions 'WSTR' affichent plusieurs chaînes de caractères.
+//
+// Résultat attendu :
+//        "On a bien aimé ce projet. Mais C'est fatiguant."
+class A{
+    void print_method() asm ("WSTR \"On a bien \"
+                    WSTR \"aimé ce projet. \"
+                WSTR \"Mais C'est fatiguant.\"
+");
+
+}
+
+{
+    A a = new A();
+    a.print_method();
+}

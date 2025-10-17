@@ -1,0 +1,11 @@
+// Description : test 2 des operations logiques invalides
+
+// Sortie : 
+// ERROR  A MODIFIER
+
+{
+    string a;
+    boolean b;
+    a = b && a;
+
+}

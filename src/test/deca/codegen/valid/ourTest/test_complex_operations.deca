@@ -1,0 +1,18 @@
+// Description:
+//    Test complexe impliquant de nombreuses opérations arithmétiques, avec des calculs utilisant des parenthèses,
+//    des additions, des soustractions, des multiplications, des divisions, des modulos et des expressions imbriquées.
+//    Chaque section effectue un calcul suivi d'une vérification du résultat attendu.
+//
+// Resultats:
+// a=47 ok b=2097152 ok 
+
+{
+    int a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u;
+    p=3;
+    a = (25+25) - (2 * 2 - 3 % 2); 
+    println("a= ",a);
+    if (a == 47) { println("ok"); } else { println("ko, a=", a);}
+    b = ((2 * 2) * (2 * 2)) / (2 * 2 * 2) * (2 * (2 * (2 * (2 * 2 * 2) * 2 * 2 * 2) * 2 * 2 * 2 * (2 * 2 * 2 * (2 * 2 * 2 * (2 * 2)))));
+    println("b= ",b);
+    if (b == 2097152) { println("ok"); } else { println("ko, b=", b); }
+}

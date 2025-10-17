@@ -1,0 +1,10 @@
+//description:test visibilité attributs
+
+class A{
+    protected int x=0;
+    protected float y=15.0;
+
+}
+{
+
+}

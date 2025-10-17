@@ -1,0 +1,7 @@
+// Description : test l'application de Not sur une expression non booléenne
+// Sortie : ERROR dans Not.java
+
+{
+    int a;
+    a = !a;
+}

@@ -1,0 +1,11 @@
+// Description : test 1 des operations logiques invalides
+
+// Sortie : 
+// ERROR  A MODIFIER
+
+{
+    int a;
+    flaot b;
+    a = a && b;
+
+}

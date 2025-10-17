@@ -1,0 +1,31 @@
+// ---------------------------------------------------------
+// Test #45 : Champ redéclaré "public" dans sous-classe (même nom).
+// ---------------------------------------------------------
+//
+// Techniquement, Deca autorise la redéclaration. Ce n'est pas 
+// un override (puisque c'est un champ, pas une méthode). 
+// Il y a "masquage" du champ de la super-classe.
+//
+// Règle (2.5) : On doit juste respecter le fait qu'on ne modifie pas
+// le type ? (Ici, même type int).
+// On suppose que c'est "legal" dans Deca, tant que c'est pas 'protected->public'.
+//
+// => Ce test illustre un "shadowing" de champ (attention, c'est un coin tricky).
+//
+
+class A {
+  int x;
+}
+
+class B extends A {
+  int x; // Masque le "x" de A
+  void init() {
+    x = 20;   // B.x
+  }
+}
+
+{
+  B b = new B();
+  b.init();
+  println(b.x); // 20, champ de B
+}

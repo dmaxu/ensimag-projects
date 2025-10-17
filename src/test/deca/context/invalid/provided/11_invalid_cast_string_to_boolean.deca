@@ -1,0 +1,10 @@
+{
+    string s;
+    boolean b;
+
+    s = "Hello world";
+    // Interdit : cast string -> boolean
+    b = (boolean)(s);
+
+    println("Ne devrait jamais s'afficher");
+}

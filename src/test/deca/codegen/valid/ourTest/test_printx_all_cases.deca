@@ -1,0 +1,14 @@
+// Description:
+//    Test complet de printx avec différents types de données :
+//    chaînes, entiers, flottants, booléens, et cas particuliers.
+//
+// Resultats: 
+//Hello world! 123 3.14 true false -42 2147483647 0 1.0E38
+
+{
+    printx("Hello", " world! ");
+    printx(123, " ", 3.14, " ");
+    printx("");
+    printx(-42, " ", 2147483647, " ");
+    printx(0, " ", 1.0E38);
+}

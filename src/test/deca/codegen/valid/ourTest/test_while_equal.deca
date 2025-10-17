@@ -1,0 +1,12 @@
+// Fichier : test_while_impossible.deca
+// Description:
+//    Test d'une boucle `while` avec une condition toujours fausse (1 == 20).
+//    La boucle ne sera jamais exécutée, donc "yes" ne sera jamais affiché.
+//
+// Resultats:
+//    Aucun affichage, la boucle n'est jamais exécutée.
+{
+    while (1 == 20) {
+        println("no");
+    }
+}

@@ -1,0 +1,66 @@
+// Description : Test Assign et ops bool 2.0
+// Resultats :
+// 123
+
+
+{
+    boolean a, b, c, result1, result2, result3, result4, result5;
+    int check;
+    check = 0;
+
+    // Initialisations
+    a = true;
+    b = false;
+    c = true;
+
+    // Test 1 : combinaison complexe avec && et ||
+    result1 = ((a && (b = false)) || (c && (b = true))) && (b || !c);
+    if (result1) {
+        check = check + 1; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 10; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 2 : double affectation avec court-circuitage
+    b = false;
+    c = true;
+    result2 = (b = true) || (c = false) && (b = false);
+    if (result2) {
+        check = check + 2; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 20; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 3 : affectation imbriquée
+    b = false;
+    result3 = (a = (b = true)) && (c = false);
+    if (result3) {
+        check = check + 3; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 30; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 4 : combinaison de !, &&, et ||
+    a = false;
+    b = true;
+    c = false;
+    result4 = !(a || b) && (c = true) || (b = false);
+    if (result4) {
+        check = check + 4; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 40; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 5 : multiple affectation et évaluation paresseuse
+    b = false;
+    c = true;
+    result5 = ((b = true) && (c = false)) || ((b = false) && (a = true));
+    if (result5) {
+        check = check + 5; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 50; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Afficher la valeur de check pour vérifier les résultats des tests
+    println(check);
+}

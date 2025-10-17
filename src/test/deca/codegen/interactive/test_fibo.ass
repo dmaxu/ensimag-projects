@@ -1,0 +1,137 @@
+	TSTO #8
+	ADDSP #7
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	RINT
+	LOAD R1, R15
+	BOV ErreurLecture
+	STORE R15, 3(GB)
+	LOAD #1, R15
+	STORE R15, 4(GB)
+	LOAD #0, R15
+	STORE R15, 5(GB)
+	LOAD #2, R15
+	STORE R15, 6(GB)
+; End declarations:
+; Insts:
+	LOAD 3(GB), R15
+	CMP #0, R15
+	BLE else.0
+	BRA E_Cond.0
+E_Debut.0:
+	LOAD 4(GB), R15
+	STORE R15, 7(GB)
+	LOAD 5(GB), R15
+	LOAD 4(GB), R14
+	ADD R15, R14
+	STORE R14, 4(GB)
+	LOAD 6(GB), R15
+	ADD #1, R15
+	STORE R15, 6(GB)
+	LOAD 7(GB), R15
+	STORE R15, 5(GB)
+E_Cond.0:
+	LOAD 6(GB), R15
+	LOAD 3(GB), R14
+	CMP R14, R15
+	BLE E_Debut.0
+	WSTR "fibo("
+	LOAD 3(GB), R15
+	LOAD R15, R1
+	WINT
+	WSTR ")="
+	LOAD 4(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+	BRA end.0
+else.0:
+	LOAD 3(GB), R15
+	CMP #0, R15
+	BNE else.1
+	WSTR "fibo("
+	LOAD 3(GB), R15
+	LOAD R15, R1
+	WINT
+	WSTR ")="
+	LOAD #0, R15
+	LOAD R15, R1
+	WINT
+	WNL
+	BRA end.1
+else.1:
+	WSTR "il faut un entier positif"
+	WNL
+end.1:
+end.0:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

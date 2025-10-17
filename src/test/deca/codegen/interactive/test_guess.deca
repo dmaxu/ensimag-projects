@@ -1,0 +1,13 @@
+{
+    float x;
+    boolean b=true;
+    while(b){
+        x=readFloat();
+        if(x!=10){
+            println("la valeur juste est 10.0,reessaie");
+        }else{
+            println("Bravo,c est bien 10");
+            b=false;
+        }
+    }
+}

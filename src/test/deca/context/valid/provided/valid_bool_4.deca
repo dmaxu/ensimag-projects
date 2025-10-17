@@ -1,0 +1,16 @@
+//Descriptif: priorité && sur ||.
+
+{
+  boolean a = true;
+  boolean b = false;
+  boolean c = true;
+  boolean d = false;
+
+  // Priorité des opérateurs avec regroupement par parenthèses
+  (a && b) || (c && d); // false
+  (a || b) && (c || d); // true
+
+  // Utilisation de plusieurs parenthèses
+  ((a && b) || c) && d; // false
+  (a || (b && c)) || d; // true
+}

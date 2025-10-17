@@ -1,0 +1,49 @@
+// Teste d'utilisation des méthodes (override)
+// Resultats:
+// hellor 1 hellor 2 hellor 3 hellor 4 hellor 1 hellor 2 hellor 3
+
+class A {
+    int x;       
+    int y = 0;  
+    int getX() {
+        return x;  
+    }
+    void setX(int y) {
+        x = y;      
+    }
+    void incrX(){
+        println("hellor");
+        x=x+1;
+    }
+}
+
+class B extends A {
+    int y = 0;   
+    int getX() {
+        return x; 
+    }
+    void setX(int y) {
+        x = y;      
+    }
+}
+
+{
+    A a = new A();  
+    B b = new B(); 
+    
+    b.incrX();
+    println(b.getX());
+    b.incrX();
+    println(b.getX());
+    b.incrX();
+    println(b.getX());
+    b.incrX();
+    println(b.getX());
+    a.incrX();
+    println(a.getX());
+    a.incrX();
+    println(a.getX());
+    a.incrX();
+    println(a.getX());
+
+}

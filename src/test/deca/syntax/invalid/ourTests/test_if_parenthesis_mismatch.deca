@@ -1,0 +1,12 @@
+// invalid_04_parenthesis_mismatch.deca
+// Description : Parenthèse fermante manquante dans `if`.
+//
+// Résultat attendu :
+// Erreur syntaxique (le compilateur doit signaler la parenthèse manquante).
+
+{
+    int x = 5;
+    if (x < 10 {
+        x = x + 1;
+    }
+}

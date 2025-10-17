@@ -1,0 +1,8 @@
+// Description :
+//    Test de l'opération divide avec un diviseur nul sur un entier
+//
+// Resultats:
+//    Erreur : Division par zero
+{
+    int x= 2/0;
+}

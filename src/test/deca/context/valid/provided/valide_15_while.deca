@@ -1,0 +1,13 @@
+// nom: valide_15_while.deca
+// Objectif : while(condition) { ... }
+{
+    while (5 < 10) {
+        print("Loop body");
+        // break n'est pas dans la grammaire standard Deca
+        // Donc on ne l'utilise pas
+    }
+
+    while (false) {
+        println("Won't print");
+    }
+}

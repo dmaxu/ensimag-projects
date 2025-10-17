@@ -1,0 +1,44 @@
+// Déclaration de la classe Employe
+class Employe {
+    // Champs de la classe
+    float salaire;
+    int anneeExperience;
+    
+    // Méthode pour initialiser les détails de l'employé
+    void initialiser(float salaireInitial, int experienceInitiale) {
+        this.salaire = salaireInitial;
+        this.anneeExperience = experienceInitiale;
+    }
+    
+    // Méthode pour afficher les informations de l'employé
+    void afficherInformations() {
+        println("Salaire: ", this.salaire);
+        println("Années d'expérience: ", this.anneeExperience);
+    }
+    
+    // Méthode pour augmenter le salaire
+    void augmenterSalaire(float pourcentage) {
+        if (pourcentage > 0) {
+            this.salaire = this.salaire + (this.salaire * pourcentage / 100);
+            println("Salaire augmenté de ", pourcentage, "%. Nouveau salaire: ", this.salaire);
+        } else {
+            println("Pourcentage d'augmentation invalide.");
+        }
+    }
+    
+    // Méthode pour ajouter une année d'expérience
+    void ajouterExperience() {
+        this.anneeExperience = this.anneeExperience + 1;
+        println(" a maintenant ", this.anneeExperience, " années d'expérience.");
+    }
+    
+    // Méthode pour vérifier l'éligibilité à une promotion
+    boolean estEligiblePromotion() {
+        if (this.anneeExperience >= 5) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+}

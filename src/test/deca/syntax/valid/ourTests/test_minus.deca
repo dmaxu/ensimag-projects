@@ -1,0 +1,12 @@
+{
+    // Déclaration et initialisation d'une variable entière
+    int x = 1;
+
+    // Déclaration et initialisation d'une autre variable entière
+    int y = 3;
+
+    // Déclaration et initialisation d'une troisième variable 
+    // en effectuant une opération arithmétique
+    int z = y - x;
+    z=z-x;
+}

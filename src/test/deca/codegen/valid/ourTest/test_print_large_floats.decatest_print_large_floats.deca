@@ -1,0 +1,9 @@
+// Description:
+//    Test print avec des flottants très grands.
+//
+// Resultats:
+//    1.0E38 -1.0E38
+
+{
+    print(1.0E38, " ", -1.0E38);
+}

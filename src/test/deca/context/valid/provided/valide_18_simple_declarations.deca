@@ -1,0 +1,10 @@
+{
+    // Test 18: Simple variable declarations
+
+    int a, b;
+    a =5;
+    b =6;
+    println(a);
+    println(b);
+
+}

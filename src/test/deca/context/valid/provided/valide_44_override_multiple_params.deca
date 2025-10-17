@@ -1,0 +1,27 @@
+// ---------------------------------------------------------
+// Test #44 : Redéfinition de méthode avec plusieurs paramètres
+// ---------------------------------------------------------
+//
+//  decl_method -> type ident '(' list_params ')' ...
+//  On redéfinit "compute(int, int)" dans B
+//
+
+class A {
+  int compute(int a, int b) {
+    return a + b;
+  }
+}
+
+class B extends A {
+  // Redéfinition, même signature : (int,int) -> int
+  int compute(int x, int y) {
+    return x * y;
+  }
+}
+
+{
+  A a = new A();
+  B b = new B();
+  println(a.compute(2, 3)); // 5
+  println(b.compute(2, 3)); // 6
+}

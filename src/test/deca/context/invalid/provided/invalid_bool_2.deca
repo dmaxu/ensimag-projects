@@ -1,0 +1,12 @@
+Descriptif: Expressions mixtes non booléennes
+{
+  int x = 3;
+  float y = 7.2;
+  boolean b = false;
+
+  // Erreur : Combinaison de types booléens et numériques
+  (x > 0) && y; // Invalide : y n'est pas booléen
+  b || x; // Invalide : x n'est pas booléen
+  (x + y) && b; // Invalide : (x + y) n'est pas booléen
+}
+

@@ -1,0 +1,10 @@
+//description:test d'une class+methode sans main
+
+
+class A{
+    protected int x=10;
+    protected int y=20;
+    int sum(){
+        return (x+y);
+    }
+}

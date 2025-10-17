@@ -1,0 +1,14 @@
+//Description:tester l'accès à un élément d'un tableau de float
+{
+
+    float[][] matrix;
+    int i;
+    float element1,element2,element3;
+    matrix = [[1.0, 2.0], [3.0, 4.0]];
+    element1 = matrix[0][0]; 
+    element2 = matrix[0][1]; 
+    element3 = matrix[1][1];
+    println(element1);
+    println(element2);
+    println(element3);
+}

@@ -1,0 +1,7 @@
+//Description:Test avec matrice non initialisée
+{
+    float[][] matrix;
+    float value = getElement(matrix, 0, 0);
+}
+
+

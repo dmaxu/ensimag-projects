@@ -1,0 +1,19 @@
+{
+    int x;
+    float y;
+
+    x = 10;
+    y = 3.5;
+
+    // Erreurs attendues : if (x), while (y) etc. => on veut un boolean dans Deca, pas un int/float
+    if (x) {
+        println("if (x) est incorrect, x est un int");
+    }
+
+    while (y) {
+        println("while (y) est incorrect, y est un float");
+        y = y - 1.0;
+    }
+
+    println("Fin du programme, ne devrait pas s'afficher si les erreurs sont détectées");
+}

@@ -1,0 +1,26 @@
+//Description:
+{
+    boolean[][]tab=new boolean[true][10];
+    tab[0][0]=true;
+    tab[11][0]=true;
+    tab[1000][0]=true;
+    tab[99][0]=true;
+    tab[0][0]=tab[0][0]+tab[0][0];
+    tab[0][0]=tab[0][0]-tab[0][0];
+    tab[0][0]=tab[0][0]*tab[0][0];
+    tab[0][0]=tab[0][0]/tab[0][0];
+    tab=tab*tab;
+    if(tab[0][0]==tab[0][0]&&tab[0][0]){
+        print("tab[0][0]",tab[0][0]);
+    }else{
+        println("tab[0][0]",tab[0][0]);
+
+    }
+    if(tab[0][0]!=tab[0][0]==tab[0][0]){
+        printx("tab[0][0]",tab[0][0]);
+
+    }
+    while(!tab[0][0]){
+        
+    }
+}

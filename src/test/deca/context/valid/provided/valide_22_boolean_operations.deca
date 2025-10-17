@@ -1,0 +1,12 @@
+{
+    // Test 25: Boolean operations
+
+    boolean flag1 = true;
+    boolean flag2 = false;
+
+    boolean andResult = flag1 && flag2;
+    boolean orResult = flag1 || flag2;
+    boolean notResult = !flag1;
+
+
+}

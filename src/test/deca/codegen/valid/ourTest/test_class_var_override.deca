@@ -1,0 +1,23 @@
+// Description :
+//    Ce test vérifie le comportement de l'héritage lorsque des variables d'instance
+//    de la classe parent sont redéfinies dans une classe enfant. La redéfinition de 'x' dans la classe 'B'
+//    masque la version de 'x' héritée de la classe 'A'.
+//
+// Resultats:
+//    1 3
+class A{
+    int x=1;
+    int y=2;
+}
+
+class B extends A{
+    int x=3;
+    int z=4;
+}
+
+{
+    A a =new A();
+    B b =new B();
+    print(a.x," ");
+    print(b.x);
+}

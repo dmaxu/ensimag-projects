@@ -1,0 +1,26 @@
+// Teste super méthode
+// Resultats:
+// 0 100 100 100
+
+class A{
+    int x;
+
+    void setX(int g){
+        this.x = g;
+        println(g, " ", this.x);
+    }
+}
+
+class B extends A{
+    int h;
+    int getX(){
+        return this.x;
+    }
+}
+
+{
+    B b = new B();
+    println(b.getX());
+    b.setX(100);
+    println(b.getX());
+}

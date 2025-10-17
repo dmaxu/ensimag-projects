@@ -1,0 +1,21 @@
+// ---------------------------------------------------------
+// Test #31 : Classe minimale sans héritage, pas de champ ni méthode
+// ---------------------------------------------------------
+//
+// Dérivation (simplifiée) :
+//  class_decl -> 'class' ident class_extension '{' class_body '}'
+//    class_extension -> ε
+//    class_body -> ε
+//
+// => On a juste un bloc main qui crée l'objet (même si la classe est vide).
+//
+
+class EmptyClass {
+}
+
+{
+  // Bloc principal : on instancie la classe vide
+  EmptyClass e;
+  e = new EmptyClass();
+  println("Minimal class instanciée !");
+}

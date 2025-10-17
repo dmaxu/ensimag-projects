@@ -1,0 +1,10 @@
+// Description : test sur le type de la condition
+// Sortie:
+//  La condition doit étre de type boolean, mais pas de type int
+
+{
+    int x;
+    if (x){
+        println(10);
+    }
+}

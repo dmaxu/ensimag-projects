@@ -1,0 +1,25 @@
+// Description :
+//    Test de l'initialisation conditionnelle d'un attribut lors de la construction
+//    d'une instance.
+//
+// Resultats:
+//    50
+//    L'attribut `x` est correctement initialisé selon la valeur passée au constructeur.
+
+class A {
+    int x;
+
+    void A(int value) {
+        if (value > 0) {
+            x = value * 10;
+        } else {
+            x = -value;
+        }
+    }
+}
+
+{
+    A a = new A();
+    a.A(5);
+    print(a.x); // Affiche 50
+}

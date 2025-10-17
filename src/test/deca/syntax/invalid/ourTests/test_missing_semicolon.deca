@@ -1,0 +1,10 @@
+// invalid_01_missing_semicolon.deca
+// Description : Manque un point-virgule après la déclaration.
+//
+// Résultat attendu :
+// Erreur syntaxique (le compilateur doit signaler la ligne où le ";" est manquant).
+
+{
+    int x = 0
+    x = x + 1;
+}

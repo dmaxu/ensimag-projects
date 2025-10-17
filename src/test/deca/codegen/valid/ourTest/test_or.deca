@@ -1,0 +1,12 @@
+
+// Description:
+// Test d'une boucle while avec plusieurs conditions fausses liées par des opérateurs || (OU). Toutes les conditions sont fausses, donc la boucle ne s'exécutera pas.
+// La boucle teste des expressions comme 2<1, 3<2, 5<4, et false, qui sont toutes fausses.
+
+// Resultats:
+// (aucune sortie)
+{    
+    while(2<1||3<=2.2||5==4||false){
+        println("yes");
+    }
+}

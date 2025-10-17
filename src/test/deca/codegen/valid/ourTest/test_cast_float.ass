@@ -1,0 +1,314 @@
+	TSTO #9
+	ADDSP #8
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+; End declarations:
+; Insts:
+	LOAD #3, R15
+	FLOAT R15, R15
+	STORE R15, 8(GB)
+	LOAD #4, R15
+	SHL R15
+	REM #2, R15
+	BOV mod_zero
+	LOAD #4, R14
+	SUB R15, R14
+	FLOAT R14, R14
+	STORE R14, 3(GB)
+	LOAD 3(GB), R15
+	LOAD #4, R14
+	FLOAT R14, R14
+	CMP R14, R15
+	BNE else.0
+	WSTR "ok, a="
+	LOAD 3(GB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " "
+	BRA end.0
+else.0:
+	WSTR "ko, a="
+	LOAD 3(GB), R15
+	LOAD R15, R1
+	WFLOAT
+end.0:
+	LOAD #4, R15
+	LOAD #4, R14
+	SHL R14
+	MUL R15, R14
+	LOAD #4, R15
+	SHL R15
+	MUL R14, R15
+	LOAD #4, R14
+	SHL R14
+	SHL R14
+	SHL R14
+	SHL R14
+	SHL R14
+	SHL R14
+	SHL R14
+	SHL R14
+	SHL R14
+	MUL R15, R14
+	SHL R14
+	LOAD #4, R15
+	SHL R15
+	LOAD #4, R13
+	LOAD #4, R12
+	MUL R13, R12
+	QUO R15, R12
+	BOV division_zero
+	MUL R14, R12
+	FLOAT R12, R12
+	STORE R12, 4(GB)
+	LOAD 4(GB), R15
+	LOAD #2097152, R14
+	FLOAT R14, R14
+	CMP R14, R15
+	BNE else.1
+	WSTR "ok, b="
+	LOAD 4(GB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " "
+	BRA end.1
+else.1:
+	WSTR "ko, b="
+	LOAD 3(GB), R15
+	LOAD R15, R1
+	WFLOAT
+end.1:
+	LOAD #39, R15
+	LOAD #33, R14
+	ADD #18, R14
+	LOAD #21, R13
+	ADD #12, R13
+	LOAD #15, R12
+	ADD #9, R12
+	LOAD #9, R11
+	ADD #6, R11
+	ADD R12, R11
+	ADD R13, R11
+	ADD #13, R11
+	ADD #14, R11
+	ADD #15, R11
+	ADD R14, R11
+	ADD R15, R11
+	LOAD #3, R15
+	ADD #3, R15
+	ADD R11, R15
+	FLOAT R15, R15
+	STORE R15, 5(GB)
+	LOAD 5(GB), R15
+	LOAD #210, R14
+	FLOAT R14, R14
+	CMP R14, R15
+	BNE else.2
+	WSTR "ok, c="
+	LOAD 5(GB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " "
+	BRA end.2
+else.2:
+	WSTR "ko, c="
+	LOAD 5(GB), R15
+	LOAD R15, R1
+	WFLOAT
+end.2:
+	LOAD #39, R15
+	LOAD #11, R14
+	ADD #7, R14
+	ADD #8, R14
+	ADD #9, R14
+	ADD #10, R14
+	ADD #11, R14
+	ADD #12, R14
+	ADD #13, R14
+	ADD #14, R14
+	ADD #15, R14
+	ADD #16, R14
+	ADD #17, R14
+	ADD #18, R14
+	LOAD #3, R13
+	ADD #3, R13
+	ADD #4, R13
+	SUB R14, R13
+	ADD R15, R13
+	FLOAT R13, R13
+	STORE R13, 6(GB)
+	LOAD 6(GB), R15
+	LOAD #112, R14
+	OPP R14, R14
+	FLOAT R14, R14
+	CMP R14, R15
+	BNE else.3
+	LOAD #112, R15
+	OPP R15, R15
+	LOAD #11, R14
+	ADD #7, R14
+	ADD #8, R14
+	ADD #9, R14
+	ADD #10, R14
+	ADD #11, R14
+	ADD #12, R14
+	ADD #13, R14
+	ADD #14, R14
+	ADD #15, R14
+	ADD #16, R14
+	ADD #17, R14
+	ADD #18, R14
+	SUB #19, R14
+	SUB #20, R14
+	LOAD #3, R13
+	ADD #3, R13
+	ADD #4, R13
+	SUB R14, R13
+	CMP R13, R15
+	BNE else.3
+	WSTR "ok, d="
+	LOAD 6(GB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " "
+	BRA end.3
+else.3:
+	WSTR "ko, d="
+	LOAD 6(GB), R15
+	LOAD R15, R1
+	WFLOAT
+end.3:
+	LOAD #4, R15
+	FLOAT R15, R15
+	LOAD 3(GB), R14
+	ADD R15, R14
+	BOV overflow_float
+	CMP #0x0.0p0, R14
+	BGE positive_value1
+	SUB #0x1.0p-1, R14
+	BRA end_round1
+positive_value1:
+	ADD #0x1.0p-1, R14
+end_round1:
+	INT R14, R14
+	LOAD 4(GB), R15
+	CMP #0x0.0p0, R15
+	BGE positive_value2
+	SUB #0x1.0p-1, R15
+	BRA end_round2
+positive_value2:
+	ADD #0x1.0p-1, R15
+end_round2:
+	INT R15, R15
+	REM R14, R15
+	BOV mod_zero
+	FLOAT R15, R15
+	LOAD 5(GB), R14
+	ADD R15, R14
+	BOV overflow_float
+	LOAD 6(GB), R15
+	LOAD 5(GB), R13
+	LOAD 4(GB), R12
+	LOAD 3(GB), R11
+	ADD R12, R11
+	BOV overflow_float
+	SUB R13, R11
+	BOV overflow_float
+	MUL R15, R11
+	BOV overflow_float
+	DIV R14, R11
+	BOV overflow_float
+	BOV division_zero
+	STORE R11, 7(GB)
+	LOAD 7(GB), R15
+	LOAD #0x1.110a34p20, R14
+	OPP R14, R14
+	CMP R14, R15
+	BNE else.4
+	WSTR "ok, e="
+	LOAD 7(GB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " "
+	BRA end.4
+else.4:
+	WSTR "ko, e="
+	LOAD 7(GB), R15
+	LOAD R15, R1
+	WFLOAT
+end.4:
+	WSTR "ok, p="
+	LOAD 8(GB), R15
+	LOAD R15, R1
+	WFLOAT
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

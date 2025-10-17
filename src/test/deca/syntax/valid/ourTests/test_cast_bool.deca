@@ -1,0 +1,15 @@
+// Cast valide : true est déjà un boolean.
+{
+    boolean B = (boolean) (true); 
+    // Résultat attendu : B == true
+    boolean B0 = (boolean) (1 == 1); 
+    // Résultat attendu : B0 == true
+    boolean B1 = (boolean) (1 != 0) && (boolean) (true); 
+    // Résultat attendu : B1 == true
+    boolean B2 = (boolean) (0 == 0) || (boolean) (false); 
+    // Résultat attendu : B2 == true
+    boolean B3 = (boolean) (2 < 3); 
+    // Résultat attendu : B3 == true
+    boolean B4 = (boolean) (1 + 1 == 2); 
+    // Résultat attendu : B4 == true
+}

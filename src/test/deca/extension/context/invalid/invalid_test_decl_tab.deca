@@ -1,0 +1,5 @@
+//Description:tab de meme nom
+{
+    boolean[]array=new boolean[10];
+    boolean[][]array=new boolean[10][15];
+}

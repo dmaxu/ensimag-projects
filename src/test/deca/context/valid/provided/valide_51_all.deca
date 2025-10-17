@@ -1,0 +1,58 @@
+// Déclaration de la classe principale
+class Main {
+    // Champs de la classe
+    int compteur;
+    float ratio;
+    boolean estActif;
+
+    void demarrer(int initial, float facteur) {
+        this.compteur = initial;
+        this.ratio = facteur;
+        this.estActif = true;
+    }
+    void incrementer() {
+        this.compteur = 1;
+        if (this.compteur == 5) {
+            this.estActif = false;
+        }
+    }
+
+    // Méthode pour afficher les résultats
+    void afficherResultat(int res, float rat, boolean cond) {
+        println("Résultat: " , res);
+        println("Ratio: " , rat);
+    }
+
+    void methodeAvecException() {
+        int division = 10 / this.compteur;
+    }
+
+    boolean verifierCondition(int valeur) {
+        return (valeur > 0) && (this.estActif || !this.estActif);
+    }
+}
+
+class Calculatrice {
+    float resultat;
+
+
+    void ajouter(float a, float b) {
+        this.resultat = a + b;
+    }
+
+    void soustraire(float a, float b) {
+        this.resultat = a - b;
+    }
+
+    void multiplier(float a, float b) {
+        this.resultat = a * b;
+    }
+
+    void diviser(float a, float b) {
+        this.resultat = a / b;
+    }
+
+    float obtenirResultat() {
+        return this.resultat;
+    }
+}

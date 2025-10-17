@@ -1,0 +1,8 @@
+// Description : test la multiplication par un boolean
+// Sortie : 
+// A MODIFIER
+
+{
+    boolean bool = true;
+    bool = bool * 2.0;
+}

@@ -1,0 +1,12 @@
+//Description:type de tableau non conforme au type declaré(class-->boolean)
+
+class A{
+    int x;
+    float sum(float y,int x){
+        return(x+y);
+    }
+}
+{
+    A a=new A();
+    a tab[]=new boolean[];
+}

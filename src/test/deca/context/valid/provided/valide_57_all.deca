@@ -1,0 +1,43 @@
+// Déclaration de la classe Voiture
+class Voiture {
+    int annee;
+    float vitesseActuelle;
+    float carburant;
+    
+    // Méthode pour initialiser les détails de la voiture
+    void initialiser(int anneeVoiture, float carburantInitial) {
+        this.annee = anneeVoiture;
+        this.vitesseActuelle = 0.0;
+        this.carburant = carburantInitial;
+    }
+    
+    // Méthode pour accélérer
+    void accelerer(float increment){
+        this.vitesseActuelle = this.vitesseActuelle + increment;
+        this.carburant = this.carburant - 0.5 * increment;
+        println("La voiture " , " accélère de " , increment , " km/h.");
+    }
+    
+    // Méthode pour freiner
+    void freiner(float decrement) {
+        if (this.vitesseActuelle - decrement < 0) {
+            this.vitesseActuelle = 0;
+        } else {
+            this.vitesseActuelle = this.vitesseActuelle - decrement;
+        }
+        println("La voiture " , " freine de " , decrement , " km/h.");
+    }
+    
+    // Méthode pour ravitailler en carburant
+    void ravitailler(float quantite) {
+        this.carburant = this.carburant + quantite;
+        println("Carburant ajouté: " , quantite , " litres. Carburant total: " , this.carburant);
+    }
+    
+    // Méthode pour afficher les informations de la voiture
+    void afficherInformations() {
+        println("Année: ", this.annee);
+        println("Vitesse actuelle: ", this.vitesseActuelle, " km/h");
+        println("Carburant: ", this.carburant, " litres");
+    }
+}

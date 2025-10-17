@@ -1,0 +1,8 @@
+// Description :
+//    Test de l'opération modulo avec un diviseur nul résultant d'une opération
+//
+// Resultats:
+//    Erreur : Débordement floattant
+{
+    float x= 2.0/((2-2)*2/2);
+}

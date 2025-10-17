@@ -1,0 +1,6 @@
+// Test de la double négation avec l'opérateur NOT
+{
+    boolean x;       // Déclaration de la variable boolean x
+    x = !!true;      // Double négation sur une constante `true`
+    // Vérification attendue : x doit être égal à true
+}

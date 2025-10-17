@@ -1,0 +1,12 @@
+// Description:
+//    Test de conversion explicite d'un entier (`int`) en un flottant (`float`).
+//    La variable `a` est assignée à 47, puis convertie en flottant et stockée dans `f`.
+//
+// Resultats:
+//    47.0
+
+{
+    int a = 47;
+    float f = (float) (a);
+    print(f);
+}

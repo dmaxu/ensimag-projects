@@ -1,0 +1,9 @@
+// Description:
+//    Test print combinant des chaînes de caractères, des entiers et des nombres flottants.
+//
+// Resultats:
+//    Bonjour 42 3.14 au revoir 1
+
+{
+    print("Bonjour ", 42, " ", 3.14," au revoir ");
+}

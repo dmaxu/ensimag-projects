@@ -1,0 +1,12 @@
+// Description : comparaison entre deux expressions dont l'une n'est pas de type (int , float)
+// Sortie : 
+// ERROR : La variable x n'est pas définie.
+
+{
+    boolean valueBoolean;
+    string phrase;
+
+    if (valueBoolean > phrase){
+        println("Hello World");
+    }
+}

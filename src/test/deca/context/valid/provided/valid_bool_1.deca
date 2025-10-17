@@ -1,0 +1,10 @@
+{
+  boolean a = true;
+  boolean b = false;
+
+  // Priorité par défaut
+  a && b || true; // true : équivalent à (a && b) || true
+
+  // Modification de la priorité 
+  a && (b || true); // true : b || true est évalué d'abord
+}

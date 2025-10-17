@@ -1,0 +1,6 @@
+// Description : test des types des attributs
+// Sortie:
+//  Le type B n'est pas définie. 
+class A{
+    B x;
+}

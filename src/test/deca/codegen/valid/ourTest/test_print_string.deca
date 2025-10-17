@@ -1,0 +1,8 @@
+// Description:
+//    tests simple print string
+//
+// Resultats:
+//    yes
+{
+    print("yes");
+}

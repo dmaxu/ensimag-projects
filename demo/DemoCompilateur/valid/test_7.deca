@@ -1,0 +1,48 @@
+//  Teste de instanceOf.
+//  Resultats:
+//  teste 1 ok  teste 2 ok  teste 2 ok
+
+class A{
+
+}
+
+class B extends A{
+    
+}
+
+class C extends B{
+    
+}
+
+class D extends C{
+    
+}
+
+class E extends D{
+    
+}
+
+{
+    B b;
+    C c;
+    D d;
+    E e;
+    // On ajoute le teste 1
+    if (e instanceof D){
+        println("teste 1 ok");
+    }else{
+        println("teste 1 ko");
+    }
+    // On ajoute le teste 2
+    if (e instanceof C){
+        println("teste 2 ok");
+    }else{
+        println("teste 2 ko");
+    }
+    // On ajoute le teste 3
+    if (e instanceof B){
+        println("teste 3 ok");
+    }else{
+        println("teste 3 ko");
+    }
+}

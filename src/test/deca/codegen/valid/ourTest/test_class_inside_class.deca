@@ -1,0 +1,28 @@
+// Description :
+//    Test de l'accès à un objet `A` à partir d'un objet `B`.
+//    - `A` contient un attribut `x` et une méthode `getX()` qui retourne la valeur de `x`.
+//    - `B` contient un attribut `a` qui est une instance de `A`, et une méthode `getA()` pour accéder à cette instance.
+//    Ce test vérifie l'accès correct à l'attribut `x` de l'objet `A` via la méthode `getA()` de l'objet `B`.
+//
+// Resultats:
+//    1
+//    L'accès à l'attribut `x` de `A` fonctionne correctement via la méthode `getA()` de `B`.
+
+class A {
+    int x = 1;   // Attribut x de A, initialisé à 1
+    int getX() {
+        return x;  // Retourne la valeur de x
+    }
+}
+
+class B {
+    A a = new A();  // Objet a de type A dans la classe B
+    A getA() {
+        return a;  // Retourne l'objet a de type A
+    }
+}
+
+{
+    B b = new B();  // Création d'un objet de type B
+    println(b.getA().getX());  // Appel à getA() pour obtenir l'objet A et appel à getX() pour obtenir la valeur de x, qui est 1
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Test de lecture d'un entier `x` à partir de l'entrée utilisateur, puis affichage du double de cette valeur.
+//
+// Resultats:
+// 4
+{
+    int x = readInt();
+    print(x*2);
+}

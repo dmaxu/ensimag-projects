@@ -1,0 +1,17 @@
+// Description:
+//    Test de la conversion de flottants en entiers avec le cast explicite.
+//    Les valeurs flottantes sont converties en entiers, ce qui élimine la partie décimale.
+//
+// Resultats:
+//3 47 48 48
+
+{
+    int x =(int) (3.14f);
+    int y =(int) (47.0);
+    int z =(int) (47.5f);
+    int w =(int) (47.9);
+    println(x);
+    println(y);
+    println(z);
+    println(w);
+}

@@ -1,0 +1,28 @@
+// ---------------------------------------------------------
+// Test #40 : Redéfinition de méthode avec sous-type
+// ---------------------------------------------------------
+// Règle : le type de retour de la redéfinition doit être un sous-type
+// du type de la méthode parente. 
+// Ici: parent => return type_class(A), enfant => return type_class(B).
+// B extends A => B est sous-type de A.
+//
+
+class A {
+  // On définit un "factory" qui renvoie un A
+  A createA() {
+    return new A();
+  }
+}
+
+class B extends A {
+  // Redéfinition : type de retour => B, qui est un sous-type de A
+  B createA() {
+    return new B();
+  }
+}
+
+{
+  B b = new B();
+  B b2 = b.createA(); 
+  println("Ok #40");
+}

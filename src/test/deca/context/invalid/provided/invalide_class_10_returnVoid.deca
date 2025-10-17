@@ -1,0 +1,11 @@
+// Description : Un retourne à l'intérieure d'une méthode de type void.
+// Sortie : 
+// ERROR : return ne peut pas étre utiliser à l'intérieure d'une instruction de type void.
+
+class A{
+    int x;
+
+    void method(int x, float y){
+        return 10;
+    }
+}

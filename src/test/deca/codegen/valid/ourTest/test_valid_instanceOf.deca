@@ -1,0 +1,27 @@
+// Teste de instance of
+// Resultats:
+// world
+
+class A{
+
+}
+
+class B extends A{
+
+}
+
+{
+    A a = new A();
+    B b = new B();
+
+    if (a == b){
+        println("hello");
+    }else{
+        if (b instanceof A){
+            println("world");
+        }else{
+            println("hi");
+        }
+    }
+}
+

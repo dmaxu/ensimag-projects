@@ -1,0 +1,13 @@
+
+// Description: 
+// Test de deux boucles while avec des conditions qui ne seront jamais vraies. // La première boucle teste false, et la seconde teste !true, les deux ne s'exécutent donc pas.
+// Resultats: 
+//(aucune sortie)
+{    
+    while(false){
+        print("yes");
+    }
+    while(!true){
+        print("yes");
+    }
+}

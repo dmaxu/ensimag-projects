@@ -1,0 +1,65 @@
+// Description :
+//    Ce programme teste une simulation simple d'un compte bancaire avec des
+//    opérations de dépôt, de retrait, d'application d'intérêts, et d'affichage
+//    des détails du compte.
+//    - Initialisation du compte : Titulaire "no Body", solde 100.0, taux d'intérêt 0%.
+//    - Deux dépôts : 1.5 et 100.5 euros.
+//    - Retrait : 10.1 euros.
+//    - Application des intérêts : taux d'intérêt 0%.
+//    - Affichage final des détails.
+//
+// Resultats:
+//    Dépôt de 1.5 effectué. Nouveau solde: 101.5    Dépôt de 100.5 effectué. Nouveau solde: 202.0    Retrait de 10.1 effectué. Nouveau solde: 191.9    Intérêts de 0 appliqués. Nouveau solde: 191.9    Titulaire: no Body    Solde: 191.9 euros    Taux d'intérêt: 0.0%
+
+// Déclaration de la classe CompteBancaire
+class CompteBancaire {
+    // Champs de la classe
+    float solde;
+    float tauxInteret;
+    
+    // Méthode pour initialiser le compte bancaire
+    void initialiser(float soldeInitial, float taux) {
+        this.solde = soldeInitial;
+        this.tauxInteret = taux;
+    }
+    
+    // Méthode pour déposer de l'argent
+    void deposer(float montant) {
+        this.solde = this.solde + montant;
+        println("Dépôt de ", montant, " effectué. Nouveau solde: ", this.solde);
+    }
+    
+    // Méthode pour retirer de l'argent
+    void retirer(float montant) {
+        this.solde =this.solde - montant;
+        println("Retrait de ", montant, " effectué. Nouveau solde: ", this.solde);
+    }
+    
+    // Méthode pour appliquer les intérêts
+    void appliquerInterets() {
+        float interets = this.solde * (this.tauxInteret / 100);
+        this.solde = this.solde+interets;
+        println("Intérêts de ", interets, " appliqués. Nouveau solde: ", this.solde);
+    }
+    
+    // Méthode pour vérifier le solde
+    float verifierSolde() {
+        return this.solde;
+    }
+    
+    // Méthode pour afficher les détails du compte
+    void afficherDetails() {
+        println("Solde: ", this.solde, " euros");
+        println("Taux d'intérêt: ", this.tauxInteret, "%");
+    }
+}
+
+{
+    CompteBancaire x = new CompteBancaire();
+    x.initialiser(100.0, 0.0);
+    x.deposer(1.5);
+    x.deposer(100.5);
+    x.retirer(10.1);
+    x.appliquerInterets();
+    x.afficherDetails();
+}

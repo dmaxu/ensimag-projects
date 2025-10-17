@@ -1,0 +1,8 @@
+//Descriptif:tester directement avec des constantes
+
+{
+
+  true && false || true;  // true
+  (true || false) && false; // false
+  !(true && (false || true)); // false
+}

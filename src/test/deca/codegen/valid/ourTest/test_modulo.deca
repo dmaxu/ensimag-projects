@@ -1,0 +1,17 @@
+// Description:
+//    Test des opérations modulo entre différents entiers.
+//    `x` calcule le reste de la division de 1000 par 2, 
+//    `y` calcule le reste de la division de 1000 par 3,
+//    `z` calcule le reste de la division de 4 par un très grand nombre.
+//
+// Resultats:
+// 0 1 4
+
+{
+    int x = 1000 % 2;
+    int y = 1000 % 3;
+    int z = 4 % 1000000000;
+    print(x," ");
+    print(y," ");
+    print(z," ");
+}

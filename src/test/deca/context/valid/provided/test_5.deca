@@ -1,0 +1,10 @@
+// Description:
+//    Programme minimaliste utilisant println
+//
+// Resultats:
+//    String sur plusieurs lignes.
+//
+
+{
+    println("hhhhhhhhhhh.");
+}

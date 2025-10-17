@@ -1,0 +1,6 @@
+{
+    string s;
+    string f;
+    f = (string) (s);
+
+}

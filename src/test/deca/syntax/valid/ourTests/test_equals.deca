@@ -1,0 +1,33 @@
+{
+    // Déclaration d'une variable float
+    float x;
+
+    // Comparaison de la variable non initialisée avec une valeur
+    x == 0; 
+    // Résultat attendu : Erreur car la variable `x` n'est pas initialisée. Une initialisation est requise.
+
+    // Comparaison entre deux valeurs booléennes
+    true == true; 
+    // Résultat attendu : Valide, car la comparaison entre deux valeurs booléennes est autorisée.
+
+    // Comparaison entre une valeur booléenne et une chaîne de caractères
+    true == "string"; 
+
+    // Comparaison de la variable non initialisée avec une valeur non définie
+    x == no; 
+
+    // Comparaison de la variable non initialisée avec une valeur
+    x != 0; 
+    // Résultat attendu : Erreur car la variable `x` n'est pas initialisée. Une initialisation est requise.
+
+    // Comparaison entre deux valeurs booléennes
+    true != true; 
+    // Résultat attendu : Valide, car la comparaison entre deux valeurs booléennes est autorisée.
+
+    // Comparaison entre une valeur booléenne et une chaîne de caractères
+    true != "string"; 
+
+    // Comparaison de la variable non initialisée avec une valeur non définie
+    x != no; 
+
+}

@@ -1,0 +1,9 @@
+// Cast d'une expression entière en float.
+{
+    float F = (float) (3 + 9 - 2 + 0 + 3); 
+    // Résultat attendu : F == 13.0 (float)
+    int I = (int) (3.5 + 2.1); 
+    // Résultat attendu : I == 5 (perte de la partie décimale)
+    float D = (float) ((float) (3) + (float) (2 * 5)); 
+    // Résultat attendu : D == 13.0 (float)
+}

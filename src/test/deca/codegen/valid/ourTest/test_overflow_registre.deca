@@ -1,0 +1,11 @@
+{
+        int x = 0;
+
+        // Boucle pour forcer l'utilisation de nombreux registres
+        while (x < 20) {
+            x = x + 1; // Une instruction simple pour consommer des registres
+        }
+
+        // Affichage d'une confirmation que le programme s'est exécuté
+        println("Test terminé.");
+}

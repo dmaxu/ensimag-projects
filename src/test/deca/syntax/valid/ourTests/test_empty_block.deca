@@ -1,0 +1,9 @@
+// valid_02_empty_block.deca
+// Description : Bloc principal avec list_decl et list_inst vides.
+//
+// Résultat attendu :
+// Compile sans erreur, n'affiche rien.
+
+{
+    // block vide
+}

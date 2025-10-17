@@ -1,0 +1,14 @@
+//Descriptif:Utilisation incorrecte de && et || avec des chaînes
+
+{
+  string s1 = "Hello";
+  string s2 = "World";
+
+  // Erreur : Les opérateurs && et || ne peuvent pas être utilisés avec des chaînes
+  s1 && s2; // Invalide
+  s1 || s2; // Invalide
+
+  // Erreur : Comparaison valide mais combinaison logique invalide
+  (s1 == "Hello") && s2; // Invalide
+}
+

@@ -1,0 +1,9 @@
+// Description :
+//    Test de l'opération modulo avec un diviseur nul sur un entier
+//
+// Resultats:
+//    Erreur : Modulo par zero
+{
+    int a = 2 % 0;
+    print(a);
+}

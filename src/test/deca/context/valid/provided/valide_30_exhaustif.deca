@@ -1,0 +1,68 @@
+// =====================================
+// list_classes vide => pas de classes
+// main => un bloc d’instructions
+// =====================================
+
+{
+    // ===============================
+    // 1) Déclarations (list_decl)
+    // ===============================
+    // Format :  type list_decl_var ';'
+    // où type -> ident  (ici "int", "float", "boolean", "string" traités comme ident)
+    int i = 2, j;            // j non initialisé
+    float f = 3.14;
+    boolean b = false;
+
+    // ===============================
+    // 2) Instructions (list_inst)
+    // ===============================
+
+    // --- 2.1 Lecture via readInt / readFloat ---
+    print("Entrez un entier: ");
+    i = readInt();
+    print("Entrez un flottant: ");
+    f = readFloat();
+
+    // --- 2.2 Opérations arithmétiques ---
+    // sum_expr : '+', '-'
+    i = i + 10;
+    i = i - 3;
+    // mult_expr : '*', '/', '%'
+    i = i * 2;
+    i = i / 2;
+    i = i % 5;
+
+    // --- 2.3 Opérations logiques et comparaisons ---
+    // or_expr -> ... '||' ...
+    // and_expr -> ... '&&' ...
+    // eq_neq_expr -> '==' / '!='
+    // inequality_expr -> '<', '>', '<=', '>='
+    b = (i == 0) || (f <= 3.14);
+    b = b && (i > 0);
+    
+    // --- 2.4 Condition if / else-if / else ---
+    if (i == 0) {
+        println("i est 0");
+    } else if (i == 1) {
+        println("i est 1");
+    } else {
+        println("i est ni 0 ni 1");
+    }
+
+    // --- 2.5 Boucle while ---
+    // while (i < 10) { i = i + 1; }
+    while (i < 10) {
+        i = i + 1;
+    }
+
+    // --- 2.6 Instructions de sortie standard ---
+    // ';' seul => instruction vide
+    ;
+    print("Valeur finale de i: ");
+    println(i);
+
+    // Utilisation de printx/printlnx (notation hexadécimale)
+    printx("En hex, i vaut: ");
+    printlnx(i);
+}
+// Fin du bloc principal

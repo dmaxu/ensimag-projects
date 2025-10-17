@@ -1,0 +1,25 @@
+class A{
+    
+    void printMatrix(int[][] matrix, int rows, int cols){
+        int i;
+        int j;
+        i = 0;
+        while (i < rows){
+            j = 0;
+            while (j < cols){
+                print(matrix[i][j], " ");
+                println(i,j);
+                j= j+1;
+            }
+            println();
+            i = i+1;
+        }
+    }
+}
+
+
+{
+    A a = new A();
+    int[][] m = [[1,2],[3,4]];
+    a.printMatrix(m, 2, 2);
+}

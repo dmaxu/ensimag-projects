@@ -1,0 +1,12 @@
+//Description:erreur declarations dans les dimensions
+
+class A{
+    void afficher(){
+        println("sans attributs");
+    }
+}
+{
+    A a=new A();
+    a tab[][]=new a[];
+    a tab2[]=new a[];
+}

@@ -1,0 +1,16 @@
+// Description:
+//    Test d'une affectation intégrée dans une condition `if`.
+//    La variable `i` est assignée à 47, puis comparée à 47 dans la même expression.
+//
+// Resultats:
+//    yes
+
+{
+    int i;
+
+    if((i = 47) == 47){
+        print("yes");
+    }else{
+        print("no");
+    }
+}

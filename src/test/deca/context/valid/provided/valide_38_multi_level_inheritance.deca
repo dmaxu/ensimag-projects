@@ -1,0 +1,31 @@
+// ---------------------------------------------------------
+// Test #38 : Héritage sur plusieurs niveaux (A -> B -> C)
+// ---------------------------------------------------------
+//
+//  class_decl -> 'class' ident 'extends' ident ...
+//  On empile la hiérarchie : A -> B -> C
+//
+
+class A {
+  int a;
+}
+
+class B extends A {
+  int b;
+}
+
+class C extends B {
+  int c;
+
+  void initAll() {
+    a = 1;
+    b = 2;
+    c = 3;
+  }
+}
+
+{
+  C cobj = new C();
+  cobj.initAll();
+  println(cobj.a + cobj.b + cobj.c); // 6
+}

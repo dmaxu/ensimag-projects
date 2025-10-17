@@ -1,0 +1,56 @@
+// Description :
+//    Ce test vérifie les opérations arithmétiques sur des nombres entiers et flottants dans la classe `A`.
+//    - Les méthodes `intOper1` à `intOper5` effectuent des opérations arithmétiques en utilisant des entiers (`int`).
+//    - Les méthodes `floatOper1` à `floatOper5` effectuent des opérations similaires, mais avec des conversions en `float`.
+//    - Chaque méthode retourne le résultat de l'opération correspondante.
+//
+// Resultats:
+//    `2 0 1 1 1`  `2.0 0.0 1.0 1.0 -3.0`
+class A{
+    int a=1;
+    int b=1;
+    int intOper1(){
+        return a+b;
+    }
+    int intOper2(){
+        return a-b;
+    }
+    int intOper3(){
+        return a*b;
+    }
+    int intOper4(){
+        return a/b;
+    }
+    int intOper5(){
+        return a+b-1*5/b;
+    }
+    float floatOper1(){
+        return 1;
+    }
+    float floatOper2(){
+        return a-b;
+    }
+    float floatOper3(){
+        return a*b;
+    }
+    float floatOper4(){
+        return a/b;
+    }
+    float floatOper5(){
+        return a+b-1*5/b;
+    }
+}
+{
+    A a=new A();
+    print(a.intOper1()," ");
+    print(a.intOper2()," ");
+    print(a.intOper3()," ");
+    print(a.intOper4()," ");
+    print(a.intOper5()," ");
+    println();
+    print(a.floatOper1()," ");
+    print(a.floatOper2()," ");
+    print(a.floatOper3()," ");
+    print(a.floatOper4()," ");
+    print(a.floatOper5()," ");
+}

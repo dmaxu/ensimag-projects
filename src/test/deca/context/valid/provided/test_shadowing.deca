@@ -1,0 +1,23 @@
+// Description :
+//    Test de l'ombrage des variables dans des portées imbriquées.
+//    - La classe `TestShadow` définit une méthode `shadow`.
+//    - Un attribut `x` est ombragé dans une portée locale, mais sa valeur initiale
+//      provient de l'attribut global `x`.
+//
+// Resultats:
+//    42
+
+
+class TestShadow {
+    int x = 42;
+
+    void shadow() {
+        int x = this.x + 1; // Ombrage de l'attribut global x
+        print(x);           // Affiche 42 + 1 = 43
+    }
+}
+
+{
+    TestShadow t = new TestShadow();
+    t.shadow();
+}

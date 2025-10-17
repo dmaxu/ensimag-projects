@@ -1,0 +1,31 @@
+// ---------------------------------------------------------
+// Test #43 : Classe avec un champ qui référence la même classe
+// ---------------------------------------------------------
+//
+//  On peut avoir un champ de type "Node" dans la classe Node => liste chaînée.
+
+class Node {
+  int data;
+  Node next;
+
+  void insertNext(int val) {
+    Node newNode = new Node();
+    newNode.data = val;
+    newNode.next = next;
+    next = newNode;
+  }
+}
+
+{
+  Node head = new Node();
+  Node it = head;
+
+  head.data = 1;
+  head.insertNext(2);
+  head.insertNext(3);
+
+  while (it != null) {
+    println(it.data);
+    it = it.next;
+  }
+}

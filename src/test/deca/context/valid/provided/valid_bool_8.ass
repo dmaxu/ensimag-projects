@@ -1,0 +1,115 @@
+	TSTO #5
+	ADDSP #4
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	LOAD #1, R15
+	STORE R15, 3(GB)
+	LOAD #2, R15
+	STORE R15, 4(GB)
+; End declarations:
+; Insts:
+	LOAD 3(GB), R14
+	CMP #1, R14
+	BNE falseLabel.0
+	LOAD 4(GB), R14
+	CMP #2, R14
+	BNE falseLabel.0
+	LOAD #1, R15
+	BRA endLabel.0
+falseLabel.0:
+	LOAD #0, R15
+endLabel.0:
+	LOAD 3(GB), R14
+	CMP #4, R14
+	BNE E_Fin.0
+	LOAD 4(GB), R14
+	CMP #2, R14
+	BEQ falseLabel.1
+E_Fin.0:
+	LOAD #1, R15
+	BRA endLabel.1
+falseLabel.1:
+	LOAD #0, R15
+endLabel.1:
+	LOAD 3(GB), R14
+	CMP #4, R14
+	BNE falseLabel.2
+	LOAD 4(GB), R14
+	CMP #2, R14
+	BEQ falseLabel.2
+	LOAD #1, R15
+	BRA endLabel.2
+falseLabel.2:
+	LOAD #0, R15
+endLabel.2:
+	LOAD 3(GB), R14
+	CMP #1, R14
+	BNE E_Fin.1
+	LOAD 4(GB), R14
+	CMP #2, R14
+	BNE falseLabel.3
+E_Fin.1:
+	LOAD #1, R15
+	BRA endLabel.3
+falseLabel.3:
+	LOAD #0, R15
+endLabel.3:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR

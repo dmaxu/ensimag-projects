@@ -1,0 +1,27 @@
+// Objectif : Comparaison complexe entre les attributs de deux objets.
+// Resultats :
+// Point p1 is above p2.
+
+class Point {
+    int x;
+    int y;
+
+    boolean isAbove(Point p) {
+        return this.y > p.y;
+    }
+}
+
+{
+        Point p1 = new Point();
+        Point p2 = new Point();
+        p1.x = 5;
+        p1.y = 10;
+        p2.x = 5;
+        p2.y = 8;
+
+        if (p1.isAbove(p2)) {
+            println("Point p1 is above p2.");
+        }
+    }
+
+

@@ -1,0 +1,23 @@
+{
+    // Test 20: Multiple variable declarations
+
+    int a, c;
+    int b;
+    float d, e;
+    boolean f, g;
+    
+
+    a = 1;
+    b = 2;
+    c = 3;
+    d = 4.4;
+    e = 5.5;
+    f = true;
+    g = false;
+
+    println(a);
+    println(b);
+    println(c);
+    println(d);
+    println(e);
+}

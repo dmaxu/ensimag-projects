@@ -1,0 +1,14 @@
+// Description:
+//    Test d'une condition `if` qui compare une affectation de type `float` avec une valeur `double` (3.14).
+//    Cela permet de vérifier la gestion des conversions implicites et des comparaisons entre types flottants.
+//
+// Resultats:
+//    "yes"
+{
+    float f;
+    if((f = 3.14f) == 3.14){
+        print("yes");
+    }else{
+        print("no");
+    }
+}

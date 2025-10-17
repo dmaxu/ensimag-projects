@@ -1,0 +1,12 @@
+// Description : test sur l'application d'une méthode qui n'est pas définie dans la classe.
+// Sortie:
+//  ERROR : la méthode blabla n'est pas définie à l'intérieure de la classe A. 
+
+class A{
+    protected int x;
+}
+
+{
+    A a = new A();
+    a.blabla();
+}

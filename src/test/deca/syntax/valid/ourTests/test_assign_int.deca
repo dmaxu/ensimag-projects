@@ -1,0 +1,8 @@
+// Test d'assignation avec une addition
+{
+    int x;      // Déclaration de la variable x
+    int z;      // Déclaration de la variable z (non utilisée ici)
+    int y = 2;  // Déclaration de y avec une initialisation à 2
+    x = y + 5;  // Assignation de la somme de y et 5 à x
+    // Vérification attendue : x doit être égal à 7
+}

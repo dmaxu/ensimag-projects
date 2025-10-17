@@ -1,0 +1,5 @@
+// Cast valide : conversion d'un entier en float.
+{
+    float x = (float) (1); 
+    // Résultat attendu : x == 1.0 (float)
+}

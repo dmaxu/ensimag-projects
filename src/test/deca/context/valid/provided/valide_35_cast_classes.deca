@@ -1,0 +1,28 @@
+// ---------------------------------------------------------
+// Test #35 : Cast entre classes (upcast et downcast explicite)
+// ---------------------------------------------------------
+//
+//  expr -> 'new' ident '(' ')'
+//  expr -> '(' type ')' '(' expr ')' pour le cast
+//
+// Sous-typage : Sub -> Super implicite ; Super -> Sub via cast explicite
+//
+
+class SuperC {
+  int x;
+}
+
+class SubC extends SuperC {
+  int y;
+}
+
+{
+  SubC sup;
+  // sup.y = 10; // pas accessible, sup est vu comme SuperC
+
+  SuperC sub;
+  sup = new SubC();  // upcast implicite
+  sub = (SuperC)(sup); // downcast explicite, OK si sup est réellement un SubC
+  sub.x = 42;
+  println(sub.x);
+}

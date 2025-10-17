@@ -1,0 +1,18 @@
+// Description:
+//    Test complet de println avec différents types de données :
+//    chaînes, entiers, flottants, booléens, et cas particuliers.
+//
+// Resultats: 
+//Bonjour le monde ! Bonjour\\tle\\nmonde!-42 -3.14 true false 123 45.6 -2147483648 2147483647 123 3.14 0 -123 -2.71 Bonjour Monde Bonjourlemonde42.3true 1.0E38 -1.0E38
+
+{
+    println("Bonjour", " le", " monde", " !");
+    println("Bonjour\\tle\\nmonde!");
+    println(-42, " ", -3.14);
+    println( " ", " ", 123, " ", 45.6);
+    println(-2147483647, " ", 2147483647);
+    println(123, " ", 3.14, " ", 0, " ", -123, " ", -2.71);
+    println("Bonjour", " ", "Monde");
+    println("Bonjour", "le", "monde", 42.3);
+    println(1.0E38, " ", -1.0E38);
+}

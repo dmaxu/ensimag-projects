@@ -1,0 +1,11 @@
+// Description :
+//    Test d'une expression complexe avec des additions imbriquées de flottants.
+//    Vérifie la précision des calculs sur les flottants et le traitement des opérations imbriquées.
+//
+// Resultats:
+//    ok
+{
+    if(1.0+(2.0+(3.0+(4.0+(5.0+(6.0+(7.0+(8.0+(9.0+(1.0+(2.0+(3.0+(4.0+(5.0+(6.0+(7.0+(8.0+(9.0+(1.0+(2.0+(3.0+(4.0+(5.0+(6.0))))))))))))))))))))))) == 111){
+        print("ok");
+    }
+}

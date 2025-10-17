@@ -1,0 +1,28 @@
+// Description:
+//    Test de conditions `if` imbriquées avec des boucles `while`.
+//    Les boucles `while` incrémentent des variables et vérifient si certaines conditions sont remplies
+//    avant d'exécuter un test supplémentaire avec une condition `if` à l'intérieur.
+//
+// Resultats:
+//    Condition A validée a x=0 et y=0 Condition B validée a x=2 et y=2
+
+{
+    int x = 0;
+    int y = 0;
+
+    while (x < 3) {
+        while (y < 3) {
+            if (x == y) {
+                if (x == 0) {
+                    println("Condition A validée a x=0 et y=0");
+                }
+                if (y == 2) {
+                    println("Condition B validée a x=2 et y=2");
+                }
+            }
+            y = y + 1;
+        }
+        x = x + 1;
+        y = 0; // Réinitialiser y à 0 à chaque nouvelle itération de x
+    }
+}

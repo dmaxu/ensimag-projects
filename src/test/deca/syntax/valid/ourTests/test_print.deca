@@ -1,0 +1,13 @@
+{
+    print();
+    print("gl47");
+    print(1);
+    print(3.14);
+    print("gl47", "born to succeed", "let's go");
+    print(((((("Hiiiii!!!"))))));
+    println("yessss");
+    printlnx(1);
+    printx(1);
+    print("noo or \" yes\"'' ");
+    print("\\////");
+}

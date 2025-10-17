@@ -1,0 +1,12 @@
+// Description:
+//    Test d'évaluation de conditions booléennes complexes et affichage conditionnel.
+//
+// Resultats:
+//our groupe is the best
+
+{    
+    boolean z;
+    z=(true==(true==true))==(0<1);
+    if(z){println("our groupe is the best");}
+    else{println("our groupe is dump");}
+}

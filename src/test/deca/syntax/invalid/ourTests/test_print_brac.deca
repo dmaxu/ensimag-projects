@@ -1,0 +1,10 @@
+// Description:
+//    Programme minimaliste utilisant println, manque de "
+//
+// Resultats:
+//    erreur, manque de token "
+//
+
+{
+    println{"Hello World"};
+}

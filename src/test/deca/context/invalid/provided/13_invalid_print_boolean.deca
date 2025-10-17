@@ -1,0 +1,10 @@
+{
+    boolean b;
+    b = false;
+
+    // Interdit : print(b) ou println(b), 
+    // car on ne peut pas imprimer un boolean.
+    println(b);
+
+    println("Ne devrait jamais s'afficher");
+}

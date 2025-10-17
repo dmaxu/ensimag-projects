@@ -1,0 +1,7 @@
+// Test de la priorité des opérateurs arithmétiques
+{
+    int x;         // Déclaration de la variable x
+    int y = 4;     // Initialisation de la variable y
+    x = y + 5 * 2; // Assignation avec une multiplication prioritaire sur l'addition
+    // Vérification attendue : x doit être égal à 14 (5*2 + 4)
+}

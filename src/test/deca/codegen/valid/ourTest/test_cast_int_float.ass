@@ -1,0 +1,133 @@
+	TSTO #7
+	ADDSP #6
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	LOAD #0x1.91eb86p1, R15
+	CMP #0x0.0p0, R15
+	BGE positive_value5
+	SUB #0x1.0p-1, R15
+	BRA end_round5
+positive_value5:
+	ADD #0x1.0p-1, R15
+end_round5:
+	INT R15, R15
+	STORE R15, 3(GB)
+	LOAD #0x1.78p5, R15
+	CMP #0x0.0p0, R15
+	BGE positive_value6
+	SUB #0x1.0p-1, R15
+	BRA end_round6
+positive_value6:
+	ADD #0x1.0p-1, R15
+end_round6:
+	INT R15, R15
+	STORE R15, 4(GB)
+	LOAD #0x1.7cp5, R15
+	CMP #0x0.0p0, R15
+	BGE positive_value7
+	SUB #0x1.0p-1, R15
+	BRA end_round7
+positive_value7:
+	ADD #0x1.0p-1, R15
+end_round7:
+	INT R15, R15
+	STORE R15, 5(GB)
+	LOAD #0x1.7f3334p5, R15
+	CMP #0x0.0p0, R15
+	BGE positive_value8
+	SUB #0x1.0p-1, R15
+	BRA end_round8
+positive_value8:
+	ADD #0x1.0p-1, R15
+end_round8:
+	INT R15, R15
+	STORE R15, 6(GB)
+; End declarations:
+; Insts:
+	LOAD 3(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+	LOAD 4(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+	LOAD 5(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+	LOAD 6(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

@@ -1,0 +1,10 @@
+//Descriptif: Expressions logiques imbriquées
+//! a la priorité la plus élevée.
+{
+  boolean x = true;
+  boolean y = false;
+
+  // Expression complexe avec imbriquement
+  ((x && y) || (!x && !y)) && (x || y); // false
+  (x || y) && !(x && y);               // true
+}

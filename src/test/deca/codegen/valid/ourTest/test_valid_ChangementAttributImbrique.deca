@@ -1,0 +1,38 @@
+//  Teste de changement des attrbut imbriqué
+// Resultats:
+//  10  70
+
+class A{
+    int a = 10;
+
+    void set(int u){
+        a = u;
+    }
+}
+
+class B extends A{
+    int b = 20;
+
+    void set(int u){
+        b = u;
+    }
+}
+
+class C {
+    int c = 30;
+
+    void set(int u){
+        c = u;
+    }
+}
+
+
+
+{
+    A a;
+    B b;
+    boolean t = a instanceof A;
+    if (a instanceof A){
+        println("hello world");
+    }
+}

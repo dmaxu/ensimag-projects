@@ -1,0 +1,17 @@
+// Description:
+//    Test d'assignation et d'évaluation de la variable booléenne `b` avec diverses expressions booléennes. 
+//    La première affectation vérifie si `i` est égal à 1, la deuxième assigne explicitement `true`, et la troisième réévalue à nouveau la condition `i == 1`.
+//
+// Resultats:
+// 1 1 1
+
+{
+    int i = 1;
+    boolean b;
+    b = (i == 1);
+    if(b){print("1 ");}
+    b = true;
+    if(b){print("1 ");}
+    b = i == 1;
+    if(b){print("1 ");}
+}

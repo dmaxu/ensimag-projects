@@ -1,0 +1,10 @@
+class B{
+    void getX(){
+        return 1;
+    }
+}
+
+{
+    B b = new B();
+
+}

@@ -1,0 +1,13 @@
+// Description:
+//    Test d'une boucle `while` qui incrémente une variable `i` de 1 à chaque itération jusqu'à ce qu'elle dépasse 6.
+//    La boucle s'exécute tant que la condition `i <= 6` est vraie.
+//
+// Resultats:
+//    1.0 2.0 3.0 4.0 5.0 6.0
+
+{
+    float i = 0;
+    while((i = i + 1) <= 6){
+        print(i," ");
+    }
+}

@@ -1,0 +1,13 @@
+// Description:
+//    tests opérateur unaire
+//
+// Resultats:
+//    1    -1
+
+{
+   int i ;
+   i = 1;
+   println(i);
+   i = -i;
+   println(i);
+}

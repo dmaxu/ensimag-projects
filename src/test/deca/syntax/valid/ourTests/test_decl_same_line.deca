@@ -1,0 +1,5 @@
+{
+    int x = 0, y = 1; // Déclaration des variables entières sur la même ligne
+    int z, t; // Déclaration sans initialisation
+    int a = 0, b = 1, c; // Déclaration des variables entières sur la même ligne
+}

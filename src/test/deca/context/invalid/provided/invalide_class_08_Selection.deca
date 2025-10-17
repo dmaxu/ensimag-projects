@@ -1,0 +1,8 @@
+// Description : test sur l'utlisation d'une attribut à une variable de type prédéfinie.
+// Sortie:
+// ERROR : Invalide Type! (int) ,l'utilisation des attributs est valable seulement pour les classes.
+
+{
+    int x;
+    x.y;
+}

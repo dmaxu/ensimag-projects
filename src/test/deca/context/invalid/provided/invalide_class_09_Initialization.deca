@@ -1,0 +1,17 @@
+// Description : L'initialisation d'une variable par une valeur de type différent du type de la variable.
+// Sortie : 
+// ERROR : On ne peut pas affectée à un type B un type A.
+
+class A{
+    int x = 10, y = 7;
+    protected int k = 10, u = 7;
+}
+
+class B {
+    boolean value = true, notvalue = false;
+}
+
+{
+    A a = new A();
+    B b = new A();
+}

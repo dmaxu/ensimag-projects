@@ -1,0 +1,36 @@
+// Description:
+// Teste l'héritage sur plusieurs niveaux, la redéfinition de méthodes et l'initialisation des champs.
+// Resultats:
+// "Woof!"
+
+class Animal {
+    int name;
+
+    void speak() {
+        println("Animal sound");
+    }
+}
+
+class Mammal extends Animal {
+    int age;
+
+    void speak() {
+        println("Mammal sound");
+    }
+}
+
+class Dog extends Mammal {
+    int breed;
+
+    void speak() {
+        println("Woof!");
+    }
+}
+
+{
+    Dog dog = new Dog();
+    dog.name = 5;
+    dog.age = 5;
+    dog.breed = 1;
+    dog.speak();
+}

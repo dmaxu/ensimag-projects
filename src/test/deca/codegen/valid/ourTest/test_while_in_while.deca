@@ -1,0 +1,23 @@
+// Description:
+//    Test de trois boucles `while` imbriquées pour afficher un tableau de multiplication simple.
+//    Les boucles parcourent trois niveaux : `x`, `y`, et `z`. Chaque niveau gère un compteur distinct.
+//
+// Resultats:
+//    x=1 y=1 z=1 produit=1 ... x=3 y=3 z=3 produit=27
+
+{
+    int x = 1,y,z,produit;
+    while (x <= 3) {
+        y = 1;
+        while (y <= 3) {
+            z = 1;
+            while (z <= 3) {
+                 produit = x * y * z;
+                println("x=", x, " y=", y, " z=", z, " produit=", produit);
+                z = z + 1;
+            }
+            y = y + 1;
+        }
+        x = x + 1;
+    }
+}

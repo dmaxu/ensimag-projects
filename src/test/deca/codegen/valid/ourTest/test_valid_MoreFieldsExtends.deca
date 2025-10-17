@@ -1,0 +1,34 @@
+// Teste d'utiliation de plusieur attribut
+// Resultats:
+// 0 10 10 0
+
+class A{
+    int y;
+    int x;
+    void Print(){
+        println(this.y);
+    }
+}
+
+class B extends A{
+    int e;
+    int y;
+    int z;
+    void t(){
+        this.y = 10;
+        println(this.y);
+    }
+    void Print(){
+        println(this.y);
+    }
+}
+
+{
+    A a = new A();
+    B b = new B();
+    a.Print();
+    b.t();
+    b.Print();
+    a.Print();
+}
+

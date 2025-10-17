@@ -1,0 +1,9 @@
+// Description:
+//    tests print max float
+//
+// Resultats:
+//    3.4028235E38
+
+{
+    print(3.4028235E38); // Valeur maximale pour un float en DECÀ (approximativement).
+}

@@ -1,0 +1,11 @@
+// nom: valide_05_arithmetic.deca
+// Objectif : Couvrir +, -, *, /, % sur int et float
+{
+    1 + 2;
+    5 - 3;
+    6 * 7;
+    9 / 4;
+    10 % 3;
+    2.5 + 3.5;
+    10.0 - 0.5;
+}

@@ -1,0 +1,15 @@
+// Description:
+//    tests operations entieres
+//
+// Resultats:
+//    1 -18
+
+{
+   int i ;
+   i = 1;
+   ;
+   println(i);
+   i = (i + 1)*2+5-27;
+   println(i);
+}
+

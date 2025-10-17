@@ -1,0 +1,17 @@
+{
+    int i;
+    boolean b;
+
+    i = 5;
+    b = true;
+
+    // Erreurs : b < i, i >= b etc. ne sont pas valides si b est un boolean
+    if (b < i) {          // Erreur attendue
+        println("b < i ?!");
+    }
+
+    // Idem : (i == b) n'est pas correct sémantiquement
+    if (i == b) {
+        println("i == b ?!");
+    }
+}

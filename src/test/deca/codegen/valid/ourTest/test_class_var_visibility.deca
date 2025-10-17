@@ -1,0 +1,21 @@
+// Description :
+//    Test pour vérifier l'initialisation explicite des attributs d'une classe en Deca.
+//    Les valeurs initiales des attributs sont définies explicitement dans la classe :
+//      - `x` est initialisé à 2 (int).
+//      - `y` est initialisé à 1 (float).
+//      - `b` est initialisé à true (boolean).
+//
+// Resultats:
+//    2 1.0 true
+//    Les valeurs des attributs doivent être imprimées dans l'ordre, séparées par des espaces.
+class A{
+    int x=2;
+    float y=1;
+    boolean b=true;
+}
+{
+    A a=new A();
+    print(a.x," ");
+    print(a.y," ");
+    if(a.b==true){print("true");}
+} 

@@ -1,0 +1,244 @@
+	TSTO #13
+	ADDSP #12
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Construction de la table des methodes de Polyexp
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Polyexp.pexp, R0
+	STORE R0, 5(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	NEW #1, R4
+	BOV heap_overflow
+	LEA 3(GB), R0
+	STORE R0, 0(R4)
+	PUSH R4
+	BSR init.Polyexp
+	POP R4
+	STORE R4, 6(GB)
+	LOAD #0x0.0p0, R4
+	STORE R4, 7(GB)
+	LOAD #0x1.0p0, R4
+	STORE R4, 8(GB)
+	LOAD #0x1.0p0, R4
+	OPP R4, R4
+	STORE R4, 9(GB)
+	LOAD #0x1.6fc2ecp-1, R4
+	STORE R4, 10(GB)
+; End declarations:
+; Insts:
+	BRA E_Cond.0
+E_Debut.0:
+	ADDSP #2
+	LOAD 6(GB), R4
+	STORE R4, 0(SP)
+	LOAD #0x1.0p1, R4
+	LOAD 8(GB), R3
+	LOAD 7(GB), R2
+	ADD R3, R2
+	BOV overflow_float
+	DIV R4, R2
+	BOV overflow_float
+	BOV division_zero
+	STORE R2, 11(GB)
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ derefNull
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #2
+	LOAD R0, R2
+	STORE R2, 12(GB)
+	CMP #0x0.0p0, R2
+	BLE else.0
+	LOAD 11(GB), R4
+	STORE R4, 8(GB)
+	LOAD 12(GB), R4
+	STORE R4, 10(GB)
+	BRA end.0
+else.0:
+	LOAD 11(GB), R4
+	STORE R4, 7(GB)
+	LOAD 12(GB), R4
+	STORE R4, 9(GB)
+end.0:
+E_Cond.0:
+	LOAD 8(GB), R4
+	LOAD #0x1.0p-23, R3
+	LOAD 7(GB), R2
+	ADD R3, R2
+	BOV overflow_float
+	CMP R2, R4
+	BGE E_Debut.0
+	LOAD 7(GB), R4
+	LOAD R4, R1
+	WFLOAT
+	WSTR " = "
+	LOAD 7(GB), R4
+	LOAD R4, R1
+	WFLOATX
+	WNL
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; --------------------------------------------------
+; Classe Polyexp
+; --------------------------------------------------
+; Initialisation des champs de Polyexp
+init.Polyexp:
+	TSTO #4
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.Polyexp.pexp:
+	TSTO #6
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+; Fin Sauvegarde de registres
+	LOAD #1, R4
+	FLOAT R4, R4
+	LOAD #0x1.0p0, R3
+	LOAD #0x1.0p-1, R2
+	PUSH R4
+	LOAD #0x1.555556p-3, R4
+	PUSH R3
+	LOAD #0x1.555556p-5, R3
+	PUSH R2
+	LOAD #0x1.111112p-7, R2
+	PUSH R4
+	LOAD #0x1.6c16c2p-10, R4
+	PUSH R3
+	LOAD #0x1.a01a02p-13, R3
+	PUSH R2
+	LOAD -3(LB), R2
+	MUL R3, R2
+	BOV overflow_float
+	ADD R4, R2
+	BOV overflow_float
+	LOAD -3(LB), R4
+	MUL R2, R4
+	BOV overflow_float
+	PUSH R4
+	ADD R4, R4
+	BOV overflow_float
+	LOAD -3(LB), R2
+	MUL R4, R2
+	BOV overflow_float
+	PUSH R2
+	ADD R2, R2
+	BOV overflow_float
+	LOAD -3(LB), R4
+	MUL R2, R4
+	BOV overflow_float
+	PUSH R4
+	ADD R4, R4
+	BOV overflow_float
+	LOAD -3(LB), R2
+	MUL R4, R2
+	BOV overflow_float
+	PUSH R2
+	ADD R2, R2
+	BOV overflow_float
+	LOAD -3(LB), R4
+	MUL R2, R4
+	BOV overflow_float
+	PUSH R4
+	ADD R4, R4
+	BOV overflow_float
+	LOAD -3(LB), R2
+	MUL R4, R2
+	BOV overflow_float
+	PUSH R2
+	SUB R2, R2
+	BOV overflow_float
+	LOAD R2, R0
+; Début Restauration de registres
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+fin.Polyexp.pexp:
+	BRA missing_return
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

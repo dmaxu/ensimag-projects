@@ -1,0 +1,267 @@
+	TSTO #17
+	ADDSP #16
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+; End declarations:
+; Insts:
+	LOAD #1, R15
+	BRA endLabel.0
+falseLabel.0:
+	LOAD #0, R15
+endLabel.0:
+	STORE R15, 3(GB)
+	LOAD 3(GB), R15
+	LOAD #1, R14
+	BRA endLabel.1
+falseLabel.1:
+	LOAD #0, R14
+endLabel.1:
+	CMP R14, R15
+	BNE else.0
+	WSTR "ok "
+	BRA end.0
+else.0:
+	WSTR "ko"
+end.0:
+	LOAD #1, R14
+	CMP #2, R14
+	BGE falseLabel.2
+	LOAD #47, R13
+	CMP #0, R13
+	BLE falseLabel.3
+	LOAD #47, R13
+	CMP #47, R13
+	BGT falseLabel.3
+	LOAD #47, R13
+	OPP R13, R13
+	CMP #47, R13
+	BNE E_Fin.0
+	LOAD #47, R13
+	CMP #47, R13
+	BEQ E_Fin.0
+	LOAD #47, R13
+	OPP R13, R13
+	LOAD #47, R12
+	OPP R12, R12
+	CMP R12, R13
+	BNE falseLabel.3
+E_Fin.0:
+	LOAD #47, R13
+	CMP #47, R13
+	BNE falseLabel.3
+	LOAD #1, R14
+	BRA endLabel.3
+falseLabel.3:
+	LOAD #0, R14
+endLabel.3:
+	LOAD #1, R13
+	BRA endLabel.4
+falseLabel.4:
+	LOAD #0, R13
+endLabel.4:
+	CMP R13, R14
+	BNE falseLabel.2
+	LOAD #1, R15
+	BRA endLabel.2
+falseLabel.2:
+	LOAD #0, R15
+endLabel.2:
+	STORE R15, 3(GB)
+	LOAD 3(GB), R15
+	LOAD #1, R14
+	BRA endLabel.5
+falseLabel.5:
+	LOAD #0, R14
+endLabel.5:
+	CMP R14, R15
+	BNE else.1
+	WSTR "ok "
+	BRA end.1
+else.1:
+	WSTR "ko"
+end.1:
+	LOAD #1, R14
+	CMP #2, R14
+	BGE falseLabel.6
+	LOAD #1, R14
+	CMP #1, R14
+	BGT falseLabel.6
+	LOAD #5, R14
+	CMP #2, R14
+	BLE falseLabel.6
+	LOAD #47, R14
+	OPP R14, R14
+	CMP #47, R14
+	BNE E_Fin.1
+	LOAD #47, R14
+	CMP #47, R14
+	BNE falseLabel.6
+E_Fin.1:
+	LOAD #47, R14
+	CMP #47, R14
+	BNE falseLabel.6
+	LOAD #1, R15
+	BRA endLabel.6
+falseLabel.6:
+	LOAD #0, R15
+endLabel.6:
+	LOAD #1, R14
+	BRA endLabel.7
+falseLabel.7:
+	LOAD #0, R14
+endLabel.7:
+	CMP R14, R15
+	BNE else.2
+	WSTR "ok "
+	BRA end.2
+else.2:
+	WSTR "ko"
+end.2:
+	LOAD #1, R14
+	CMP #1, R14
+	BGT falseLabel.8
+	LOAD #5, R14
+	OPP R14, R14
+	CMP #2, R14
+	BGT falseLabel.8
+	LOAD #47, R14
+	OPP R14, R14
+	CMP #47, R14
+	BNE falseLabel.8
+	LOAD #47, R14
+	CMP #47, R14
+	BEQ falseLabel.8
+	LOAD #1, R15
+	BRA endLabel.8
+falseLabel.8:
+	LOAD #0, R15
+endLabel.8:
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	STORE R15, 4(GB)
+	LOAD 4(GB), R15
+	BRA falseLabel.9
+	LOAD #1, R14
+	BRA endLabel.9
+falseLabel.9:
+	LOAD #0, R14
+endLabel.9:
+	CMP R14, R15
+	BNE else.3
+	WSTR "ok "
+	BRA end.3
+else.3:
+	WSTR "ko"
+end.3:
+	LOAD #47, R15
+	CMP #47, R15
+	BGT else.4
+	LOAD #47, R15
+	OPP R15, R15
+	CMP #47, R15
+	BGT else.4
+	LOAD #47, R15
+	CMP #47, R15
+	BEQ else.4
+	LOAD #47, R15
+	OPP R15, R15
+	CMP #47, R15
+	BNE else.4
+	WSTR "ko"
+	BRA end.4
+else.4:
+	WSTR "ok "
+end.4:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

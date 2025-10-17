@@ -1,0 +1,27 @@
+class A{
+    int[][] list;
+
+    void allocate(int col, int row){
+        println(col," ", row);
+        list = new int[col][row];
+    }
+    void set(){
+        list[0][0] = 4;
+        list[1][1] = 7;
+        list[0][1] = 5;
+        list[1][0] = 6;
+    }
+    void Print(){
+        println(list[0][0]);
+        println(list[0][1]);
+        println(list[1][0]);
+        println(list[1][1]);
+    }
+}
+
+{
+    A a = new A();
+    a.allocate(2, 2);
+    a.set();
+    a.Print();
+}

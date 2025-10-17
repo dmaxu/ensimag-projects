@@ -1,0 +1,15 @@
+class A{
+    void Print(int[] list, int t){
+        int i = 0;
+        while (i < t){
+            println(list[i]);
+            i = i+1;
+        }
+    }
+}
+
+{
+    int[] tab = [1,2,3];
+    A a = new A();
+    a.Print(tab, 3);
+}

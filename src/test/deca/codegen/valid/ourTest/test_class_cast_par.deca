@@ -1,0 +1,16 @@
+// Description :
+//    Ce test vérifie une méthode prenant un paramètre `float` et retourne la même valeur.
+//    On teste deux cas : passer directement un `float` et caster un `int` en `float`.
+// Resultats:
+//    47.0 47.0
+class A{
+    float getX(float x){
+        return x;
+    }
+}
+
+{
+    A a=new A();
+    print(a.getX(47.0)," ");
+    print(a.getX((float)(47)), " ");
+}

@@ -1,0 +1,11 @@
+// Description : Un retourne à l'extérieure d'une méthode.
+// Sortie : 
+// ERROR : return ne peut pas étre utiliser à l'intérieure d'une instruction de type void.
+
+{
+    int x = 0;
+
+    if (x > 10){
+        return 10;
+    }
+}

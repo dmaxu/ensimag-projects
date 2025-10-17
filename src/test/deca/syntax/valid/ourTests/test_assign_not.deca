@@ -1,0 +1,5 @@
+// Test de l'opérateur NOT (!) dans une assignation
+{
+    boolean b;
+    x=!false;
+}

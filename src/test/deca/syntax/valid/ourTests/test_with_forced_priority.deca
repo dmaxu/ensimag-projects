@@ -1,0 +1,7 @@
+// Test avec des parenthèses pour modifier la priorité
+{
+    int x;         // Déclaration de la variable x
+    int y = 4;     // Initialisation de la variable y
+    x = (y + 5) * 2; // Assignation avec priorité forcée pour l'addition
+    // Vérification attendue : x doit être égal à 18 ((4+5)*2)
+}

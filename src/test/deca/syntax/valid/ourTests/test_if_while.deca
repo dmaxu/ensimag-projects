@@ -1,0 +1,41 @@
+// valid_05_if_while.deca
+// Description : Utilisation des structures if/else if/else et while.
+//               Affiche un décompte et évalue x.
+//
+// Résultat attendu :
+// Affiche les nombres de 5 à 1, puis un message sur x.
+
+{
+    int x = 5;
+    int i = 0;
+    int j = 0;
+    
+    while (x > 0) {
+        println(x);
+        x = x - 1;
+    }
+
+    if (x == 0) {
+        println("x est maintenant 0");
+    } else if (x < 0) {
+        println("x est négatif");
+    } else {
+        println("x est positif");
+    }
+
+    while (i < 3) {
+        if (i % 2 == 0) {
+            if (j == 0) {
+                println("i pair et j == 0");
+            } else {
+                println("i pair et j != 0");
+            }
+        } else {
+            println("i impair");
+        }
+        i = i + 1;
+        j = j + 2;
+    }
+    
+
+}

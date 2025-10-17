@@ -1,0 +1,11 @@
+{
+    // Test 19: Variable initialization
+
+    int x = 25;
+    float y = 3.14;
+    boolean flag = false;
+
+    println(x);
+    println(y);
+    println("Initialized");
+}

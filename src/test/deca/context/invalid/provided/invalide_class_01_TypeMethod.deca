@@ -1,0 +1,10 @@
+// Description : test d'existence du type de la méthode dans l'environment des types.
+// Sortie:
+//  Le type Mit n'est pas définie dans l'environment.
+
+class A{
+    protected int x;
+    Mit setX(int y){
+        this.x = y;
+    }
+}

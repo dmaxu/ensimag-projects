@@ -1,0 +1,14 @@
+// Teste méthode de type int qui ne retourne pas
+// Resultats:
+// Erreur : Return null dans fonction non void
+
+class A{
+    int get(){
+
+    }
+}
+
+{
+    A a = new A();
+    a.get();
+}

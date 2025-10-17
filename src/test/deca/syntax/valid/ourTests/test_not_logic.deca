@@ -1,0 +1,10 @@
+// Test avec une expression logique combinant NOT et AND
+{
+    boolean x;       // Déclaration de la variable x
+    boolean y;       // Déclaration de la variable y
+    boolean z;       // Déclaration de la variable z
+    x = true;        // Assignation de la valeur true à x
+    y = false;       // Assignation de la valeur false à y
+    z = !(x && y);   // Utilisation de NOT sur l'expression (x && y)
+    // Vérification attendue : z doit être égal à true
+}

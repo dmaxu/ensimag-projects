@@ -1,0 +1,23 @@
+// Description:
+//    Test des opérations arithmétiques complexes avec des flottants.
+//    Vérifie les additions, soustractions, multiplications, divisions, et opérations modulo.
+//    Teste également les conversions implicites et explicites entre `float` et `int`.
+//
+// Resultats:
+//    ok, a=4 ok, b=2097152 ok, c=210 ok, d=-112 ok, e=-1118371.2 ok, p=3
+{
+    float a, b, c, d, e,p;
+    p=3;
+    a = (2 + 2) - (2 * 2 * 2 % 2);
+
+    if (a == 4) {print("ok, a=",a," "); } else {print("ko, a=", a); }
+    b = ((2 * 2) * (2 * 2)) / (2 * 2 * 2) * (2 * (2 * (2 * (2 * 2 * 2) * 2 * 2 * 2) * 2 * 2 * 2 * (2 * 2 * 2 * (2 * 2 * 2 * (2 * 2)))));
+    if (b == 2097152) {print("ok, b=",b," "); } else {print("ko, b=", a); }
+    c = (1 + 2 + 3) + (4 + 5 + 6 + (7 + 8 + 9) + (10 + 11 + 12) + 13 + 14 + 15 + (16 + 17 + 18) + (19 + 20));
+    if (c == 210) {print("ok, c=",c," "); } else { print("ko, c=", c); }
+    d = (1 + 2 + 3) + 4 - ((5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18)) + (19 + 20);
+    if (d == -112 && -112==(1 + 2 + 3 + 4 - (5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14 + 15 + 16 + 17 + 18 - 19 - 20))) {print("ok, d=",d," "); } else { print("ko, d=", d);}
+    e = ((a + b) - c) * d / (c + ((int)(b) % (int)((a+4)))); 
+    if (e == -1118371.2) {print("ok, e=",e," "); } else { print("ko, e=", e);}
+    print("ok, p=",p);
+}
