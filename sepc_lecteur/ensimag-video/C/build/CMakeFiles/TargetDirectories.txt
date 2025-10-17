@@ -1,0 +1,7 @@
+/user/9/chellatr/SEPC/sepc_lecteur/ensimag-video/C/build/CMakeFiles/rebuild_cache.dir
+/user/9/chellatr/SEPC/sepc_lecteur/ensimag-video/C/build/CMakeFiles/edit_cache.dir
+/user/9/chellatr/SEPC/sepc_lecteur/ensimag-video/C/build/CMakeFiles/ensivideo.dir
+/user/9/chellatr/SEPC/sepc_lecteur/ensimag-video/C/build/CMakeFiles/test.dir
+/user/9/chellatr/SEPC/sepc_lecteur/ensimag-video/C/build/CMakeFiles/check.dir
+/user/9/chellatr/SEPC/sepc_lecteur/ensimag-video/C/build/CMakeFiles/package.dir
+/user/9/chellatr/SEPC/sepc_lecteur/ensimag-video/C/build/CMakeFiles/package_source.dir
