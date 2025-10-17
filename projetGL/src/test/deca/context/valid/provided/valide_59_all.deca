@@ -1,0 +1,21 @@
+// Déclaration de la classe Animal
+class Animal {
+    // Champs de la classe
+    int age;
+    
+    // Méthode pour faire sonner l'animal
+    void faireSon() {
+        println(" fait un son inconnu.");
+    }
+    
+    // Méthode pour vieillir l'animal
+    void vieillir() {
+        this.age = this.age + 1;
+        println(" a maintenant ", this.age, " ans.");
+    }
+    
+    // Méthode pour afficher les informations de l'animal
+    void afficherInformations() {
+        println("Âge: ", this.age, " ans");
+    }
+}

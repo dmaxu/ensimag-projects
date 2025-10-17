@@ -1,0 +1,16 @@
+//  Teste d'allocation d'attribut d'une classe
+// Resultats:
+//  ERROR PUSH : Debordement de la pile
+
+class A{
+    B b = new B();
+}
+
+class B{
+    A a = new A();
+}
+
+{
+    A a = new A();
+}
+

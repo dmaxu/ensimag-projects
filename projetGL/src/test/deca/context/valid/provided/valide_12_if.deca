@@ -1,0 +1,10 @@
+// nom: valide_12_if.deca
+// Objectif : if(condition) { ... } sans else
+{
+    if (true) {
+        print("Condition True");
+    }
+    if ((1 + 2) < (10 / 2)) {
+        println("Yes");
+    }
+}

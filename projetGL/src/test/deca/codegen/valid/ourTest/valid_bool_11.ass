@@ -1,0 +1,568 @@
+	TSTO #16
+	ADDSP #15
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+; End declarations:
+; Insts:
+	LOAD #0, R15
+	STORE R15, 15(GB)
+	LOAD #1, R15
+	BRA endLabel.0
+falseLabel.0:
+	LOAD #0, R15
+endLabel.0:
+	STORE R15, 3(GB)
+	BRA falseLabel.1
+	LOAD #1, R15
+	BRA endLabel.1
+falseLabel.1:
+	LOAD #0, R15
+endLabel.1:
+	STORE R15, 4(GB)
+	LOAD #1, R15
+	BRA endLabel.2
+falseLabel.2:
+	LOAD #0, R15
+endLabel.2:
+	STORE R15, 5(GB)
+	BRA falseLabel.3
+	LOAD #1, R15
+	BRA endLabel.3
+falseLabel.3:
+	LOAD #0, R15
+endLabel.3:
+	STORE R15, 6(GB)
+	LOAD #1, R15
+	BRA endLabel.4
+falseLabel.4:
+	LOAD #0, R15
+endLabel.4:
+	STORE R15, 7(GB)
+	LOAD 3(GB), R14
+	CMP #1, R14
+	BNE E_Fin.1
+	BRA falseLabel.6
+	LOAD #1, R14
+	BRA endLabel.6
+falseLabel.6:
+	LOAD #0, R14
+endLabel.6:
+	STORE R14, 4(GB)
+	CMP #0, R14
+	BNE E_Fin.0
+E_Fin.1:
+	BRA falseLabel.7
+	LOAD #1, R14
+	BRA endLabel.7
+falseLabel.7:
+	LOAD #0, R14
+endLabel.7:
+	STORE R14, 5(GB)
+	CMP #0, R14
+	BEQ falseLabel.5
+	LOAD #1, R14
+	BRA endLabel.8
+falseLabel.8:
+	LOAD #0, R14
+endLabel.8:
+	STORE R14, 6(GB)
+	CMP #0, R14
+	BEQ falseLabel.5
+E_Fin.0:
+	LOAD 4(GB), R14
+	CMP #1, R14
+	BEQ E_Fin.2
+	LOAD 5(GB), R14
+	CMP #1, R14
+	BEQ falseLabel.5
+E_Fin.2:
+	BRA falseLabel.9
+	LOAD #1, R14
+	BRA endLabel.9
+falseLabel.9:
+	LOAD #0, R14
+endLabel.9:
+	STORE R14, 7(GB)
+	CMP #0, R14
+	BEQ falseLabel.5
+	LOAD #1, R15
+	BRA endLabel.5
+falseLabel.5:
+	LOAD #0, R15
+endLabel.5:
+	STORE R15, 8(GB)
+	LOAD 8(GB), R15
+	CMP #1, R15
+	BNE else.0
+	LOAD 15(GB), R15
+	ADD #1, R15
+	STORE R15, 15(GB)
+	BRA end.0
+else.0:
+	LOAD 15(GB), R15
+	ADD #10, R15
+	STORE R15, 15(GB)
+end.0:
+	BRA falseLabel.10
+	LOAD #1, R15
+	BRA endLabel.10
+falseLabel.10:
+	LOAD #0, R15
+endLabel.10:
+	STORE R15, 4(GB)
+	LOAD #1, R15
+	BRA endLabel.11
+falseLabel.11:
+	LOAD #0, R15
+endLabel.11:
+	STORE R15, 5(GB)
+	LOAD #1, R14
+	BRA endLabel.13
+falseLabel.13:
+	LOAD #0, R14
+endLabel.13:
+	STORE R14, 4(GB)
+	CMP #0, R14
+	BNE E_Fin.3
+	BRA falseLabel.14
+	LOAD #1, R14
+	BRA endLabel.14
+falseLabel.14:
+	LOAD #0, R14
+endLabel.14:
+	STORE R14, 5(GB)
+	CMP #0, R14
+	BEQ falseLabel.12
+E_Fin.3:
+	BRA falseLabel.15
+	LOAD #1, R14
+	BRA endLabel.15
+falseLabel.15:
+	LOAD #0, R14
+endLabel.15:
+	STORE R14, 6(GB)
+	CMP #0, R14
+	BNE E_Fin.4
+	LOAD #1, R14
+	BRA endLabel.16
+falseLabel.16:
+	LOAD #0, R14
+endLabel.16:
+	STORE R14, 7(GB)
+	CMP #0, R14
+	BEQ falseLabel.12
+E_Fin.4:
+	LOAD #1, R15
+	BRA endLabel.12
+falseLabel.12:
+	LOAD #0, R15
+endLabel.12:
+	STORE R15, 9(GB)
+	LOAD 9(GB), R15
+	CMP #1, R15
+	BNE else.1
+	LOAD 15(GB), R15
+	ADD #2, R15
+	STORE R15, 15(GB)
+	BRA end.1
+else.1:
+	LOAD 15(GB), R15
+	ADD #20, R15
+	STORE R15, 15(GB)
+end.1:
+	BRA falseLabel.17
+	LOAD #1, R15
+	BRA endLabel.17
+falseLabel.17:
+	LOAD #0, R15
+endLabel.17:
+	STORE R15, 3(GB)
+	BRA falseLabel.18
+	LOAD #1, R15
+	BRA endLabel.18
+falseLabel.18:
+	LOAD #0, R15
+endLabel.18:
+	STORE R15, 4(GB)
+	LOAD #1, R14
+	BRA endLabel.20
+falseLabel.20:
+	LOAD #0, R14
+endLabel.20:
+	STORE R14, 4(GB)
+	STORE R14, 3(GB)
+	CMP #0, R14
+	BNE E_Fin.5
+	BRA falseLabel.21
+	LOAD #1, R14
+	BRA endLabel.21
+falseLabel.21:
+	LOAD #0, R14
+endLabel.21:
+	STORE R14, 5(GB)
+	CMP #0, R14
+	BEQ falseLabel.19
+	LOAD #1, R14
+	BRA endLabel.22
+falseLabel.22:
+	LOAD #0, R14
+endLabel.22:
+	STORE R14, 6(GB)
+	CMP #0, R14
+	BEQ falseLabel.19
+E_Fin.5:
+	LOAD #1, R14
+	BRA endLabel.23
+falseLabel.23:
+	LOAD #0, R14
+endLabel.23:
+	STORE R14, 7(GB)
+	CMP #0, R14
+	BNE E_Fin.6
+	LOAD #1, R14
+	BRA endLabel.24
+falseLabel.24:
+	LOAD #0, R14
+endLabel.24:
+	STORE R14, 5(GB)
+	CMP #0, R14
+	BEQ falseLabel.19
+E_Fin.6:
+	LOAD #1, R15
+	BRA endLabel.19
+falseLabel.19:
+	LOAD #0, R15
+endLabel.19:
+	STORE R15, 10(GB)
+	LOAD 10(GB), R15
+	CMP #1, R15
+	BNE else.2
+	LOAD 15(GB), R15
+	ADD #3, R15
+	STORE R15, 15(GB)
+	BRA end.2
+else.2:
+	LOAD 15(GB), R15
+	ADD #30, R15
+	STORE R15, 15(GB)
+end.2:
+	LOAD #1, R15
+	BRA endLabel.25
+falseLabel.25:
+	LOAD #0, R15
+endLabel.25:
+	STORE R15, 3(GB)
+	BRA falseLabel.26
+	LOAD #1, R15
+	BRA endLabel.26
+falseLabel.26:
+	LOAD #0, R15
+endLabel.26:
+	STORE R15, 4(GB)
+	LOAD #1, R15
+	BRA endLabel.27
+falseLabel.27:
+	LOAD #0, R15
+endLabel.27:
+	STORE R15, 5(GB)
+	LOAD 3(GB), R14
+	CMP #1, R14
+	BNE E_Fin.8
+	BRA falseLabel.29
+	LOAD #1, R14
+	BRA endLabel.29
+falseLabel.29:
+	LOAD #0, R14
+endLabel.29:
+	STORE R14, 4(GB)
+	CMP #0, R14
+	BNE E_Fin.7
+E_Fin.8:
+	LOAD 5(GB), R14
+	CMP #1, R14
+	BEQ falseLabel.28
+	BRA falseLabel.30
+	LOAD #1, R14
+	BRA endLabel.30
+falseLabel.30:
+	LOAD #0, R14
+endLabel.30:
+	STORE R14, 6(GB)
+	CMP #0, R14
+	BNE falseLabel.28
+	LOAD #1, R14
+	BRA endLabel.31
+falseLabel.31:
+	LOAD #0, R14
+endLabel.31:
+	STORE R14, 7(GB)
+	CMP #0, R14
+	BEQ falseLabel.28
+E_Fin.7:
+	LOAD #1, R15
+	BRA endLabel.28
+falseLabel.28:
+	LOAD #0, R15
+endLabel.28:
+	LOAD #1, R0
+	SUB R15, R0
+	LOAD R0, R15
+	STORE R15, 11(GB)
+	LOAD 11(GB), R15
+	CMP #1, R15
+	BNE else.3
+	LOAD 15(GB), R15
+	ADD #4, R15
+	STORE R15, 15(GB)
+	BRA end.3
+else.3:
+	LOAD 15(GB), R15
+	ADD #40, R15
+	STORE R15, 15(GB)
+end.3:
+	BRA falseLabel.32
+	LOAD #1, R15
+	BRA endLabel.32
+falseLabel.32:
+	LOAD #0, R15
+endLabel.32:
+	STORE R15, 4(GB)
+	LOAD #1, R15
+	BRA endLabel.33
+falseLabel.33:
+	LOAD #0, R15
+endLabel.33:
+	STORE R15, 5(GB)
+	BRA falseLabel.34
+	LOAD #1, R15
+	BRA endLabel.34
+falseLabel.34:
+	LOAD #0, R15
+endLabel.34:
+	STORE R15, 6(GB)
+	LOAD #1, R14
+	BRA endLabel.36
+falseLabel.36:
+	LOAD #0, R14
+endLabel.36:
+	STORE R14, 4(GB)
+	CMP #0, R14
+	BEQ E_Fin.10
+	BRA falseLabel.37
+	LOAD #1, R14
+	BRA endLabel.37
+falseLabel.37:
+	LOAD #0, R14
+endLabel.37:
+	STORE R14, 5(GB)
+	CMP #0, R14
+	BNE E_Fin.9
+	LOAD #1, R14
+	BRA endLabel.38
+falseLabel.38:
+	LOAD #0, R14
+endLabel.38:
+	STORE R14, 6(GB)
+	CMP #0, R14
+	BNE E_Fin.9
+E_Fin.10:
+	BRA falseLabel.39
+	LOAD #1, R14
+	BRA endLabel.39
+falseLabel.39:
+	LOAD #0, R14
+endLabel.39:
+	STORE R14, 7(GB)
+	CMP #0, R14
+	BEQ falseLabel.35
+	BRA falseLabel.40
+	LOAD #1, R14
+	BRA endLabel.40
+falseLabel.40:
+	LOAD #0, R14
+endLabel.40:
+	STORE R14, 3(GB)
+	CMP #0, R14
+	BEQ falseLabel.35
+E_Fin.9:
+	LOAD #1, R15
+	BRA endLabel.35
+falseLabel.35:
+	LOAD #0, R15
+endLabel.35:
+	STORE R15, 12(GB)
+	LOAD 12(GB), R15
+	CMP #1, R15
+	BNE else.4
+	LOAD 15(GB), R15
+	ADD #5, R15
+	STORE R15, 15(GB)
+	BRA end.4
+else.4:
+	LOAD 15(GB), R15
+	ADD #50, R15
+	STORE R15, 15(GB)
+end.4:
+	LOAD #1, R15
+	BRA endLabel.41
+falseLabel.41:
+	LOAD #0, R15
+endLabel.41:
+	STORE R15, 3(GB)
+	LOAD #1, R15
+	BRA endLabel.42
+falseLabel.42:
+	LOAD #0, R15
+endLabel.42:
+	STORE R15, 4(GB)
+	BRA falseLabel.43
+	LOAD #1, R15
+	BRA endLabel.43
+falseLabel.43:
+	LOAD #0, R15
+endLabel.43:
+	STORE R15, 5(GB)
+	BRA falseLabel.44
+	LOAD #1, R15
+	BRA endLabel.44
+falseLabel.44:
+	LOAD #0, R15
+endLabel.44:
+	STORE R15, 6(GB)
+	LOAD #1, R15
+	BRA endLabel.45
+falseLabel.45:
+	LOAD #0, R15
+endLabel.45:
+	STORE R15, 7(GB)
+	LOAD 3(GB), R14
+	CMP #1, R14
+	BEQ E_Fin.13
+	LOAD 4(GB), R14
+	CMP #1, R14
+	BNE E_Fin.12
+E_Fin.13:
+	LOAD #1, R14
+	BRA endLabel.47
+falseLabel.47:
+	LOAD #0, R14
+endLabel.47:
+	STORE R14, 5(GB)
+	CMP #0, R14
+	BNE E_Fin.11
+E_Fin.12:
+	LOAD 6(GB), R14
+	CMP #1, R14
+	BEQ falseLabel.46
+	BRA falseLabel.48
+	LOAD #1, R14
+	BRA endLabel.48
+falseLabel.48:
+	LOAD #0, R14
+endLabel.48:
+	STORE R14, 7(GB)
+	CMP #0, R14
+	BNE falseLabel.46
+	BRA falseLabel.49
+	LOAD #1, R14
+	BRA endLabel.49
+falseLabel.49:
+	LOAD #0, R14
+endLabel.49:
+	STORE R14, 4(GB)
+	CMP #0, R14
+	BEQ falseLabel.46
+E_Fin.11:
+	LOAD #1, R15
+	BRA endLabel.46
+falseLabel.46:
+	LOAD #0, R15
+endLabel.46:
+	STORE R15, 13(GB)
+	LOAD 13(GB), R15
+	CMP #1, R15
+	BNE else.5
+	LOAD 15(GB), R15
+	ADD #6, R15
+	STORE R15, 15(GB)
+	BRA end.5
+else.5:
+	LOAD 15(GB), R15
+	ADD #60, R15
+	STORE R15, 15(GB)
+end.5:
+	LOAD 15(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

@@ -1,0 +1,26 @@
+// valid_06_read_input.deca
+// Description : Lit un int puis un float depuis l'entrée, puis les affiche.
+//
+// Résultat attendu :
+// Compile sans erreur. À l'exécution, il attendra deux valeurs, puis affichera.
+//
+// Remarque : test interactif (catégorie "sans objet" + "lecture").
+
+{
+    int xi = 0;
+    float xf = 1.0;
+    int x ;
+
+    print("Entrez un entier : ");  
+    xi = readInt();
+    print("Entrez un flottant : ");
+    xf = readFloat();  
+
+    println("Vous avez saisi : ");
+    println(xi);
+    println(xf);
+
+    x=readInt() ;
+    println(0.5*(x*x));
+}
+

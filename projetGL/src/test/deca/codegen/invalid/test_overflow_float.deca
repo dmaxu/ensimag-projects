@@ -1,0 +1,10 @@
+// Description :
+//    Test de déclaration d'un flottant pour provoquer un dépassement de capacité
+//
+// Resultats:
+//    Erreur : Débordement floattant
+
+{
+    float x = 3.4028235E+38; /* Valeur maximale pour un float */
+    x = x * 3;
+}

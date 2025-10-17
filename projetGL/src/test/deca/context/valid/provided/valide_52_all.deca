@@ -1,0 +1,37 @@
+// Déclaration de la classe Personne
+class Personne {
+    // Champs de la classe
+    int age;
+    boolean estEmploye;
+    
+    // Méthode pour initialiser les détails de la personne
+    void initialiserint(int ageInitial, boolean emploiInitial) {
+        this.age = ageInitial;
+        this.estEmploye = emploiInitial;
+    }
+    
+    // Méthode pour afficher les détails de la personne
+    void afficherDetails() {
+        println("Âge: ", this.age);
+
+    }
+    
+    // Méthode pour célébrer l'anniversaire
+    void anniversaire() {
+        this.age = this.age + 1;
+        println(" a maintenant ", this.age, " ans.");
+    }
+    
+    boolean estEligibleRetraite() {
+        if (this.age >= 65) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    // Méthode avec exception
+    void changerAge(int nouveauAge) {
+        this.age = nouveauAge;
+    }
+}

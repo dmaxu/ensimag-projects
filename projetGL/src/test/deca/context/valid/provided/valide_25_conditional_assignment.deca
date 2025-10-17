@@ -1,0 +1,22 @@
+{
+    // Test 28: Conditional assignment
+
+    int a = 10;
+    int b = 20;
+    int max;
+
+    if (a > b) {
+        max = a;
+    } else {
+        max = b;
+    }
+
+    println("Max: " , max);
+
+    // Réassignation basée sur une nouvelle condition
+    if (max > 15) {
+        max = max + 5;
+    }
+
+    println("Updated Max: " , max);
+}

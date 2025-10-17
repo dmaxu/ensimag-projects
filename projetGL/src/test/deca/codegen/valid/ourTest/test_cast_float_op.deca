@@ -1,0 +1,10 @@
+// Description :
+//    Test de la conversion explicite d'une opération modulo sur des entiers en flottant.
+//    Vérifie si la conversion d'un résultat d'opération entière (int) en float fonctionne correctement.
+//
+// Resultats:
+// 1.0
+{
+    float i=(int)(5%4);
+    print(i);
+}

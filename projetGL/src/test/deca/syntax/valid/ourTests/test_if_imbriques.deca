@@ -1,0 +1,32 @@
+//description: test de boucles if imbriqués
+{
+int a=15;
+int b=5;
+
+if (a>10){
+    if (b<5){
+        println("b est supérieur à 5");
+        a=a+1;
+        println(a);
+    }else 
+        if (b==5){
+        println("b est égal à 5");
+        
+        }
+        else{
+            println("b est supérieur à 5");
+            a=a-1;
+            println(a);
+        }
+}else{
+    if(a==10){
+        println("a est égal à 10");
+    }else 
+    if(a<10 && a>5){
+        b=b+1;
+    }
+
+}
+
+}
+

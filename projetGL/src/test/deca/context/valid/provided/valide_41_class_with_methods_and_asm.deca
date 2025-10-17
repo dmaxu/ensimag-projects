@@ -1,0 +1,30 @@
+// ---------------------------------------------------------
+// Test #41 : Classe avec plusieurs méthodes, dont une en asm
+// ---------------------------------------------------------
+//
+// Deca autorise decl_method -> type ident(...) 'asm'(...) 
+// Ici, getConst() renvoie un int via ASM bidon.
+//
+
+class ManyMethods {
+  int x;
+
+  void initX(int val) {
+    x = val;
+  }
+
+  int doubleX() {
+    return x*2;
+  }
+
+  int getConst(){
+    return 10;
+  } 
+}
+
+{
+  ManyMethods obj = new ManyMethods();
+  obj.initX(10);
+  println(obj.doubleX()); // 20
+  println(obj.getConst()); // 999
+}

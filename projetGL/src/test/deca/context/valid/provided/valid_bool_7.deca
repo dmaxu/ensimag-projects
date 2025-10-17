@@ -1,0 +1,21 @@
+//Descriptif: Combinaison complexe avec plusieurs parenthèses
+{
+  boolean A;
+  boolean B;
+
+  // Cas 1 : A = true, B = true
+  A = true; B = true;
+  ((A || B) && !(A && B)) || (!A && !B); // true
+
+  // Cas 2 : A = true, B = false
+  A = true; B = false;
+  ((A || B) && !(A && B)) || (!A && !B); // true
+
+  // Cas 3 : A = false, B = true
+  A = false; B = true;
+  ((A || B) && !(A && B)) || (!A && !B); // true
+
+  // Cas 4 : A = false, B = false
+  A = false; B = false;
+  ((A || B) && !(A && B)) || (!A && !B); // true
+}

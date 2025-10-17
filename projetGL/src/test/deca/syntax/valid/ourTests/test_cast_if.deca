@@ -1,0 +1,8 @@
+// Cast explicite avec une vérification conditionnelle.
+{
+    float d = 3.99f;
+    if ((int) (d) == 3) {
+        println("cast ok");
+        // Résultat attendu : "cast ok" affiché
+    }
+}

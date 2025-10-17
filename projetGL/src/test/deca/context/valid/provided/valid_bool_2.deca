@@ -1,0 +1,10 @@
+//Descriptif: Ce test vérifie que l'opérateur logique &&.
+//Si la première opérande de l'expression && est évaluée à false, la seconde opérande n'est pas évaluée,
+
+{
+  boolean a = false;
+  boolean b = true;
+  
+  a && (b = false); // false
+
+}

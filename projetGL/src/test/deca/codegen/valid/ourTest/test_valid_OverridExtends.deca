@@ -1,0 +1,41 @@
+// Teste overrid + extends
+// Resultats:
+// 1 2 3 11 22 33
+class A{
+    int getH(){
+        return 11;
+    }
+    int getX(){
+        return 1;
+    }
+}
+
+class B extends A{
+    int getX(){
+        return 2;
+    }
+    int getH(){
+        return 22;
+    }
+}
+
+class X extends B{
+    int getH(){
+        return 33;
+    }
+    int getX(){
+        return 3;
+    }
+}
+
+{
+    X x = new X();
+    B b = new B();
+    A a = new A();
+    println(a.getX());
+    println(b.getX());
+    println(x.getX());
+    println(a.getH());
+    println(b.getH());
+    println(x.getH());
+}

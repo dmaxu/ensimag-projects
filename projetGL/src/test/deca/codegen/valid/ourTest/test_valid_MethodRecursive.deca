@@ -1,0 +1,25 @@
+// Description :
+//    Ce test vérifie l'implémentation de la récursion dans une méthode pour calculer la somme des entiers
+//    de 1 à x. La méthode récursive `somme` utilise la méthode `add` pour effectuer l'addition.
+//
+// Resultats:
+//    55
+class Calc{
+    int add(int a , int b){
+        return a + b;
+    }
+    int somme(int x){
+        if(x<=0){
+            return 0;
+        }
+        else{
+            return add(x, somme(x-1));
+        }
+    }
+}
+
+{
+    Calc c = new Calc();
+    int z  = c.somme(10);
+    println(z);
+}

@@ -1,0 +1,23 @@
+// Description :
+//    Test d'une chaîne d'héritage sur plusieurs niveaux.
+//
+// Resultats:
+//    45
+
+class A {
+    int x = 15;
+}
+
+class B extends A {
+    }
+
+class C extends B {
+    int multiplyX(){
+        return x * 3;
+    }
+}
+
+{
+    C c = new C();
+    print(c.multiplyX()); 
+}

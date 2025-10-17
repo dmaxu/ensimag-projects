@@ -1,0 +1,10 @@
+{
+    float f;
+    boolean b;
+
+    f = 3.14;
+    // Interdit : cast float -> boolean
+    b = (boolean)(f); // Doit déclencher une erreur sémantique
+
+    println("Ne devrait jamais s'afficher");
+}

@@ -1,0 +1,7 @@
+// Description : test des types des attributs
+// Sortie:
+//  Le type d'un attribut ne peux pas étre void.
+
+class A{
+    void x;
+}

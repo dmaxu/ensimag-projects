@@ -1,0 +1,7 @@
+// nom: valide_10_read_functions.deca
+// Objectif : Couvrir readInt() et readFloat()
+{
+    readInt();
+    readFloat();
+    (readInt() + 2) > (readFloat() * 3);
+}

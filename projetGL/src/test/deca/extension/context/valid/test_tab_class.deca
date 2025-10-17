@@ -1,0 +1,11 @@
+class A{
+    float[] all(int r){
+        float[] d=new float[r];
+        d[0]=d[0]+1.0;
+        return d;
+    }
+}
+{
+    A a =new A();
+    float[] d=a.all(1);
+}

@@ -1,0 +1,18 @@
+//  Teste d'utilsisation d'une méthode
+//  Result:
+//  ERROR PUSH : Debordement de la pile
+
+class A{
+    int getX(){
+        return getY();
+    }
+    int getY(){
+        return getX();
+    }
+}
+
+{
+    A a = new A();
+    a.getX();
+}
+

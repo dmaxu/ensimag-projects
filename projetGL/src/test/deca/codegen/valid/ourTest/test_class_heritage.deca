@@ -1,0 +1,29 @@
+// Description :
+//    Test de l'héritage d'attributs et de méthodes entre les classes `A`, `B` et `C`.
+//    - `A` contient un attribut `x` initialisé à 3.
+//    - `B` hérite de `A` sans ajouter de nouveaux attributs ou méthodes.
+//    - `C` hérite de `B` et redéfinit la méthode `getX()` pour retourner l'attribut `x`.
+//    Ce test vérifie si `C` peut accéder à l'attribut `x` hérité de `A` et le retourner correctement.
+//
+// Resultats:
+//    3
+//    La méthode `getX()` dans la classe `C` accède correctement à l'attribut `x` hérité de `A` et retourne sa valeur.
+
+class A {
+    int x = 3;  // Attribut x de A, initialisé à 3
+}
+
+class B extends A {
+    // Héritage sans modification de l'attribut x
+}
+
+class C extends B {
+    int getX() {
+        return x;  // Retourne la valeur de x, qui est hérité de A
+    }
+}
+
+{
+    C c = new C();    // Création d'un objet de type C
+    print(c.getX());  // Affiche la valeur de x, héritée de A, soit 3
+}

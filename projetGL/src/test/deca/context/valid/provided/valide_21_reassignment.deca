@@ -1,0 +1,16 @@
+{
+    // Test 21: Variable reassignment
+
+    int count = 0;
+    float total = 0.0;
+    boolean active = true;
+
+    // Reassignments
+    count = count + 5;
+    total = total + 10.5;
+    active = !active;
+
+    println(count);
+    println(total);
+    println("Updated");
+}

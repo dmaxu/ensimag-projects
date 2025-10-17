@@ -1,0 +1,16 @@
+// Description:
+//    Test des comparaisons entre un entier `x` et différentes valeurs
+//    ou expressions arithmétiques utilisant des entiers et des flottants.
+//    Vérifie le comportement des conversions implicites entre `int` et `float`.
+//
+// Resultats:
+//    ok ok ok ok ok ok
+{
+    int x=47;
+    if (x==47){print("ok ");}
+    if (x==47.0){print("ok ");}
+    if (x==(94/2)){print("ok ");}
+    if (x==(94.0/2.0)){print("ok ");}
+    if (x==(94.0/2.0)){print("ok ");}
+    if (x==(94.0/2.0*1.00000)){print("ok");}
+}

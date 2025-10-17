@@ -1,0 +1,10 @@
+//Descriptif:Ce test vérifie l'opérateur logique ||.
+
+{
+  boolean a = true;
+  boolean b = false;
+
+  // a est true, donc b ne sera pas évalué
+  a || (b = true); // true
+
+}

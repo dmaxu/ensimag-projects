@@ -1,0 +1,26 @@
+// ---------------------------------------------------------
+// Test #32 : Classe avec champ public et méthode simple
+// ---------------------------------------------------------
+//
+// Dérivation (simplifiée) :
+//  class_body -> decl_field_set (public par défaut) + decl_method...
+//  block -> '{' list_decl_var list_inst '}'
+//  inst -> expr ';' | print(...) | ...
+//
+// Champ public accessible librement : "public" est la visibilité par défaut.
+//
+
+class SimpleClass {
+  int x;  // champ public par défaut
+
+  void setX(int val) {
+    x = val;
+  }
+}
+
+{
+  SimpleClass s;
+  s = new SimpleClass();
+  s.setX(42);
+  println(s.x); // Accès direct, x est public
+}

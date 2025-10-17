@@ -1,0 +1,356 @@
+
+// Classe générique pour les listes de flottants dynamiques
+class ListFloat {
+    // Variables membres
+    float[] data;
+    int size;
+    int capacity;
+
+    // Initialise la liste
+    void init(int capacity) {
+        this.capacity = capacity;
+        data = new float[this.capacity];
+        size = 0;
+    }
+
+    // Ajoute un élément à la liste
+    void add(float value) {
+        float[] newData;
+        int i;
+        if (size >= capacity) {
+            // Redimensionnement du tableau
+            newData = new float[this.capacity * 2];
+            i = 0;
+            while (i < size) {
+                newData[i] = data[i];
+                i = i + 1;
+            }
+            data = newData;
+            capacity = capacity * 2;
+        }
+        data[size] = value;
+        size = size + 1;
+    }
+
+    // Obtient un élément à un index spécifique
+    float get(int index) {
+        if (index >= 0 && index < size) {
+            return data[index];
+        }
+        // Gestion d'erreur simplifiée
+        print("Erreur: Index hors limites.");
+        return 0.0;
+    }
+
+    // Supprime un élément à un index spécifique
+    void remove(int index) {
+        int i;
+        if (index >= 0 && index < size) {
+            i = index;
+            while (i < size - 1) {
+                data[i] = data[i + 1];
+                i = i + 1;
+            }
+            size = size - 1;
+        }
+    }
+
+    // Obtient la taille actuelle de la liste
+    int getSize() {
+        return size;
+    }
+
+    // Tri rapide (Quicksort) optimisé
+    void quickSort() {
+        quickSortRecursive(0, size - 1);
+    }
+
+    void quickSortRecursive(int low, int high) {
+        int pi;
+        if (low < high) {
+            pi = partition(low, high);
+            quickSortRecursive(low, pi - 1);
+            quickSortRecursive(pi + 1, high);
+        }
+    }
+
+    int partition(int low, int high) {
+        float pivot;
+        int i;
+        float temp;
+        int j;
+        pivot = data[high];
+        i = low - 1;
+        j = low;
+        while (j < high) {
+            if (data[j] < pivot) {
+                i = i + 1;
+                // Échange data[i] et data[j]
+                temp = data[i];
+                data[i] = data[j];
+                data[j] = temp;
+            }
+            j = j + 1;
+        }
+        // Échange data[i + 1] et data[high] (le pivot)
+        
+        temp = data[i + 1];
+        data[i + 1] = data[high];
+        data[high] = temp;
+        return i + 1;
+    }
+
+    // Recherche binaire (prérequis: liste triée)
+    int binarySearch(float target) {
+        int left;
+        int right;
+        int mid;
+        left = 0;
+        right = size - 1;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (data[mid] == target) {
+                return mid;
+            }
+            if (data[mid] < target) {
+                left = mid + 1;
+            }
+            else {
+                right = mid - 1;
+            }
+        }
+        return -1; // Non trouvé
+    }
+
+    // Recherche linéaire optimisée
+    int linearSearch(float target) {
+        int i;
+        i = 0;
+        while (i < size) {
+            if (data[i] == target) {
+                return i;
+            }
+            i = i + 1;
+        }
+        return -1; // Non trouvé
+    }
+}
+
+
+class MatrixFloat{
+    float[][] matrix;
+    int cols;
+    int rows;
+    // Affiche la matrice
+    void printMatrix() {
+        int i;
+        int j;
+        i = 0;
+        while (i < rows) {
+            j = 0;
+            while (j < cols) {
+                print(matrix[i][j]);
+                print(" ");
+                j = j + 1;
+            }
+            print("");
+            i = i + 1;
+        }
+    }
+
+    void init(int cols, int rows){
+        this.cols = cols;
+        this.rows = rows;
+        this.matrix = new float[this.cols][this.rows];
+    }
+
+    float[][] createMatrix(){
+        return new float[this.cols][this.rows];
+    }
+
+    void  setElement(float[][] m, int i, int j , float x){
+        m[i][j] = x;
+    }
+
+    float getElement(float[][] m, int i, int j){
+        return m[i][j];
+    }
+
+    // Transpose la matrice
+    float[][] transpose() {
+        float[][] transposed;
+        int i;
+        int j;
+        i = 0;
+        transposed = createMatrix();
+        while (i < rows) {
+            j = 0;
+            while (j < cols) {
+                setElement(transposed, j, i, getElement(matrix, i, j));
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+        return transposed;
+    }
+
+    // Calcule la trace de la matrice (somme des éléments diagonaux)
+    float trace() {
+        float trace = 0.0;
+        int i;
+        i = 0;
+        while (i < rows && i < cols) {
+            trace = trace + getElement(matrix, i, i);
+            i = i + 1;
+        }
+        return trace;
+    }
+
+    // Calcule le déterminant de la matrice (pour toutes les dimensions)
+    float determinant() {
+        float[][] tempMatrix;
+        int size = cols;
+        float det;
+        // Copier la matrice dans tempMatrix
+        int i;
+        int j;
+        int pivotRow;
+        float maxAbs;
+        int k;
+        float factor;
+        float newValue;
+        float temp;
+        det = 1.0;
+        tempMatrix = createMatrix();
+        i = 0;
+        while (i < size) {
+            j = 0;
+            while (j < size) {
+                setElement(tempMatrix, i, j, getElement(matrix, i, j));
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+
+        i = 0;
+        while (i < size) {
+            // Trouver le pivot
+            pivotRow = i;
+            maxAbs = getElement(tempMatrix, i, i);
+            j = i + 1;
+            while (j < size) {
+                if (getElement(tempMatrix, j, i) > maxAbs) {
+                    pivotRow = j;
+                    maxAbs = getElement(tempMatrix, j, i);
+                }
+                j = j + 1;
+            }
+
+            // Si le pivot est zéro, le déterminant est zéro
+            if (getElement(tempMatrix, pivotRow, i) == 0.0) {
+                return 0.0;
+            }
+
+            // Échanger les lignes si nécessaire
+            if (pivotRow != i) {
+                // Échange des éléments de la ligne i avec la ligne pivotRow
+                j = 0;
+                while (j < size) {
+                    temp = getElement(tempMatrix, i, j);
+                    setElement(tempMatrix, i, j, getElement(tempMatrix, pivotRow, j));
+                    setElement(tempMatrix, pivotRow, j, temp);
+                    j = j + 1;
+                }
+                det = det * -1.0;
+            }
+
+            // Multiplication du déterminant par le pivot
+            det = det * getElement(tempMatrix, i, i);
+
+            // Élimination des éléments en dessous du pivot
+            j = i + 1;
+            while (j < size) {
+                if (getElement(tempMatrix, j, i) != 0.0) {
+                    factor = getElement(tempMatrix, j, i) / getElement(tempMatrix, i, i);
+                    k = i;
+                    while (k < size) {
+                        newValue = getElement(tempMatrix, j, k) - factor * getElement(tempMatrix, i, k);
+                        setElement(tempMatrix, j, k, newValue);
+                        k = k + 1;
+                    }
+                }
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+
+        return det;
+    }
+
+    // Multiplie deux matrices
+    float[][] multiply(float[][] B, int rowsB, int colsB) {
+        float[][] result;
+        int i;
+        int j;
+        int k;
+        float sum;
+        float newValue;
+        i = 0;
+        while (i < rows) {
+            j = 0;
+            while (j < colsB) {
+                sum = 0.0;
+                k = 0;
+                while (k < cols) {
+                    sum = sum + getElement(matrix, i, k) * getElement(B, k, j);
+                    k = k + 1;
+                }
+                setElement(result, i, j, sum);
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+        return result;
+    }
+
+    // Additionne deux matrices
+    float[][] add(float[][] B, int rowsB, int colsB) {
+        int i;
+        int j;
+        float[][] result = createMatrix();
+        float sum;
+        i = 0;
+        while (i < rows) {
+            j = 0;
+            while (j < cols) {
+                sum = getElement(matrix, i, j) + getElement(B, i, j);
+                setElement(result, i, j, sum);
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+        return result;
+    }
+
+    // Soustrait deux matrices
+    float[][] subtract( float[][] B, int rowsB, int colsB) {
+        int i;
+        int j;
+        float[][] result = createMatrix();
+        float diff;
+        i = 0;
+        while (i < rows) {
+            j = 0;
+            while (j < cols) {
+                diff = getElement(matrix, i, j) - getElement(B, i, j);
+                setElement(result, i, j, diff);
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+        return result;
+    }
+}
+
+
+

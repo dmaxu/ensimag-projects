@@ -1,0 +1,12 @@
+// test_if_imbriques4.deca
+// Description : Test d'un if imbriqué sans else final
+{
+    int z = 1;
+
+    if (z > 0) {
+        println("z > 0");
+        if (z == 1) {
+            println("z == 1");
+        }
+    }
+}

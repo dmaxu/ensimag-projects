@@ -1,0 +1,10 @@
+//description:mauvaise declaration de la class
+
+
+class A{
+
+{
+}  
+}
+
+    

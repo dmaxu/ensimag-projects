@@ -1,0 +1,7 @@
+// Test avec des types incompatibles
+{
+    int x;          // Déclaration de la variable x
+    boolean y = true; // Déclaration de la variable y avec un type boolean
+    x = y + 5;      // Assignation incompatible entre un int et un boolean
+    // Vérification attendue : Erreur contextuelle car y n'est pas un int.
+}

@@ -1,0 +1,3 @@
+{
+    int[] tab=new int[{}];
+}

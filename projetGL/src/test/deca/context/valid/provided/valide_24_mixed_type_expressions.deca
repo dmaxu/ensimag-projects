@@ -1,0 +1,15 @@
+{
+    // Test 27: Mixed type expressions
+
+    int a = 5;
+    float b = 2.5;
+    boolean c = true;
+
+    float result1 = a + b * 2;
+    int result2 = a * 3;
+    boolean result3 = c && (a > 2);
+
+    println(result1);
+    println(result2);
+
+}

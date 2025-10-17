@@ -1,0 +1,40 @@
+// Déclaration de la classe Etudiant
+class Etudiant {
+    int age;
+    float noteMoyenne;
+    boolean estInscrit;
+    
+    // Méthode pour initialiser les détails de l'étudiant
+    void initialiser(int ageEtudiant, float noteInitiale) {
+        this.age = ageEtudiant;
+        this.noteMoyenne = noteInitiale;
+        this.estInscrit = true;
+    }
+    
+    // Méthode pour mettre à jour la note moyenne
+    void mettreAJourNote(float nouvelleNote){
+        this.noteMoyenne = (this.noteMoyenne + nouvelleNote) / 2;
+        println("La note moyenne de "," est mise à jour à ", this.noteMoyenne);
+    }
+    
+    // Méthode pour vérifier l'admission
+    boolean estAdmis() {
+        return this.noteMoyenne >= 10;
+    }
+    
+    // Méthode pour afficher les informations de l'étudiant
+    void afficherInformations() {
+        println("Âge: ", this.age);
+        println("Note moyenne: ", this.noteMoyenne);
+        if (this.estInscrit) {
+            println("Statut: Inscrit");
+        } else {
+            println("Statut: Non Inscrit");
+        }
+    }
+    
+    // Méthode pour se désinscrire
+    void desinscrire() {
+        this.estInscrit = false;
+    }
+}

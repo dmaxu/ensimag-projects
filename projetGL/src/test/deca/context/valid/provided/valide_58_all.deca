@@ -1,0 +1,20 @@
+// Déclaration de la classe CompteUtilisateur
+class CompteUtilisateur {
+    // Champs de la classe
+    boolean estConnecte;
+    
+    // Méthode pour initialiser le compte utilisateur
+    void initialiser() {
+        this.estConnecte = false;
+    }
+    
+    
+    // Méthode pour afficher les informations du compte
+    void afficherInformations() {
+        if (this.estConnecte) {
+            println("Statut: Connecté");
+        } else {
+            println("Statut: Déconnecté");
+        }
+    }
+}

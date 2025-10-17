@@ -1,0 +1,51 @@
+class Search {
+    void Print(int[] list, int t) {
+        int i = 0;
+        while (i < t) {
+            print(list[i], " ");
+            i = i + 1;
+        }
+        println();
+    }
+
+    int linearSearch(int[] list, int n, int key) {
+        int i = 0;
+
+        // Parcours linéaire du tableau
+        while (i < n) {
+            if (list[i] == key) {
+                return i; // Élément trouvé
+            }
+            i = i + 1;
+        }
+        return -1; // Élément non trouvé
+    }
+
+}
+
+
+{
+    Search search = new Search();
+    int read;
+    int key;
+    int index;
+    int[] tab = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    int i = 0;
+
+    // Affiche le tableau
+    println("Tableau :");
+    search.Print(tab, 10);
+
+    // Lire la clé à rechercher
+    println("Entrez l'élément à rechercher :");
+    key = 3;
+
+    // Recherche linéaire
+    index = search.linearSearch(tab, 10, key);
+
+    if (index != -1) {
+        println("Élément trouvé à l'index : ", index);
+    } else {
+        println("Élément non trouvé.");
+    }
+}

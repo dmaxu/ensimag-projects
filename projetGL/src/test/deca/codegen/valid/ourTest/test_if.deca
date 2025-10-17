@@ -1,0 +1,28 @@
+// Description:
+//    Test conditionnel avec une structure if-else.
+//
+// Resultats:
+//1 2 3 4
+
+{
+    int x=0;
+    if (1==1){
+        x=1;
+        print(x," ");
+    }
+    else {
+        x=-1;
+        print(x," ");
+    }
+    if(true){
+        x=2;
+        print(x," ");
+    }
+    if((x>1)){
+        x=3;
+        print(x," ");
+    }
+    if(x<5&&x>=3){
+        print(4);
+    }
+}

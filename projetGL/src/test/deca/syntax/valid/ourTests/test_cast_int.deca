@@ -1,0 +1,5 @@
+// Cast valide : conversion d'un double en entier, avec perte de précision.
+{
+    int I = (int) (3.0999999999999999); 
+    // Résultat attendu : I == 3 (perte de la partie décimale)
+}

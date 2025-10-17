@@ -1,0 +1,10 @@
+// Description :
+//    Test de déclaration d'une classe vide.
+//    - La classe A est déclarée sans aucun champ, méthode ou constructeur explicite.
+//    - Aucun appel ou instanciation de la classe n'est effectué.
+//
+// Resultats:
+// (aucune sortie)
+class A{
+    
+}

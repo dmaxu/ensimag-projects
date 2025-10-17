@@ -1,0 +1,47 @@
+//  Teste de changement des attrbut imbriqué
+// Resultats:
+//  yes  yes  yes  yes  yes yes
+{
+    float f;
+    boolean a = true, b = false, c = true, d = false;
+    float d1 = 1.00000001;
+    int x = 9, y = 3;
+    float d2 = 1.00000002;
+        int m = 15, n = 10;
+    boolean e = false;
+    if (3.14 == (f = 3.14f)) {
+        println("Test 1: Yes");
+    } else {
+        println("Test 1: No");
+    }
+    // Test 2 : Vérification directe de flottants
+    if ((d1 - d2 < 0.0000001) && (d2 - d1 < 0.0000001)) {
+        println("Test 2: Yes");
+    } else {
+        println("Test 2: No");
+    }
+    // Test 3 : Test logique combiné
+    if ((a && c) || (b && d)) {
+        println("Test 3: Yes");
+    } else {
+        println("Test 3: No");
+    }
+    // Test 4 : Calculs arithmétiques pour comparaisons
+    if ((x % y == 0) && (x / y == 3)) {
+        println("Test 4: Yes");
+    } else {
+        println("Test 4: No");
+    }
+    // Test 5 : Vérification simple de complément
+    if (!e) {
+        println("Test 5: Yes");
+    } else {
+        println("Test 5: No");
+    }
+    // Test 6 : Vérification entre deux entiers
+    if ((m - n == 5) && (m > n)) {
+        println("Test 6: Yes");
+    } else {
+        println("Test 6: No");
+    }
+}

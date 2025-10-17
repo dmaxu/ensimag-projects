@@ -1,0 +1,34 @@
+// ---------------------------------------------------------
+// Test #42 : Classe avec champs de différents types
+// ---------------------------------------------------------
+//
+//  decl_field -> type ident
+//  On teste int, float, boolean, string, et un champ-objet
+//
+
+class A {
+  int value;
+}
+
+class TestFields {
+  int i;
+  float f;
+  boolean b;
+  A obj; // champ de type classe A
+
+  void initAll() {
+    i = 123;
+    f = 4.56;
+    b = true;
+    obj = new A();
+    obj.value = 999;
+  }
+}
+
+
+
+{
+  TestFields tf = new TestFields();
+  tf.initAll();
+  println(tf.obj.value); // 999
+}

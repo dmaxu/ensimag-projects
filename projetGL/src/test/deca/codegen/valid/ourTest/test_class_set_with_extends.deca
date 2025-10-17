@@ -1,0 +1,48 @@
+// Description :
+//    Test de l'héritage et de l'override des méthodes dans les classes `A` et `B`.
+//    - `A` contient un attribut `x` et une méthode `getX()` et `setX()`.
+//    - `B` hérite de `A` et surcharge les méthodes `getX()` et `setX()`.
+//    - Ce test vérifie si les méthodes de la classe parente sont correctement héritées et si la surcharge fonctionne correctement.
+//
+// Resultats:
+//    2 3 4
+//    Les méthodes `getX()` et `setX()` fonctionnent pour l'objet de type `A` comme pour l'objet de type `B`.
+//    Les valeurs de `x` sont mises à jour et lues correctement, même après l'héritage.
+
+class A {
+    int x;       // Attribut x de A
+    int y = 0;   // Attribut y de A, initialisé à 0
+    int getX() {
+        return x;   // Retourne la valeur de x
+    }
+    void setX(int y) {
+        x = y;       // Modifie l'attribut x avec la valeur passée
+    }
+    void incrX(){
+        x=x+1;
+    }
+}
+
+class B extends A {
+    int y = 0;   // Attribut y de B, initialisé à 0 (n'affecte pas x de A)
+    int getX() {
+        return x;   // Retourne la valeur de x (hérité de A)
+    }
+    void setX(int y) {
+        x = y;       // Modifie l'attribut x (hérité de A)
+    }
+}
+
+{
+    A a = new A();  // Création d'un objet de type A
+    B b = new B();  // Création d'un objet de type B
+    
+    a.setX(2);      // Définit x de a à 2
+    println(a.getX());  // Affiche la valeur de x pour a, devrait être 2
+    
+    b.setX(3);      // Définit x de b à 3
+    println(b.getX());  // Affiche la valeur de x pour b, devrait être 3
+    b.incrX();
+    println(b.getX());  // Affiche la valeur de x pour b, devrait être 4
+
+}

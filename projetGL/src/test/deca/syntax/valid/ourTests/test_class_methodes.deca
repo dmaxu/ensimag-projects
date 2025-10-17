@@ -1,0 +1,23 @@
+//description:test class+methodes, main vide
+
+class A{
+    protected int x=10;
+    protected int y=10;
+    void afficher(){
+        println("hello");
+       
+    }
+    void init(){
+        x=0;
+        y=1;
+        println(x,y);
+    }
+    int mult(int a,int b){
+        return (a*b);
+    }
+}
+
+{
+
+
+}

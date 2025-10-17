@@ -1,0 +1,137 @@
+// Description :
+//    Test pour vérifier que les constructeurs des classes de A à Z fonctionnent correctement,
+//    et qu'il est possible d'instancier chaque classe dans une hiérarchie d'héritage profonde.
+//
+// Resultats:
+//    (Aucune sortie).
+class A {
+
+}
+
+class B extends A {
+
+}
+
+class C extends B {
+
+}
+
+class D extends C {
+
+}
+
+class E extends D {
+
+}
+
+class F extends E {
+
+}
+
+class G extends F {
+
+}
+
+class H extends G {
+
+}
+
+class I extends H {
+
+}
+
+class J extends I {
+
+}
+
+class K extends J {
+
+}
+
+class L extends K {
+
+}
+
+class M extends L {
+
+}
+
+class N extends M {
+
+}
+
+class O extends N {
+
+}
+
+class P extends O {
+
+}
+
+class Q extends P {
+
+}
+
+class R extends Q {
+
+}
+
+class S extends R {
+
+}
+
+class T extends S {
+
+}
+
+class U extends T {
+
+}
+
+class V extends U {
+
+}
+
+class W extends V {
+
+}
+
+class X extends W {
+
+}
+
+class Y extends X {
+
+}
+
+class Z extends Y {
+
+}
+{
+        A a = new A();
+        B b = new B();
+        C c = new C();
+        D d = new D();
+        E e = new E();
+        F f = new F();
+        G g = new G();
+        H h = new H();
+        I i = new I();
+        J j = new J();
+        K k = new K();
+        L l = new L();
+        M m = new M();
+        N n = new N();
+        O o = new O();
+        P p = new P();
+        Q q = new Q();
+        R r = new R();
+        S s = new S();
+        T t = new T();
+        U u = new U();
+        V v = new V();
+        W w = new W();
+        X x = new X();
+        Y y = new Y();
+        Z z = new Z();
+    }

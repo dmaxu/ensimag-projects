@@ -1,0 +1,24 @@
+// Description :
+//    Test pour vérifier le comportement des attributs d'une classe en Deca, 
+//    notamment l'initialisation par défaut, la modification via un setter 
+//    et l'accès via un getter.
+//
+// Resultats:
+//    2
+//    Le setter `setx` modifie la valeur de l'attribut `x` correctement.
+//    Le getter `getx` retourne la valeur mise à jour.
+class A{
+    int x;
+    int y=1;
+    int getX(){
+        return x;
+    }
+    void setX(int y){
+        x=y;
+    }
+}
+{
+    A a= new A();
+    a.setX(2);
+    println(a.getX());
+}

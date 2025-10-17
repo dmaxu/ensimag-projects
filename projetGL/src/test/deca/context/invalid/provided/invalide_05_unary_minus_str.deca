@@ -1,0 +1,8 @@
+// Description : Test l'operation UNAIRE - EXPR pour un boolean
+// Resultat : 
+// ERROR dans unary operation // A MODIF!! 
+
+{
+    boolean bool = true;
+    bool = - bool;
+}

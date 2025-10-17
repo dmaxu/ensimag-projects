@@ -1,0 +1,203 @@
+	TSTO #9
+	ADDSP #8
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	LOAD #1, R1
+	LOAD #10, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	NEW R1, R15
+	BOV heap_overflow
+	LOAD #0, R14
+	LOAD R15, R13
+forLabel.0:
+	CMP R14, R1
+	BLE endForLabel.0
+	LOAD #0, R0
+	STORE R0, 0(R13)
+	LEA 1(R13), R13
+	ADD #1, R14
+	BRA forLabel.0
+endForLabel.0:
+	STORE R15, 3(GB)
+	LOAD #1, R1
+	LOAD #5, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	LOAD #10, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	NEW R1, R15
+	BOV heap_overflow
+	LOAD #0, R14
+	LOAD R15, R13
+forLabel.1:
+	CMP R14, R1
+	BLE endForLabel.1
+	LOAD #0, R0
+	STORE R0, 0(R13)
+	LEA 1(R13), R13
+	ADD #1, R14
+	BRA forLabel.1
+endForLabel.1:
+	STORE R15, 4(GB)
+	LOAD #1, R1
+	LOAD #10, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	NEW R1, R15
+	BOV heap_overflow
+	LOAD #0, R14
+	LOAD R15, R13
+forLabel.2:
+	CMP R14, R1
+	BLE endForLabel.2
+	LOAD #0x0.0p0, R0
+	STORE R0, 0(R13)
+	LEA 1(R13), R13
+	ADD #1, R14
+	BRA forLabel.2
+endForLabel.2:
+	STORE R15, 5(GB)
+	LOAD #1, R1
+	LOAD #10, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	LOAD #20, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	NEW R1, R15
+	BOV heap_overflow
+	LOAD #0, R14
+	LOAD R15, R13
+forLabel.3:
+	CMP R14, R1
+	BLE endForLabel.3
+	LOAD #0x0.0p0, R0
+	STORE R0, 0(R13)
+	LEA 1(R13), R13
+	ADD #1, R14
+	BRA forLabel.3
+endForLabel.3:
+	STORE R15, 6(GB)
+	LOAD #1, R1
+	LOAD #10, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	NEW R1, R15
+	BOV heap_overflow
+	LOAD #0, R14
+	LOAD R15, R13
+forLabel.4:
+	CMP R14, R1
+	BLE endForLabel.4
+	LOAD #0, R0
+	STORE R0, 0(R13)
+	LEA 1(R13), R13
+	ADD #1, R14
+	BRA forLabel.4
+endForLabel.4:
+	STORE R15, 7(GB)
+	LOAD #1, R1
+	LOAD #10, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	LOAD #15, R15
+	CMP #0, R15
+	BLE allocation_problem
+	MUL R15, R1
+	NEW R1, R15
+	BOV heap_overflow
+	LOAD #0, R14
+	LOAD R15, R13
+forLabel.5:
+	CMP R14, R1
+	BLE endForLabel.5
+	LOAD #0, R0
+	STORE R0, 0(R13)
+	LEA 1(R13), R13
+	ADD #1, R14
+	BRA forLabel.5
+endForLabel.5:
+	STORE R15, 8(GB)
+; End declarations:
+; Insts:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

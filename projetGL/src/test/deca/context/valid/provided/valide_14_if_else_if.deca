@@ -1,0 +1,17 @@
+// nom: valide_14_if_else_if.deca
+// Objectif : if(...) {...} else if(...) {...} else {...}
+{
+    if (1 == 2) {
+        print("First if");
+    } else if (2 == 3) {
+        print("Second if");
+    } else {
+        print("Final else");
+    }
+
+    if (false) {
+        println("No");
+    } else if (true) {
+        println("Yes");
+    }
+}

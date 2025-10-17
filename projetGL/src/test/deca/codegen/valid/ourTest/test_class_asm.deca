@@ -1,0 +1,15 @@
+// Description :
+//    Test d'une tentative d'assemblage dans une méthode Java.
+//    Ce test utilise l'instruction 'asm'.
+//
+// Resultats:
+//    ok
+class A{
+    void Asm()asm ("WSTR \"ok\"");
+
+}
+
+{
+    A a = new A();
+    a.Asm();
+}

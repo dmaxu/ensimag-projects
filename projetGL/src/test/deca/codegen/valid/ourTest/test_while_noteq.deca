@@ -1,0 +1,9 @@
+// Description: 
+// Test d'une boucle while avec une condition complexe. La boucle utilise !(1<2) et !(2<=3) qui sont toutes deux fausses, rendant la condition globale toujours fausse. // En conséquence, la boucle ne s'exécute pas.
+// Resultats: 
+// (aucune sortie)
+{
+    while (!(1<2)&&!(2<=3)){
+        print("yes");
+    }
+}

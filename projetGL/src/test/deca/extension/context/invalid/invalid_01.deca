@@ -1,0 +1,8 @@
+//Description:type de tableau non conforme au type declaré(boolean-->int)
+
+{
+    int x;
+    int tab1[]=[1,2,3,4,5];
+    boolean tab2[][]=new int[][];
+    x=tab[0]+tab[1];
+}

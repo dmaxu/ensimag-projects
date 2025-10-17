@@ -1,0 +1,7 @@
+{
+    if (true){
+        println("hello world");
+    }else{
+        println("ko");
+    }
+}

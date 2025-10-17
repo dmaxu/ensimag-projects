@@ -1,0 +1,4 @@
+{
+    int x;
+    x = !1;  // Doit produire une erreur contextuelle, car 1 n'est pas un boolean.
+}

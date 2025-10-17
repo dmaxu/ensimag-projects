@@ -1,0 +1,12 @@
+// Description:
+//    Test de l'opérateur + avec des entiers positifs et négatifs, puis un print pour afficher le résultat.
+//
+// Resultats: 
+//10 10 12 2147483647
+
+{
+    print(5 + 5," ");        // 10
+    print(1+2+(3+4)," ");    // 10
+    print((5+6)-7+8," "); // 12
+    print(2147483647+0); // 214748364
+}

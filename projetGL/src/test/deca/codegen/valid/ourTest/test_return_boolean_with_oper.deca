@@ -1,0 +1,64 @@
+// Description :
+//    Ce test vérifie l'ordre d'évaluation des opérations logiques dans la classe `A`. 
+//    La classe `A` définit plusieurs méthodes pour tester des expressions booléennes.
+//    - `op1()`: Teste un `AND` logique (&&) entre deux valeurs booléennes.
+//    - `op2()`: Teste un `OR` logique (||) entre deux valeurs booléennes.
+//    - `op3()`: Teste une combinaison de `AND` et `OR` pour vérifier la priorité des opérateurs.
+//    - `op4()`: Teste l'opérateur NOT (!).
+//    - `op5()`: Teste une expression avec `OR` et `AND` pour vérifier la priorité des opérateurs.
+//    - `op6()`: Teste une expression complexe avec plusieurs `OR` et `AND` imbriqués.
+//
+// Resultats:
+//    ok ok ok ok ok ok ok ok
+
+class A {
+    boolean b1 = false;
+    boolean b2 = true;
+
+    // Méthodes de test des opérations logiques
+    boolean op1() {
+        return this.b1 && this.b2; // false && true
+    }
+
+    boolean op2() {
+        return this.b1 || this.b2; // false || true
+    }
+
+    boolean op3() {
+        return this.b1 && this.b1 || this.b2 && this.b2; // (false && false) || (true && true)
+    }
+
+    boolean op4() {
+        return !this.b1; // !false
+    }
+
+    boolean op5() {
+        return true || false && false; // true || (false && false)
+    }
+
+    boolean op6() {
+        return false || true && false && true; // false || (true && false && true)
+    }
+
+    // Méthode pour tester une expression plus complexe
+    boolean op7() {
+        return (this.b1 || this.b2) && (!this.b1 || this.b2); // (false || true) && (!false || true)
+    }
+
+    boolean op8() {
+        return !(this.b1 && this.b2) || (this.b1 || this.b2); // !(false && true) || (false || true)
+    }
+}
+
+{
+    A a = new A();
+    // Test des opérations logiques avec affichage des résultats
+    if (!a.op1()) { print("ok "); }  // false
+    if (a.op2()) { print("ok "); }   // true
+    if (a.op3()) { print("ok "); }   // true
+    if (a.op4()) { print("ok "); }   // true
+    if (a.op5()) { print("ok "); }   // true
+    if (!a.op6()) { print("ok "); }  // false
+    if (a.op7()) { print("ok "); }   // true
+    if (a.op8()) { print("ok "); }   // true
+}

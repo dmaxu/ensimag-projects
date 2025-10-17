@@ -1,0 +1,10 @@
+// Description:
+//    Test de toutes les opérations arithmétiques sur des entiers (addition, soustraction, division, multiplication).
+//
+// Resultats:
+//20
+{
+    int x=47,y=-11,z;
+    z=((x+y)/2-8)*2;
+    print(z);
+}

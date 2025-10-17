@@ -1,0 +1,375 @@
+	TSTO #13
+	ADDSP #12
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Construction de la table des methodes de Search
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.Search.Print, R0
+	STORE R0, 5(GB)
+	LOAD code.Search.linearSearch, R0
+	STORE R0, 6(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	NEW #1, R15
+	BOV heap_overflow
+	LEA 3(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.Search
+	POP R15
+	STORE R15, 7(GB)
+	LOAD #1, R1
+	LOAD #10, R14
+	MUL R14, R1
+	NEW R1, R15
+	LOAD #1, R0
+	STORE R0, 0(R15)
+	LOAD #2, R0
+	STORE R0, 1(R15)
+	LOAD #3, R0
+	STORE R0, 2(R15)
+	LOAD #4, R0
+	STORE R0, 3(R15)
+	LOAD #5, R0
+	STORE R0, 4(R15)
+	LOAD #6, R0
+	STORE R0, 5(R15)
+	LOAD #7, R0
+	STORE R0, 6(R15)
+	LOAD #8, R0
+	STORE R0, 7(R15)
+	LOAD #9, R0
+	STORE R0, 8(R15)
+	LOAD #10, R0
+	STORE R0, 9(R15)
+	STORE R15, 11(GB)
+	LOAD #0, R15
+	STORE R15, 12(GB)
+; End declarations:
+; Insts:
+	WSTR "Tableau :"
+	WNL
+	ADDSP #3
+	LOAD 7(GB), R15
+	STORE R15, 0(SP)
+	LOAD 11(GB), R15
+	STORE R15, -1(SP)
+	LOAD #10, R15
+	STORE R15, -2(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 2(R15)
+	SUBSP #3
+	WSTR "Entrez l'élément à rechercher :"
+	WNL
+	LOAD #3, R15
+	STORE R15, 9(GB)
+	ADDSP #4
+	LOAD 7(GB), R15
+	STORE R15, 0(SP)
+	LOAD 11(GB), R15
+	STORE R15, -1(SP)
+	LOAD #10, R15
+	STORE R15, -2(SP)
+	LOAD 9(GB), R15
+	STORE R15, -3(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 3(R15)
+	SUBSP #4
+	LOAD R0, R15
+	STORE R15, 10(GB)
+	LOAD 10(GB), R15
+	LOAD #1, R14
+	OPP R14, R14
+	CMP R14, R15
+	BEQ else.0
+	WSTR "Élément trouvé à l'index : "
+	LOAD 10(GB), R15
+	LOAD R15, R1
+	WINT
+	WNL
+	BRA end.0
+else.0:
+	WSTR "Élément non trouvé."
+	WNL
+end.0:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; --------------------------------------------------
+; Classe Search
+; --------------------------------------------------
+; Initialisation des champs de Search
+init.Search:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.Search.Print:
+	TSTO #18
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #0, R15
+	STORE R15, 1(LB)
+	BRA E_Cond.0
+E_Debut.0:
+	LOAD -3(LB), R15
+	LOAD #1, R13
+	LOAD #0, R14
+	LOAD #10, R12
+	LOAD 1(LB), R11
+	MUL R13, R11
+	ADD R11, R14
+	MUL R12, R13
+beginWhile.0:
+	CMP #0, R14
+	BEQ endWhile.0
+	LEA 1(R15), R15
+	SUB #1, R14
+	BRA beginWhile.0
+endWhile.0:
+	LOAD 0(R15), R13
+	LOAD R13, R1
+	WINT
+	WSTR " "
+	LOAD 1(LB), R15
+	ADD #1, R15
+	STORE R15, 1(LB)
+E_Cond.0:
+	LOAD 1(LB), R15
+	LOAD -4(LB), R14
+	CMP R14, R15
+	BLT E_Debut.0
+	WNL
+fin.Search.Print:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.Search.linearSearch:
+	TSTO #19
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #0, R15
+	STORE R15, 1(LB)
+	BRA E_Cond.1
+E_Debut.1:
+	LOAD -3(LB), R15
+	LOAD #1, R13
+	LOAD #0, R14
+	LOAD #10, R12
+	LOAD 1(LB), R11
+	MUL R13, R11
+	ADD R11, R14
+	MUL R12, R13
+beginWhile.1:
+	CMP #0, R14
+	BEQ endWhile.1
+	LEA 1(R15), R15
+	SUB #1, R14
+	BRA beginWhile.1
+endWhile.1:
+	LOAD 0(R15), R13
+	LOAD -5(LB), R14
+	CMP R14, R13
+	BNE else.1
+	LOAD 1(LB), R15
+	LOAD R15, R0
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+	BRA end.1
+else.1:
+end.1:
+	LOAD 1(LB), R15
+	ADD #1, R15
+	STORE R15, 1(LB)
+E_Cond.1:
+	LOAD 1(LB), R15
+	LOAD -4(LB), R14
+	CMP R14, R15
+	BLT E_Debut.1
+	LOAD #1, R15
+	OPP R15, R15
+	LOAD R15, R0
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+fin.Search.linearSearch:
+	BRA missing_return
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

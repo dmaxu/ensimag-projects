@@ -1,0 +1,36 @@
+// Objectif : Comparaisons imbriquées et accès aux attributs imbriqués.
+// Resultats :
+// Alice and Bob are in the same country.
+class Address {
+    int city;
+    int country;
+}
+
+class Person {
+    Address address;
+    int name;
+
+    boolean isSameCountry(Person p) {
+        return this.address.country == p.address.country;
+    }
+}
+{
+        Person p1 = new Person();
+        Person p2 = new Person();
+        p1.name = 0;
+        p1.address = new Address();
+        p1.address.city = 0;
+        p1.address.country = 11;
+
+        p2.name = 0;
+        p2.address = new Address();
+        p2.address.city = 12;
+        p2.address.country = 11;
+
+        if (p1.isSameCountry(p2)) {
+            println(p1.name , " and " , p2.name , " are in the same country.");
+        }
+}
+
+
+

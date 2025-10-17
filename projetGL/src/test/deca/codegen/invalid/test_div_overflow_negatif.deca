@@ -1,0 +1,8 @@
+// Description :
+//    Test de la division par un très petit nombre negatif
+//
+// Resultats:
+//    Erreur : Débordement floattant
+{
+    println (4/-4.0E-40);
+}

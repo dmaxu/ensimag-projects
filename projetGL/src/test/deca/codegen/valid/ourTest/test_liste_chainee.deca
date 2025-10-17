@@ -1,0 +1,24 @@
+// Description :
+//    Test de comportement similaire à l'arithmétique des pointeurs en utilisant
+//    une liste chaînée.
+//
+// Resultats:
+//    10
+//    La méthode `setNextData` modifie correctement le second élément de la liste.
+
+class Node {
+    int data;
+    Node next;
+
+    void setNextData(int value) {
+        this.next.data = value; // Simule l'arithmétique des pointeurs
+    }
+}
+
+{
+    Node n1 = new Node();
+    Node n2 = new Node();
+    n1.next = n2;
+    n1.setNextData(10);
+    print(n2.data); // Affiche 10
+}

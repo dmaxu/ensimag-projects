@@ -1,0 +1,13 @@
+{
+    //tester d'accès sur un tableau d'entiers
+    int a;
+    int[]tab_entier=int[10];
+    tab_entier[0]=1;
+    a=tab_entier[0];
+    println(a);
+    tab_entier[1]=2;
+    a=tab_entier[1];
+    println(a);
+    tab_entier[-1]=10;
+    a=tab_entier[-1];
+}

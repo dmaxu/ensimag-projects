@@ -1,0 +1,17 @@
+// Description : test sur l'utlisation d'une méthode avec des paramétre fausse.
+// Sortie:
+// ERROR : Un probléme dans les parametres d'entrée de la méthode blabla.
+// Attendue : int float A.
+// Présentée : int int string
+
+class A{
+    protected int x;
+    void blabla(int x, float o, A g){
+
+    }
+}
+
+{
+    A a = new A();
+    a.blabla(1, 7, "hello world");
+}

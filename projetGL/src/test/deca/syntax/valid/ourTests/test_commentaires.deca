@@ -1,0 +1,14 @@
+{
+    // Commentaire contenant des caractères spéciaux : !@#$%^&*()_+{}:"<>?
+    int x = 9;
+
+    /* Commentaire multi-lignes avec caractères spéciaux
+       ~`|[];',./-={}
+    */
+    int y = 10;
+        /* Commentaire multi-lignes contient un autre Commentaire
+        // un autre commentaire        
+       ~`|[];',./-={}
+    */
+    /* /* // */
+}

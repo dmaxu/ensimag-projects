@@ -1,0 +1,27 @@
+
+// Description:
+//    Test de différentes expressions avec des opérateurs logiques `!`
+//    La première condition vérifie si `b1` est faux.
+//    La deuxième compare les négations de `b1` et `b2`.
+//    La troisième compare les doubles négations de `b1` et `b2`.
+//    La dernière compare les triples et quintuple négations de `b1` et `b2`.
+//
+// Resultats:
+//    yes yes yes yes
+
+{
+    boolean b1=false;
+    boolean b2=false;
+    if(!b1){
+        print("yes ");
+    }
+    if(!b1==!b2){
+        print("yes ");
+    }
+    if(!!b1==!!b2){
+        print("yes ");
+    }
+    if(!!!!!b1==!!!b2){
+        print("yes ");
+    }
+}

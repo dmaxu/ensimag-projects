@@ -1,0 +1,45 @@
+// Description:
+//    Programme minimaliste utilisant println
+//
+// Resultats:
+//    Vide. 
+//
+//class Robot {
+//    int energie = 10;
+//    
+//    // Constructeur de la class
+//
+//    void afficher() {
+//        //println("Energie du robot : " , this.energie);
+//    }
+//}
+//
+//class Main {
+//    void main() {
+//        Robot r = new Robot(); 
+//        //r.afficher();
+//    }
+//}
+
+{
+    "hello world";
+}
+//{
+//    float z = 10;
+//    float x = 5;
+//    float y = z+x-x+z;
+//
+//    if (x > 10){
+//        println(x);
+//    }
+//    else {
+//        if (z < 100){
+//            println(z);
+//        }else{
+//            println(y);
+//        }
+//    }
+//    while (x > 10){
+//        println("hello world");
+//    }
+//}

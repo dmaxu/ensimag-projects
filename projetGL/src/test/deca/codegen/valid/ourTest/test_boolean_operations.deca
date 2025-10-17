@@ -1,0 +1,20 @@
+// Description:
+//    Test d'évaluation de conditions booléennes complexes avec plusieurs niveaux de négation,
+//    opérateurs logiques, et comparaisons numériques. Chaque test vérifie la valeur d'une 
+//    expression booléenne et affiche "ok" ou "ko" selon le résultat attendu.
+//
+// Resultats:
+//ok ok ok ok ok
+
+{
+    boolean B1,B2,B3,B4,B5,B47,b7,b8,B9,B10;
+    int x,y,z,d;
+    B1=(true&&true);
+    if (B1==true){print("ok "); }else{print("ko");}
+    B1=true&&(1<2)&&(true&&true&&true&&true&&(((47>0)&&47>-2)&&(-47!=47||47==47||-47==-47))&&(47==47))==true;
+    if (B1==true){print("ok "); }else{print("ko");}
+    if ((true&&(1<2)&&(true&&true&&((1>-200)&&5>2)&&(-47!=47||47==47))&&(47==47))==true){print("ok ");}else{print("ko");}
+    B2=(!!!!!!!!((1>-200)&&!(-5>2)&&!((!(-47==47)||!(47!=-47)))));
+    if (B2==false){print("ok "); }else{print("ko");}
+    if (!!!!!!!!((47>-999)&&!(-47>47)&&!((!(47!=-47)||!(-47==47))))){print("ko"); }else{print("ok ");}
+}

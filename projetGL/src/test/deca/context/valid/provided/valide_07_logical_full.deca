@@ -1,0 +1,9 @@
+// nom: valide_07_logical_full.deca
+// Objectif : Couvrir toutes les combinaisons booléennes de base
+{
+    true && false;
+    true || false;
+    !true;
+    true && (false || !false);
+    (true || false) && (!true || false);
+}

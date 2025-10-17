@@ -1,0 +1,17 @@
+{
+    float[][] matrix;
+    int i;
+    int j;
+    matrix = [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]];
+    i = 0;
+
+    while (i < 2) {
+        j = 0;
+        matrix[i][j]=i;
+        while (j < 3) {
+            matrix[i][j]=j;
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+}

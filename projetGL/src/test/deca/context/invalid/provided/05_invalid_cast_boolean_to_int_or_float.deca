@@ -1,0 +1,13 @@
+{
+    boolean b;
+    int x;
+    float y;
+
+    b = false;
+
+    // Erreurs : cast boolean -> int ou boolean -> float
+    x = (int)(b);    // Interdit
+    y = (float)(b);  // Interdit
+
+    println("Ne devrait pas arriver");
+}

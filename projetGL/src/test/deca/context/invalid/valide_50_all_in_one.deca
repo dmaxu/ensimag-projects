@@ -1,0 +1,57 @@
+// ---------------------------------------------------------
+// Test #50 : "Tout-en-un" : champs publics et protégés, 
+//            héritage, redéfinition, instanceOf, cast, this
+// ---------------------------------------------------------
+//
+// On combine plusieurs aspects pour un test final costaud.
+//
+
+class BaseA {
+  protected float val;
+  int x;
+  
+  void init(float v) {
+    val = v;
+    x = 10;
+  }
+  
+  BaseA cloneMe() {
+    // On renvoie un BaseA "neuf"
+    BaseA b = new BaseA();
+    b.val = this.val;
+    b.x = this.x;
+    return b;
+  }
+}
+
+class SubA extends BaseA {
+  int y;
+  
+  // Redéfinition, type de retour = SubA (sous-type de BaseA)
+  SubA cloneMe() {
+    SubA s = new SubA();
+    s.val = this.val;
+    s.x   = this.x;
+    s.y   = this.y;
+    return s;
+  }
+  
+  void doubleAll() {
+    val = val * 2;
+    y   = y * 2;
+  }
+}
+
+{
+  SubA b = new SubA();
+  BaseA s;
+  BaseA s2;
+  b.init(2.5);
+
+  // On cast si c'est vraiment un SubA
+  if (b instanceof SubA) {
+    s = (BaseA)(b);
+    s.x = 20;
+    println(s2.x);
+  }
+}

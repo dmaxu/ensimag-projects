@@ -1,0 +1,20 @@
+// Description :
+//    Test d'accès à un attribut non redéfini dans une classe dérivée.
+//    La classe `B` hérite de `A` et utilise un attribut défini uniquement dans `A`.
+//
+// Resultats:
+//    15
+class A {
+    int y = 5;
+}
+
+class B extends A {
+    int addY() {
+        return y + 10; // Accède à `y` hérité de `A`
+    }
+}
+
+{
+    B b = new B();
+    print(b.addY()); // Affiche 15
+}

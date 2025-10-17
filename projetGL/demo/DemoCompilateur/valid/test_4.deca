@@ -1,0 +1,22 @@
+class A{
+    void Print(){
+        print("class A");
+    }
+}
+
+class C extends A{
+    void Print(){
+        print("class C");
+    }
+}
+
+class B extends A{
+
+}
+
+{
+    B b = new B();
+    C c = new C();
+    b.Print();
+    c.Print();
+}

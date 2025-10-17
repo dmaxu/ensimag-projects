@@ -1,0 +1,9 @@
+// Description:
+//    tests simple print float
+//
+// Resultats:
+//    3.14
+
+{
+    print(3.14);
+}

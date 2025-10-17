@@ -1,0 +1,22 @@
+// Description :
+//    Test d'une classe dérivée essayant d'utiliser une méthode non héritée.
+//
+// Resultats:
+//    Erreur de compilation : `getY()` n'est pas défini dans la classe `B`.
+
+class A {
+    int y = 5;
+
+    int getY() {
+        return y;
+    }
+}
+
+class B extends A {
+    // Pas de méthode getY() définie ici
+}
+
+{
+    B b = new B();
+    print(b.getY()); // Erreur : `getY()` n'est pas disponible dans `B`
+}

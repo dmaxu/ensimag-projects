@@ -1,0 +1,83 @@
+// Description : Test de Assign et ops booleens
+// Resultats:
+// 30
+
+
+{
+    boolean a, b, c, d, e, result1, result2, result3, result4, result5, result6, result7;
+    int check;
+    check = 0;
+
+    // Initialisations
+    a = true;
+    b = false;
+    c = true;
+    d = false;
+    e = true;
+
+    // Test 1 : Imbrication complexe avec && et ||, incluant des affectations croisées
+    result1 = ((a && (b = false)) || ((c = false) && (d = true))) && ((b || !c) && (e = false));
+    if (result1) {
+        check = check + 1; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 10; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 2 : Double court-circuitage avec && et ||
+    b = false;
+    c = true;
+    result2 = ((b = true) || (c = false)) && ((d = false) || (e = true));
+    if (result2) {
+        check = check + 2; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 20; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 3 : Affectations imbriquées avec priorités
+    a = false;
+    b = false;
+    result3 = ((a = (b = true)) || ((c = false) && (d = true))) && ((e = true) || (c = true));
+    if (result3) {
+        check = check + 3; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 30; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 4 : Multiples inversions logiques
+    a = true;
+    b = false;
+    c = true;
+    result4 = !((a && (b = false)) || (!(c || (d = false)) && (e = true)));
+    if (result4) {
+        check = check + 4; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 40; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 5 : Affectations croisées avec évaluation paresseuse
+    b = false;
+    c = true;
+    d = false;
+    result5 = ((b = true) && ((c = false) || (d = true))) || ((e = false) && (a = false));
+    if (result5) {
+        check = check + 5; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 50; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Test 6 : Expression chaînée complexe
+    a = true;
+    b = true;
+    c = false;
+    d = false;
+    e = true;
+    result6 = (a || b) && (c = true) || (!(d || (e = false)) && (b = false));
+    if (result6) {
+        check = check + 6; // Devrait être exécuté si l'expression globale est vraie
+    } else {
+        check = check + 60; // Devrait être exécuté si l'expression globale est fausse
+    }
+
+    // Affichage du résultat global
+    println(check);
+}

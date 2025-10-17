@@ -1,0 +1,14 @@
+// Description :
+//    Ce test vérifie l'utilisation de l'assignation et de la comparaison dans une expression complexe.
+//    - Les variables 'a' et 'b' sont affectées avec les valeurs 3 et 3.0 respectivement.
+//    - Les comparaisons imbriquées entre les résultats des affectations sont ensuite évaluées.
+//
+// Resultats:
+//    yes
+{
+    int a;
+    float b;
+    if(((a=3)==(b=3.0))==((b=3)==(a=3))){
+        print("yes");
+    }
+}

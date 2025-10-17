@@ -1,0 +1,7 @@
+// Description : Utilisation d'une variable sans étre définit
+// Sortie : 
+// ERROR : La variable x n'est pas définie.
+
+{
+    println(x);
+}

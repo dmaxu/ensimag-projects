@@ -1,0 +1,8 @@
+// Descitpion : test d'existence de la superclasse.
+// Sortie:
+// ERROR : super-classe B n'est pas définie dans l'environment.
+
+class A extends B{
+    int x;
+    float y;
+}

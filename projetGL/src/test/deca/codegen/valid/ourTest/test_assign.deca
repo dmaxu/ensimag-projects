@@ -1,0 +1,15 @@
+// Description:
+//    Test de manipulation et affichage de variables de type float.
+//    - Initialise `x` à 3.14 et l'affiche.
+//    - Assigne la valeur entière 42 à `x` et effectue une addition (`x + 5`).
+//    Affiche les résultats avec println.
+//
+// Resultats:
+//3.14 47.0
+
+{
+    float x=3.14;
+    print(x," ");
+    x=42;
+    print(x+5);
+}

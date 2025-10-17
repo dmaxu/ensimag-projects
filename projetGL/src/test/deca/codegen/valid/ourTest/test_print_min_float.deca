@@ -1,0 +1,9 @@
+// Description:
+//    tests print max negative float
+//
+// Resultats:
+//    -3.4028235E38
+
+{
+    print(-3.4028235E38); // Valeur maximale négative pour un float 32 bits en DECÀ.
+}

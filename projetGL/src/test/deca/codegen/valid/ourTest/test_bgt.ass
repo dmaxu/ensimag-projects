@@ -1,0 +1,177 @@
+	TSTO #6
+	ADDSP #5
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	LOAD #1, R14
+	CMP #2, R14
+	BLE falseLabel.0
+	LOAD #3, R14
+	CMP #4, R14
+	BLE falseLabel.0
+	LOAD #5, R14
+	CMP #6, R14
+	BLE falseLabel.0
+	LOAD #7, R14
+	CMP #8, R14
+	BLE falseLabel.0
+	LOAD #9, R14
+	CMP #10, R14
+	BLE falseLabel.0
+	LOAD #1, R15
+	BRA endLabel.0
+falseLabel.0:
+	LOAD #0, R15
+endLabel.0:
+	STORE R15, 3(GB)
+	LOAD #1, R14
+	OPP R14, R14
+	LOAD #2, R13
+	OPP R13, R13
+	CMP R13, R14
+	BLE falseLabel.1
+	LOAD #3, R14
+	OPP R14, R14
+	LOAD #4, R13
+	OPP R13, R13
+	CMP R13, R14
+	BLE falseLabel.1
+	LOAD #5, R14
+	OPP R14, R14
+	LOAD #6, R13
+	OPP R13, R13
+	CMP R13, R14
+	BLE falseLabel.1
+	LOAD #7, R14
+	OPP R14, R14
+	LOAD #8, R13
+	OPP R13, R13
+	CMP R13, R14
+	BLE falseLabel.1
+	LOAD #9, R14
+	OPP R14, R14
+	LOAD #10, R13
+	OPP R13, R13
+	CMP R13, R14
+	BLE falseLabel.1
+	LOAD #1, R15
+	BRA endLabel.1
+falseLabel.1:
+	LOAD #0, R15
+endLabel.1:
+	STORE R15, 4(GB)
+	LOAD #1, R14
+	CMP #2, R14
+	BLE falseLabel.2
+	LOAD #3, R14
+	CMP #4, R14
+	BLE falseLabel.2
+	LOAD #5, R14
+	CMP #6, R14
+	BLE falseLabel.2
+	LOAD #7, R14
+	CMP #8, R14
+	BLE falseLabel.2
+	LOAD #9, R14
+	CMP #10, R14
+	BLE falseLabel.2
+	LOAD #1, R15
+	BRA endLabel.2
+falseLabel.2:
+	LOAD #0, R15
+endLabel.2:
+	STORE R15, 5(GB)
+; End declarations:
+; Insts:
+	LOAD 3(GB), R15
+	CMP #1, R15
+	BEQ else.0
+	WSTR "our group is "
+	BRA end.0
+else.0:
+end.0:
+	LOAD 4(GB), R15
+	CMP #1, R15
+	BNE else.1
+	WSTR "the "
+	BRA end.1
+else.1:
+	WSTR "not the "
+end.1:
+	LOAD 5(GB), R15
+	CMP #1, R15
+	BEQ else.2
+	WSTR "best"
+	BRA end.2
+else.2:
+end.2:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

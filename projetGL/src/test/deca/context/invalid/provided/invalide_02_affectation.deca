@@ -1,0 +1,11 @@
+// Description Affectation et typage
+// affectation string <- boolean
+// Resultat : 
+// ERROR
+
+
+{
+    string a = 0;
+    boolean b = true;
+    a = b;
+}

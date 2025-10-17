@@ -1,0 +1,7 @@
+// Test d'assignation avec une variable non initialisée
+{
+    int x;         // Déclaration de la variable x
+    int y;         // Déclaration de la variable y, mais sans initialisation
+    x = y + 5;     // Utilisation de y dans une assignation
+    // Vérification attendue : Erreur contextuelle car y n'est pas initialisée.
+}

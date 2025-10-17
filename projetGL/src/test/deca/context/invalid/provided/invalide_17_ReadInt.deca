@@ -1,0 +1,7 @@
+// Description : L'initialisation d'une variable par une valeur de type différent du type de la variable.
+// Sortie : 
+// ERROR : On ne peut pas affectée à un type boolean un type int.
+
+{
+    boolean value = readInt();
+}

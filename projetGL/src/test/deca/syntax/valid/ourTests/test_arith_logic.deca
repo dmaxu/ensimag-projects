@@ -1,0 +1,19 @@
+// valid_07_arith_logic.deca
+// Description : Opérations arithmétiques (%, /, *) et logiques (||, &&, !).
+//               Comparaisons (<, <=, !=).
+//
+// Résultat attendu :
+// Compile et exécute un petit calcul, imprimant quelques résultats.
+
+{
+    int x = 2 + 3 * 4;  
+    boolean b1 = (x <= 14) && !(x == 13);  
+    boolean b2 = (x != 0) || (x < 0);      
+    println(x);  
+    println(b1);  
+    println(b2);  
+
+    x = x % 5;  
+    println(x);
+}
+

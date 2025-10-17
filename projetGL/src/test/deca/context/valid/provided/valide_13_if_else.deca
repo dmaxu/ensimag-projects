@@ -1,0 +1,15 @@
+// nom: valide_13_if_else.deca
+// Objectif : if(...) {...} else {...}
+{
+    if (false) {
+        println("This won't print");
+    } else {
+        println("Else branch");
+    }
+
+    if (5.0 == 5) {
+        print("equal");
+    } else {
+        print("not equal");
+    }
+}

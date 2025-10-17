@@ -1,0 +1,12 @@
+// Description:
+//    Test de l'utilisation de l'opérateur unary sur float
+// Resultats:
+//    -47 47 -47 en float
+{
+    float a=47;
+    print(-a," ");
+    if(--a==47){
+        print(a," ");
+    }
+    print(---a," ");
+}

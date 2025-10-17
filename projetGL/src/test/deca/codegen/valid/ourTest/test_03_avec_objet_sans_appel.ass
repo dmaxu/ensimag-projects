@@ -1,0 +1,1247 @@
+	TSTO #55
+	ADDSP #54
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Construction de la table des methodes de A
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+; Construction de la table des methodes de B
+	LEA 3(GB), R0
+	STORE R0, 5(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 6(GB)
+; Construction de la table des methodes de C
+	LEA 5(GB), R0
+	STORE R0, 7(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 8(GB)
+; Construction de la table des methodes de D
+	LEA 7(GB), R0
+	STORE R0, 9(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 10(GB)
+; Construction de la table des methodes de E
+	LEA 9(GB), R0
+	STORE R0, 11(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 12(GB)
+; Construction de la table des methodes de F
+	LEA 11(GB), R0
+	STORE R0, 13(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 14(GB)
+; Construction de la table des methodes de G
+	LEA 13(GB), R0
+	STORE R0, 15(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 16(GB)
+; Construction de la table des methodes de H
+	LEA 15(GB), R0
+	STORE R0, 17(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 18(GB)
+; Construction de la table des methodes de I
+	LEA 17(GB), R0
+	STORE R0, 19(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 20(GB)
+; Construction de la table des methodes de J
+	LEA 19(GB), R0
+	STORE R0, 21(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 22(GB)
+; Construction de la table des methodes de K
+	LEA 21(GB), R0
+	STORE R0, 23(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 24(GB)
+; Construction de la table des methodes de L
+	LEA 23(GB), R0
+	STORE R0, 25(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 26(GB)
+; Construction de la table des methodes de M
+	LEA 25(GB), R0
+	STORE R0, 27(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 28(GB)
+; Construction de la table des methodes de N
+	LEA 27(GB), R0
+	STORE R0, 29(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 30(GB)
+; Construction de la table des methodes de O
+	LEA 29(GB), R0
+	STORE R0, 31(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 32(GB)
+; Construction de la table des methodes de P
+	LEA 31(GB), R0
+	STORE R0, 33(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 34(GB)
+; Construction de la table des methodes de Q
+	LEA 33(GB), R0
+	STORE R0, 35(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 36(GB)
+; Construction de la table des methodes de R
+	LEA 35(GB), R0
+	STORE R0, 37(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 38(GB)
+; Construction de la table des methodes de S
+	LEA 37(GB), R0
+	STORE R0, 39(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 40(GB)
+; Construction de la table des methodes de T
+	LEA 39(GB), R0
+	STORE R0, 41(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 42(GB)
+; Construction de la table des methodes de U
+	LEA 41(GB), R0
+	STORE R0, 43(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 44(GB)
+; Construction de la table des methodes de V
+	LEA 43(GB), R0
+	STORE R0, 45(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 46(GB)
+; Construction de la table des methodes de W
+	LEA 45(GB), R0
+	STORE R0, 47(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 48(GB)
+; Construction de la table des methodes de X
+	LEA 47(GB), R0
+	STORE R0, 49(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 50(GB)
+; Construction de la table des methodes de Y
+	LEA 49(GB), R0
+	STORE R0, 51(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 52(GB)
+; Construction de la table des methodes de Z
+	LEA 51(GB), R0
+	STORE R0, 53(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 54(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+; End declarations:
+; Insts:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; --------------------------------------------------
+; Classe A
+; --------------------------------------------------
+; Initialisation des champs de A
+init.A:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe B
+; --------------------------------------------------
+; Initialisation des champs de B
+init.B:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe C
+; --------------------------------------------------
+; Initialisation des champs de C
+init.C:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe D
+; --------------------------------------------------
+; Initialisation des champs de D
+init.D:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe E
+; --------------------------------------------------
+; Initialisation des champs de E
+init.E:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe F
+; --------------------------------------------------
+; Initialisation des champs de F
+init.F:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe G
+; --------------------------------------------------
+; Initialisation des champs de G
+init.G:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe H
+; --------------------------------------------------
+; Initialisation des champs de H
+init.H:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe I
+; --------------------------------------------------
+; Initialisation des champs de I
+init.I:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe J
+; --------------------------------------------------
+; Initialisation des champs de J
+init.J:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe K
+; --------------------------------------------------
+; Initialisation des champs de K
+init.K:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe L
+; --------------------------------------------------
+; Initialisation des champs de L
+init.L:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe M
+; --------------------------------------------------
+; Initialisation des champs de M
+init.M:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe N
+; --------------------------------------------------
+; Initialisation des champs de N
+init.N:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe O
+; --------------------------------------------------
+; Initialisation des champs de O
+init.O:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe P
+; --------------------------------------------------
+; Initialisation des champs de P
+init.P:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe Q
+; --------------------------------------------------
+; Initialisation des champs de Q
+init.Q:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe R
+; --------------------------------------------------
+; Initialisation des champs de R
+init.R:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe S
+; --------------------------------------------------
+; Initialisation des champs de S
+init.S:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe T
+; --------------------------------------------------
+; Initialisation des champs de T
+init.T:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe U
+; --------------------------------------------------
+; Initialisation des champs de U
+init.U:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe V
+; --------------------------------------------------
+; Initialisation des champs de V
+init.V:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe W
+; --------------------------------------------------
+; Initialisation des champs de W
+init.W:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe X
+; --------------------------------------------------
+; Initialisation des champs de X
+init.X:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe Y
+; --------------------------------------------------
+; Initialisation des champs de Y
+init.Y:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+; --------------------------------------------------
+; Classe Z
+; --------------------------------------------------
+; Initialisation des champs de Z
+init.Z:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

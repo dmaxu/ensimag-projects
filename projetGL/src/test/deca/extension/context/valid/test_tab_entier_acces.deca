@@ -1,0 +1,5 @@
+{
+    int a;
+    int[]tab_entier=[10,5];
+    print(tab_entier[0]," ",tab_entier[1]);
+}

@@ -1,0 +1,16 @@
+// Description:
+//    tests while
+//
+// Resultats:
+//    1  2  3
+//
+// Historique:
+//    cree le 01/01/2025
+
+{
+   int i = 1;
+   while (i<=3){
+    println(i);
+    i = i+1;
+   }
+}

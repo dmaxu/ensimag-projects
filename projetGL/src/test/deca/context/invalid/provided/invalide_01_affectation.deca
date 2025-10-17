@@ -1,0 +1,11 @@
+// Description Affectation et typage
+// affectation string <- float
+// Resultat : 
+// ERROR
+
+
+{
+    string a = 0;
+    float b = 0.0;
+    a = b;
+}

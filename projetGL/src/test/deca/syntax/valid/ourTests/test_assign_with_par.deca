@@ -1,0 +1,6 @@
+// Test d'assignation avec une déclaration implicite et addition
+{
+    int x;      // Déclaration de la variable x
+    x = (2 + 5); // Assignation d'une somme directe à x
+    // Vérification attendue : x doit être égal à 7
+}

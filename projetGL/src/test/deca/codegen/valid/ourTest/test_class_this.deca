@@ -1,0 +1,17 @@
+// Description :
+//    Ce test vérifie l'utilisation de l'instruction 'this' pour accéder à une variable d'instance.
+//    Dans ce cas, 'this.x' accède à la variable d'instance 'x' de la classe 'A'.
+//    La méthode 'Print' affiche la valeur de 'x'.
+//
+// Resultats:
+//    1
+class A{
+    int x=1;
+    void Print(){
+        print(this.x);
+    }
+}
+{
+    A a=new A();
+    a.Print();
+}

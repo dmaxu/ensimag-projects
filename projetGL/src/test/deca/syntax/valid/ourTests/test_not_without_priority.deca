@@ -1,0 +1,7 @@
+// Test de la priorité avec l'opérateur NOT
+{
+    boolean x;       // Déclaration de la variable x
+    boolean y;       // Déclaration de la variable y
+    x = !true || false;  // Utilisation de NOT sur une expression `(true || false)`
+    // Vérification attendue : x doit être égal à false
+}

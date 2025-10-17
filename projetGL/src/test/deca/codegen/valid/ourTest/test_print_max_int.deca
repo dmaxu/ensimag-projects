@@ -1,0 +1,9 @@
+// Description:
+//    tests print max int
+//
+// Resultats:
+//    2147483647
+
+{
+    print(2147483647); // Valeur maximale d'un entier sur 32 bits
+}

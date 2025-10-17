@@ -1,0 +1,10 @@
+class A{
+    int getX(){
+    }
+}
+
+
+{
+    A a = new A();
+    int x = a.getX();
+}

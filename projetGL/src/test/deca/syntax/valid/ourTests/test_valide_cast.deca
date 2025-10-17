@@ -1,0 +1,27 @@
+// Objectif : Test basique d’héritage avec transtypage.
+// Resultats :
+// - Compilation : OK
+
+// - Exécution : Woof! I am a dog.
+
+class Animal {
+
+    void speak() {
+        println("I am an animal.");
+    }
+}
+
+class Dog extends Animal {
+    void speak() {
+        println("Woof! I am a dog.");
+    }
+}
+
+{
+    Dog d;
+    Animal a = new Dog();
+    if (a instanceof Dog) {
+        d = (Dog)(a); // Transtypage valide
+        d.speak();
+    }
+}

@@ -1,0 +1,30 @@
+// ---------------------------------------------------------
+// Test #49 : Mélange de instanceof et cast
+// ---------------------------------------------------------
+//
+// On vérifie qu'un cast explicite Sub -> Super -> Sub est
+// contextuellement valide si "instanceof" confirme que c'est un Sub.
+//
+
+class Base {
+  void hello() {
+    println("Hello from Base");
+  }
+}
+
+class Derived extends Base {
+  void hello() {
+    println("Hello from Derived");
+  }
+}
+
+{
+  Derived b;
+  Base d;
+  b = new Derived();
+
+  if (b instanceof Derived) {
+    d = (Base)(b);
+    d.hello(); // "Hello from Derived"
+  }
+}

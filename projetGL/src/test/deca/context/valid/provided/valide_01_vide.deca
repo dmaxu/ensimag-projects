@@ -1,0 +1,8 @@
+// nom: valide_01_vide.deca
+// Objectif : main -> ε
+// Dérivation : 
+//  prog -> list_classes main EOF
+//  list_classes -> ε
+//  main -> ε
+//  (EOF atteint)
+// -- Fichier vide --

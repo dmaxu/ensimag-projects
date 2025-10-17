@@ -1,0 +1,6 @@
+// Cast implicite : un entier peut être converti directement en float.
+{
+    int i = 42;
+    float d = i; 
+    // Résultat attendu : d == 42.0 (float)
+}

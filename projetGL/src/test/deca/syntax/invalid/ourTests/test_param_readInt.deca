@@ -1,0 +1,6 @@
+// Description:
+// erreur sur parametre de readInt
+//readInt attend un entier
+{
+    int a=readInt(readFloat());
+}

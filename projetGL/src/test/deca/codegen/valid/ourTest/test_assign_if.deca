@@ -1,0 +1,17 @@
+// Description:
+//    Test conditionnel avec comparaison entre deux variables entières.
+//    Vérifie l'exécution de la condition `x < y` pour affecter la plus petite valeur à `z`.
+//    Affiche la valeur de `z` après la condition.
+//
+// Resultats:
+//47
+{
+    int x=47,y=50,z;
+    if (x<y){
+        z=x;
+    }else{
+        z=y;
+    }
+    print(z);
+
+}

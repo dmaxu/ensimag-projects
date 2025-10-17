@@ -1,0 +1,10 @@
+//Description: erreur declaration tableau dans les dimensions
+
+{
+    int x,y;
+    int tab[][][];
+    x=3;
+    y=5;
+    tab[][][]=new int[x][y];
+
+}

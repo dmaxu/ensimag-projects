@@ -1,0 +1,11 @@
+//description:test d'une methode qui ne retourne readInt
+
+
+    class A{
+        void methodeVide(){
+
+        }
+    }
+{
+    
+}

@@ -1,0 +1,7 @@
+{
+    /* Un commentaire multi-lignes
+       /* imbriqué, ce qui est invalide en Java */
+       int x = 6;
+    */
+    int y = 7;
+}

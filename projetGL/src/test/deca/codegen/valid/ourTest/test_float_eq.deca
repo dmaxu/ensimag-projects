@@ -1,0 +1,20 @@
+// Description:
+//    Test d'égalité entre des valeurs flottantes exprimées sous différentes notations et précisions.
+//    Les conditions imbriquées comparent des constantes en utilisant des double et des float, et vérifient l'égalité avec des notations scientifiques.
+//
+// Resultats:
+//    our team are not in a mess.
+{
+    if(3.14 == 3.14){
+        print("our ");
+        if(3.14f == 0.0314E+2f){
+            print("team ");
+            if(3.14f == 3.14F){
+                print("are ");
+                if(3.14 == 314.0E-2){
+                    print("not in a mess.");
+                }
+            }
+        }
+    }
+}

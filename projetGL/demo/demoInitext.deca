@@ -1,0 +1,64 @@
+// Resultats:
+// (1.0 2.0 3.0 4.0 5.0 6.0 7.0 8.0 9.0)*3
+
+{
+    int i =0;
+    int j;
+    float nb = 1.0 ;
+    float[][] mat = [[1.0,2.0,3.0],[4.0,5.0,6.0],[7.0,8.0,9.0]];
+    float[][] mat2 = new float[3][3];
+    float[][] mat3 = new float[3][3];
+    mat3 = mat;
+    while (i<3){
+        j = 0;
+        while (j<3){
+            mat2[i][j] = nb;
+            j = j+1;
+            nb = nb+1.0;
+        }
+        i = i+1;
+    }
+
+
+
+    i = 0;
+
+    while (i<3){
+        j = 0;
+        while (j<3){
+            print(mat[i][j], " ");
+            j = j+1;
+        }
+        i = i+1;
+        println();
+    }
+
+
+    i = 0;
+    println();
+
+    while (i<3){
+        j = 0;
+        while (j<3){
+            print(mat2[i][j], " ");
+            j = j+1;
+        }
+        i = i+1;
+        println();
+    }
+
+    i = 0;
+    println();
+
+    while (i<3){
+        j = 0;
+        while (j<3){
+            print(mat3[i][j], " ");
+            j = j+1;
+        }
+        i = i+1;
+        println();
+    }
+
+
+}

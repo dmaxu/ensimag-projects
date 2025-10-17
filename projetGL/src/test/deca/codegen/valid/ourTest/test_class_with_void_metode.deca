@@ -1,0 +1,58 @@
+// Description :
+//    Test de l'héritage et de la redéfinition (override) des méthodes dans les classes `A`, `B`, `C`, `D`, `E`, et `F`.
+//    - `A` contient une méthode `Print()` qui affiche "A".
+//    - `B` hérite de `A` et redéfinit `Print()` pour afficher "B".
+//    - `C` hérite de `B` et redéfinit `Print()` pour afficher "C".
+//    - `D` hérite de `A` sans redéfinir `Print()`, donc utilise la méthode de `A`.
+//    - `E` hérite de `B` sans redéfinir `Print()`, donc utilise la méthode de `B`.
+//    - `F` hérite de `C` sans redéfinir `Print()`, donc utilise la méthode de `C`.
+//
+// Resultats:
+//    ABCABC
+//    La méthode `Print()` est correctement redéfinie dans les classes héritées et l'appel de cette méthode varie en fonction de la classe de l'objet.
+
+class A {
+    void Print() {
+        print("A");  // Méthode de A qui affiche "A"
+    }
+}
+
+class B extends A {
+    void Print() {
+        print("B");  // Redéfinit Print() pour afficher "B"
+    }
+}
+
+class C extends B {
+    void Print() {
+        print("C");  // Redéfinit Print() pour afficher "C"
+    }
+}
+
+class D extends A {
+    // Hérite de A, mais n'a pas de redéfinition de Print()
+}
+
+class E extends B {
+    // Hérite de B, mais n'a pas de redéfinition de Print()
+}
+
+class F extends C {
+    // Hérite de C, mais n'a pas de redéfinition de Print()
+}
+
+{
+    A a = new A();    // Création d'un objet de type A
+    B b = new B();    // Création d'un objet de type B
+    C c = new C();    // Création d'un objet de type C
+    D d = new D();    // Création d'un objet de type D
+    E e = new E();    // Création d'un objet de type E
+    F f = new F();    // Création d'un objet de type F
+    
+    a.Print();        // Appel à Print() pour l'objet A, affiche "A"
+    b.Print();        // Appel à Print() pour l'objet B, affiche "B"
+    c.Print();        // Appel à Print() pour l'objet C, affiche "C"
+    d.Print();        // Appel à Print() pour l'objet D, affiche "A" (méthode héritée de A)
+    e.Print();        // Appel à Print() pour l'objet E, affiche "B" (méthode héritée de B)
+    f.Print();        // Appel à Print() pour l'objet F, affiche "C" (méthode héritée de C)
+}

@@ -1,0 +1,24 @@
+// Description :
+//    Ce test utilise des affectations logiques dans des conditions `if` pour évaluer
+//    des expressions arithmétiques et booléennes.
+//    - Le premier `if` teste si `i == 47`.
+//    - Le deuxième `if` teste si `i + 2 >= 1 / 2` (avec division entière).
+//    - Le troisième `if` teste une égalité entre des expressions arithmétiques.
+//
+// Resultats:
+//   "yes yes "
+{
+    int i = 47;
+    boolean b;
+    if(b = i == 47){
+        print("yes ");
+    }
+
+    if(b = i + 2 >= 1/2){
+        print("yes ");
+    }
+
+    if(b = i * 2 - 1== 2 - 1){
+        print("yes");
+    }
+}

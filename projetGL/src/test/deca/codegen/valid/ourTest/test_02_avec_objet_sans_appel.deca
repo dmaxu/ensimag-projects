@@ -1,0 +1,11 @@
+// Description :
+//    Test de déclaration d'une classe vide avec un point d'entrée main.
+//    - La classe A est déclarée sans champ, méthode ou constructeur explicite.
+//    - Un bloc main est présent, mais il ne contient aucune opération.
+//
+// Resultats:
+//    (Aucune sortie)
+class A{}
+{
+    
+}

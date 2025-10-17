@@ -1,0 +1,34 @@
+//Description:combinaisons logiques utilisant and && ; or ||
+
+{
+    if(true && true){
+        println("true && true= true");
+      
+    }
+    else if(true && false){
+        println("true && false=false");
+      
+    }
+    else if(false && false){
+        println("false && false=false");
+    
+    }
+    else{
+        if(true || true){
+            println("true ou true =true");
+          
+        }
+        else if(true || false){
+            println("true ou false=true");
+            
+        }
+        else if(false || true){
+            println("false ou true=true");
+          
+        }
+        else if(false || false){
+            println("false ou false=false");
+          
+        }
+    }
+}

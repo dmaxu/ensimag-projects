@@ -1,0 +1,9 @@
+// Description:
+//    tests print min positive float
+//
+// Resultats:
+//    1.17549435E-38
+
+{
+    print(1.17549435E-38); // Plus petite valeur positive pour un float 32 bits en DECÀ.
+}

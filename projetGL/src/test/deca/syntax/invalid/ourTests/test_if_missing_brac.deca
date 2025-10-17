@@ -1,0 +1,11 @@
+// invalid_05_if_missing_block.deca
+// Description : Un `if` nécessite un bloc '{ }', or on a mis une simple instruction.
+//
+// Résultat attendu :
+// Erreur syntaxique (selon la grammaire sans objet, if(...) '{' list_inst '}' ).
+
+{
+    int x = 2;
+    if (x > 1)
+        x = x + 1;  // Pas de bloc { }, syntaxiquement incorrect dans la partie sans objet
+}

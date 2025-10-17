@@ -1,0 +1,43 @@
+//Description:
+{
+    int[][]tab=new int[5][10];
+    tab[0][0]=5;
+    tab[11][0]=5;
+    tab[1000][0]=5;
+    tab[99][0]=5;
+    tab[0][0]=tab[0][0]+tab[0][0];
+    tab[0][0]=tab[0][0]-tab[0][0];
+    tab[0][0]=tab[0][0]*tab[0][0];
+    tab[0][0]=tab[0][0]/tab[0][0];
+    tab=tab*tab;
+    if(tab[0][0]<tab[0][0]+tab[0][0]){
+        print("tab[0][0]",tab[0][0]);
+    }else{
+        println("tab[0][0]",tab[0][0]);
+
+    }
+    if(tab[0][0]<=tab[0][0]+tab[0][0]){
+        printx("tab[0][0]",tab[0][0]);
+
+    }else{
+        printlnx("tab[0][0]",tab[0][0]);
+    }
+    if(tab[0][0]>tab[0][0]+tab[0][0]){
+
+    }else{
+        
+    }
+    if(tab[0][0]>=tab[0][0]+tab[0][0]){
+
+    }else{
+        
+    }
+    if(tab[0][0]==tab[0][0]+tab[0][0]){
+
+    }else{
+        
+    }
+    while(tab){
+        
+    }
+}

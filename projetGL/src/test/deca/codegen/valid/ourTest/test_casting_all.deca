@@ -1,0 +1,17 @@
+// Description :
+//    Test des conversions entre types int et float (implicites et explicites).
+//
+// Resultats:
+//    3 3.000000 3 -3.5 -4
+{
+    int i = 3;
+    float f = i; // Conversion implicite int -> float
+    int j = (int)(f); // Conversion explicite float -> int
+    float g = -3.5;
+    int k = (int)(g); // Perte de précision, mais doit être autorisé
+    print(i," ");
+    print(f," ");
+    print(j," ");
+    print(g," ");
+    print(k);
+}

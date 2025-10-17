@@ -1,0 +1,26 @@
+// Description:
+// Teste la conversion de types sécurisée en utilisant `instanceof` et le cast explicite.
+//
+// Resultats:
+// d.c.x = 20
+
+class C {
+    int x;
+}
+
+class D extends C {
+    C c;
+}
+
+{
+    D d = new D();
+    C obj = new C();
+    d.c = new C();
+    
+    d.c.x = 20;
+    
+    if (d.c instanceof C) {
+        obj = (C) (d.c);
+        println("d.c.x = " , obj.x);
+    }
+}

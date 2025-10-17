@@ -1,0 +1,16 @@
+// Description:
+//    tests opérateurs bool
+//
+// Resultats:
+//    0 1
+
+{
+   boolean a = true;
+   boolean b = false;
+   boolean c = true;
+   boolean d = false;
+   c = a && b;
+   d = a || b;
+   if(!c){println(0);}
+   if(d){println(1);}
+}

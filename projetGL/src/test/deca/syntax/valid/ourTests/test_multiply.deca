@@ -1,0 +1,8 @@
+{
+    int x=5*5;
+    float y=6*2.02355322;
+    boolean b=true*552*false*0.2322*"ff f5"*y;
+    x=x*5;
+    y=y*"gl47";
+    g=f*f;
+}

@@ -1,0 +1,531 @@
+	TSTO #12
+	ADDSP #11
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Construction de la table des methodes de CompteBancaire
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.CompteBancaire.initialiser, R0
+	STORE R0, 5(GB)
+	LOAD code.CompteBancaire.deposer, R0
+	STORE R0, 6(GB)
+	LOAD code.CompteBancaire.retirer, R0
+	STORE R0, 7(GB)
+	LOAD code.CompteBancaire.appliquerInterets, R0
+	STORE R0, 8(GB)
+	LOAD code.CompteBancaire.verifierSolde, R0
+	STORE R0, 9(GB)
+	LOAD code.CompteBancaire.afficherDetails, R0
+	STORE R0, 10(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	NEW #3, R15
+	BOV heap_overflow
+	LEA 3(GB), R0
+	STORE R0, 0(R15)
+	PUSH R15
+	BSR init.CompteBancaire
+	POP R15
+	STORE R15, 11(GB)
+; End declarations:
+; Insts:
+	ADDSP #3
+	LOAD 11(GB), R15
+	STORE R15, 0(SP)
+	LOAD #0x1.9p6, R15
+	STORE R15, -1(SP)
+	LOAD #0x0.0p0, R15
+	STORE R15, -2(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 2(R15)
+	SUBSP #3
+	ADDSP #2
+	LOAD 11(GB), R15
+	STORE R15, 0(SP)
+	LOAD #0x1.8p0, R15
+	STORE R15, -1(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 3(R15)
+	SUBSP #2
+	ADDSP #2
+	LOAD 11(GB), R15
+	STORE R15, 0(SP)
+	LOAD #0x1.92p6, R15
+	STORE R15, -1(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 3(R15)
+	SUBSP #2
+	ADDSP #2
+	LOAD 11(GB), R15
+	STORE R15, 0(SP)
+	LOAD #0x1.433334p3, R15
+	STORE R15, -1(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 4(R15)
+	SUBSP #2
+	ADDSP #1
+	LOAD 11(GB), R15
+	STORE R15, 0(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 5(R15)
+	SUBSP #1
+	ADDSP #1
+	LOAD 11(GB), R15
+	STORE R15, 0(SP)
+	LOAD 0(SP), R15
+	CMP #null, R15
+	BEQ derefNull
+	LOAD 0(R15), R15
+	BSR 7(R15)
+	SUBSP #1
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+; --------------------------------------------------
+; Classe CompteBancaire
+; --------------------------------------------------
+; Initialisation des champs de CompteBancaire
+init.CompteBancaire:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #0x0.0p0, R15
+	LOAD -2(LB), R14
+	STORE R15, 1(R14)
+	LOAD #0x0.0p0, R15
+	LOAD -2(LB), R14
+	STORE R15, 2(R14)
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.CompteBancaire.initialiser:
+	TSTO #17
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R15
+	LOAD -3(LB), R14
+	CMP #null, R15
+	BEQ derefNull
+	STORE R14, 1(R15)
+	LOAD -2(LB), R15
+	LOAD -4(LB), R14
+	CMP #null, R15
+	BEQ derefNull
+	STORE R14, 2(R15)
+fin.CompteBancaire.initialiser:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.CompteBancaire.deposer:
+	TSTO #16
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R15
+	LOAD -3(LB), R14
+	LOAD -2(LB), R13
+	LOAD 1(R13), R13
+	ADD R14, R13
+	BOV overflow_float
+	CMP #null, R15
+	BEQ derefNull
+	STORE R13, 1(R15)
+	WSTR "Dépôt de "
+	LOAD -3(LB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " effectué. Nouveau solde: "
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	LOAD R15, R1
+	WFLOAT
+	WNL
+fin.CompteBancaire.deposer:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.CompteBancaire.retirer:
+	TSTO #16
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R15
+	LOAD -3(LB), R14
+	LOAD -2(LB), R13
+	LOAD 1(R13), R13
+	SUB R14, R13
+	BOV overflow_float
+	CMP #null, R15
+	BEQ derefNull
+	STORE R13, 1(R15)
+	WSTR "Retrait de "
+	LOAD -3(LB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " effectué. Nouveau solde: "
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	LOAD R15, R1
+	WFLOAT
+	WNL
+fin.CompteBancaire.retirer:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.CompteBancaire.appliquerInterets:
+	TSTO #16
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD #100, R15
+	FLOAT R15, R15
+	LOAD -2(LB), R14
+	LOAD 2(R14), R14
+	DIV R15, R14
+	BOV overflow_float
+	BOV division_zero
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	MUL R14, R15
+	BOV overflow_float
+	STORE R15, 1(LB)
+	LOAD -2(LB), R15
+	LOAD 1(LB), R14
+	LOAD -2(LB), R13
+	LOAD 1(R13), R13
+	ADD R14, R13
+	BOV overflow_float
+	CMP #null, R15
+	BEQ derefNull
+	STORE R13, 1(R15)
+	WSTR "Intérêts de "
+	LOAD 1(LB), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " appliqués. Nouveau solde: "
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	LOAD R15, R1
+	WFLOAT
+	WNL
+fin.CompteBancaire.appliquerInterets:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+code.CompteBancaire.verifierSolde:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	LOAD R15, R0
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+fin.CompteBancaire.verifierSolde:
+	BRA missing_return
+code.CompteBancaire.afficherDetails:
+	TSTO #15
+	BOV pile_pleine
+; Début Sauvegarde de registres
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+; Fin Sauvegarde de registres
+	WSTR "Solde: "
+	LOAD -2(LB), R15
+	LOAD 1(R15), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR " euros"
+	WNL
+	WSTR "Taux d'intérêt: "
+	LOAD -2(LB), R15
+	LOAD 2(R15), R15
+	LOAD R15, R1
+	WFLOAT
+	WSTR "%"
+	WNL
+fin.CompteBancaire.afficherDetails:
+; Début Restauration de registres
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+; Fin Restauration de registres
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

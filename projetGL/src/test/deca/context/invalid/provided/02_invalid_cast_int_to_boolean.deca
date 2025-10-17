@@ -1,0 +1,11 @@
+{
+    int x;
+    boolean b;
+    
+    x = 10;
+
+    // Erreur sémantique : cast int -> boolean n'est pas autorisé
+    b = (boolean)(x);
+
+    println("Conversion int -> boolean refusée");
+}

@@ -1,0 +1,21 @@
+// Description :
+//    Test d'une méthode dans une classe dérivée qui accède à un attribut défini
+//    dans une classe parente.
+//
+// Resultats:
+//    6
+
+class A {
+    int x = 3;
+}
+
+class B extends A {
+    int multiplyX() {
+        return x * 2; // Accède à l'attribut `x` hérité de `A`
+    }
+}
+
+{
+    B b = new B();
+    print(b.multiplyX()); // Affiche 6
+}

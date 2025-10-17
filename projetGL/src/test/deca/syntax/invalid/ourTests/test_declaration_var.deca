@@ -1,0 +1,8 @@
+//description:decalaration d'une variable apres une instruction
+
+{
+    int a; 
+    float b;
+    println("hello");
+    int c;
+}

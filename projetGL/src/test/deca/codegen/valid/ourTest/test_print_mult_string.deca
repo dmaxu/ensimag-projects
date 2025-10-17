@@ -1,0 +1,9 @@
+// Description:
+//    tests simple print string
+//
+// Resultats:
+//    hello, gr47 is the best.
+
+{
+    print("hello,"," ","gr47 ","is ","the ","best.");
+}

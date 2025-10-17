@@ -1,0 +1,5 @@
+// valid_01_empty_main.deca
+// Description : Programme Deca entièrement vide, main => epsilon.
+//
+// Résultat attendu :
+// Compile sans erreur, ne fait rien (pas de bloc, juste EOF).

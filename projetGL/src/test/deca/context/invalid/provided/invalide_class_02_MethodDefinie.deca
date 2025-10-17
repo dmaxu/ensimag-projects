@@ -1,0 +1,15 @@
+// Description : test d'existence d'une méthode plusieur fois dans la méme classe.
+// Sortie:
+//  la méthode sous le nom setX est définie plusieur fois.
+
+class A{
+    protected int x;
+
+    int setX(int y){
+        this.x = y;
+        return x;
+    }
+    void setX(int b){
+        this.x = b;
+    }
+}

@@ -1,0 +1,14 @@
+//Descriptif: Priorite des operateurs; sans et avec parenthèses
+
+{
+  boolean a = true;
+  boolean b = false;
+  boolean c = true;
+
+  // Sans parenthèses, && a une priorité supérieure à || c'est comme: a || (b && c)
+  a || b && c;       // true 
+  
+  // Avec parenthèses, priorité modifiée 
+  (a || b) && c;  // true
+
+}

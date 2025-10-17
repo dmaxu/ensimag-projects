@@ -1,0 +1,22 @@
+// Description:
+//    Test de la déclaration et de l'initialisation de variables avec des sauts de ligne inhabituels.
+//    Une variable entière `x` est déclarée et initialisée après plusieurs lignes.
+//    Une variable flottante `f` est également initialisée avec une valeur entière (47), démontrant une conversion implicite.
+//
+// Resultats:
+//    47.0    47
+{
+    int
+    x
+    ;
+    float f
+    =
+    47
+    ;
+    print(f," ");
+    x
+    =
+    47
+    ;
+    print(x);
+}

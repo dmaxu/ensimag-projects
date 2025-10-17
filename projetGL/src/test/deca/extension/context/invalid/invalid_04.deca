@@ -1,0 +1,18 @@
+//Description:remplissage par un type invalide des elements du tableau
+
+{
+    boolean tab[]=new boolean[10];
+    tab[0]=true;
+    tab[1]=false;
+    tab[2]=true || false;
+    tab[3]=3;
+    tab[4]=3.14;
+    tab[5]=true;
+    tab[6]=true && true;
+    tab[7]=true || false;
+    tab[8]=false && false;
+    tab[9]=false && true;
+
+
+
+}

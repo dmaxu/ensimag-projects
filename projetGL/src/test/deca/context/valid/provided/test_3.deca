@@ -1,0 +1,11 @@
+// Description:
+//    Programme minimaliste utilisant println.
+//
+// Resultats:
+//    4 yalla shoot 3
+//
+
+{
+        println(4, "yalla","shoot" , 3);
+
+}

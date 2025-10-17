@@ -1,0 +1,25 @@
+// ---------------------------------------------------------
+// Test #47 : Méthode qui retourne un objet
+// ---------------------------------------------------------
+//
+//  decl_method -> type ident '(' ... ')' block
+//  type -> ident => type_class(X)
+//
+
+class A {
+  int num;
+}
+
+class Factory {
+  A createA(int val) {
+    A a = new A();
+    a.num = val;
+    return a;
+  }
+}
+
+{
+  Factory f = new Factory();
+  A a = f.createA(42);
+  println(a.num); // 42
+}

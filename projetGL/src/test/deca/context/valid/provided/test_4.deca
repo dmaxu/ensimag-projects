@@ -1,0 +1,10 @@
+// Description:
+//    Programme minimaliste utilisant println(vide).
+//
+// Resultats:
+//    println
+//
+
+{
+        println();
+}

@@ -1,0 +1,13 @@
+//Description: test sur les declarations des types de tables
+//test avec les print
+{
+    int[]tab1=new int[10];
+    int[][]tab2=new int[5][10];
+   
+    float[]tab3=new float[10];
+    float[][]tab4=new float[10][20];
+
+    boolean[]array=new boolean[10];
+    boolean[][]array1=new boolean[10][15];   
+
+}

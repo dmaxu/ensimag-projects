@@ -1,0 +1,27 @@
+// ---------------------------------------------------------
+// Test #34 : Héritage et redéfinition de méthode (override)
+// ---------------------------------------------------------
+//
+// Règle : decl_method -> type ident '(' ... ')' block
+// On redéfinit foo() dans B (même signature).
+//
+
+class A {
+  int foo() {
+    return 1;
+  }
+}
+
+class B extends A {
+  int foo() {
+    // Redéfinition : type de retour identique (int), same signature
+    return 2;
+  }
+}
+
+{
+  A a = new A();
+  B b = new B();
+  println(a.foo()); // 1
+  println(b.foo()); // 2
+}

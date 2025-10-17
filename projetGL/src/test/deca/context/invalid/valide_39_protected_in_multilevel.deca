@@ -1,0 +1,31 @@
+// ---------------------------------------------------------
+// Test #39 : Champ protected dans A, accès direct dans C via B
+// ---------------------------------------------------------
+//
+//  A -> B -> C. 
+//  'val' protégé dans A, C est sous-classe de A => accès direct autorisé.
+//
+
+class A {
+  protected int val;
+  void setVal(int x) {
+    val = x;
+  }
+}
+
+class B extends A {
+  // pas de code
+}
+
+class C extends B {
+  void doubleVal() {
+    val = val * 2; // Accès OK
+  }
+}
+
+{
+  C c = new C();
+  c.setVal(10);
+  c.doubleVal();
+  println(c.val); // 20
+}

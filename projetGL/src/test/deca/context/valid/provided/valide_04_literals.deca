@@ -1,0 +1,14 @@
+// nom: valide_04_literals.deca
+// Objectif : Tester INT, FLOAT, STRING, true, false
+// Dérivation (pour "42;") :
+//  inst -> expr ';'
+//  expr -> assign_expr -> or_expr -> and_expr -> eq_neq_expr
+//       -> inequality_expr -> sum_expr -> mult_expr -> unary_expr
+//       -> select_expr -> primary_expr -> literal
+{
+    42;
+    3.14;
+    "hello world";
+    true;
+    false;
+}

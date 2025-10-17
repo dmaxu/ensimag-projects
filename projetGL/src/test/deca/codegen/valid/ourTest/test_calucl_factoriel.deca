@@ -1,0 +1,15 @@
+// Description:
+//    Test d'une boucle while qui calcule la factorielle de 10 (produit des entiers de 10 à 1) 
+//    en multipliant à chaque itération et affichant le résultat à chaque étape.
+//
+// Resultats:
+//10 90 720 5040 30240 604800 1814400 36288000 36288000
+{
+    int x=10;
+    int resultat=1;
+    while(x>0){
+        resultat=(x)*resultat;
+        println(resultat);
+        x=x-1;
+    }
+}

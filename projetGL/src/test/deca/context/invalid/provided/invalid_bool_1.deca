@@ -1,0 +1,16 @@
+//Descriptif: Opérateurs booléens appliqués à des types non booléens
+
+{
+  int x = 10;
+  float y = 5.5;
+
+  // Erreur : && appliqué à un entier
+  x && true; // Invalide : le premier opérande n'est pas booléen
+
+  // Erreur : || appliqué à un flottant
+  y || false; // Invalide : le premier opérande n'est pas booléen
+
+  // Erreur : Les deux opérandes ne sont pas booléens
+  x && y; // Invalide : ni x ni y ne sont booléens
+}
+

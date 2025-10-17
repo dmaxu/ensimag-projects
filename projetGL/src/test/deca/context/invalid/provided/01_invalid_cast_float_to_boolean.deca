@@ -1,0 +1,11 @@
+{
+    float f;
+    boolean b;
+
+    f = 3.14;
+
+    // Erreur sémantique attendue : cast float -> boolean n'est pas autorisé
+    b = (boolean)(f);
+
+    println(b , "Ce message ne devrait pas s'afficher si le cast est refusé");
+}

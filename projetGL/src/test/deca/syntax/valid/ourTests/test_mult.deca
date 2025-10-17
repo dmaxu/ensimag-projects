@@ -1,0 +1,12 @@
+{
+    // Déclaration et initialisation d'une variable entière
+    float x = 1;
+
+    // Déclaration et initialisation d'une autre variable entière
+    float y = 3;
+
+    // Déclaration et initialisation d'une troisième variable 
+    // en effectuant une opération arithmétique
+    int z = y * x;
+    z=z*x;
+}

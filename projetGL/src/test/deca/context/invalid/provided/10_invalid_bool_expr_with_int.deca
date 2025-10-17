@@ -1,0 +1,10 @@
+{
+    int x;
+    boolean b;
+
+    x = 5;
+    // Erreur : (x && true) => x est un int, pas un boolean
+    b = (x && true); 
+
+    println("Ne devrait jamais s'afficher");
+}

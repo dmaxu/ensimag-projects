@@ -1,0 +1,19 @@
+{
+    // Déclaration d'une variable entière
+    int x;
+
+    // Comparaison de la variable non initialisée avec une valeur
+    x > 1; 
+
+    // Comparaison avec un opérateur "supérieur ou égal"
+    x >= 1; 
+
+    // Comparaison avec un opérateur "inférieur"
+    x < 0; 
+
+    // Comparaison avec un opérateur "inférieur ou égal"
+    x <= 0; 
+
+    // Comparaison entre un entier et une chaîne de caractères
+    x <= "gl47"; 
+}

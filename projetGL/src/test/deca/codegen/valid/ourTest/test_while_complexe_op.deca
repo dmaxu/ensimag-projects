@@ -1,0 +1,13 @@
+// Description:
+//    Test d'une boucle `while` avec une condition complexe qui combine des opérations logiques `&&` et `||`. 
+//    La condition inclut des comparaisons qui ne sont pas toutes vraies, ce qui empêche l'exécution de la boucle.
+//    Les parties de la condition sont évaluées selon la priorité des opérateurs logiques.
+//
+// Resultats:
+//    (aucune sortie)
+
+{
+    while(1==1 && 2>3||4<5 && true && 1==2){
+        print("yes");
+    }
+}

@@ -1,0 +1,9 @@
+// Description : test la multiplication avec un boolean
+// Resultat : 
+// ERROR dans verify AbstractOpArith
+// A MODIF
+
+{
+    boolean bool = false;
+    boll = bool * 2;
+}

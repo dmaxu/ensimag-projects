@@ -1,0 +1,217 @@
+	TSTO #15
+	ADDSP #14
+	BOV pile_pleine
+;  --------------------------------------------------
+;        Construction des tables des methodes        
+;  --------------------------------------------------
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; --------------------------------------------------
+;                Start main program                 
+; --------------------------------------------------
+; Variable declarations:
+	LOAD #1, R15
+	BRA endLabel.0
+falseLabel.0:
+	LOAD #0, R15
+endLabel.0:
+	STORE R15, 4(GB)
+	BRA falseLabel.1
+	LOAD #1, R15
+	BRA endLabel.1
+falseLabel.1:
+	LOAD #0, R15
+endLabel.1:
+	STORE R15, 5(GB)
+	LOAD #1, R15
+	BRA endLabel.2
+falseLabel.2:
+	LOAD #0, R15
+endLabel.2:
+	STORE R15, 6(GB)
+	BRA falseLabel.3
+	LOAD #1, R15
+	BRA endLabel.3
+falseLabel.3:
+	LOAD #0, R15
+endLabel.3:
+	STORE R15, 7(GB)
+	LOAD #0x1.0p0, R15
+	STORE R15, 8(GB)
+	LOAD #9, R15
+	STORE R15, 9(GB)
+	LOAD #3, R15
+	STORE R15, 10(GB)
+	LOAD #0x1.0p0, R15
+	STORE R15, 11(GB)
+	LOAD #15, R15
+	STORE R15, 12(GB)
+	LOAD #10, R15
+	STORE R15, 13(GB)
+	BRA falseLabel.4
+	LOAD #1, R15
+	BRA endLabel.4
+falseLabel.4:
+	LOAD #0, R15
+endLabel.4:
+	STORE R15, 14(GB)
+; End declarations:
+; Insts:
+	LOAD #0x1.91eb86p1, R15
+	CMP #0x1.91eb86p1, R15
+	BNE else.0
+	WSTR "Test 1: Yes"
+	WNL
+	BRA end.0
+else.0:
+	WSTR "Test 1: No"
+	WNL
+end.0:
+	LOAD 11(GB), R15
+	LOAD 8(GB), R14
+	SUB R15, R14
+	BOV overflow_float
+	CMP #0x1.ad7f2ap-24, R14
+	BGE else.1
+	LOAD 8(GB), R14
+	LOAD 11(GB), R15
+	SUB R14, R15
+	BOV overflow_float
+	CMP #0x1.ad7f2ap-24, R15
+	BGE else.1
+	WSTR "Test 2: Yes"
+	WNL
+	BRA end.1
+else.1:
+	WSTR "Test 2: No"
+	WNL
+end.1:
+	LOAD 4(GB), R15
+	CMP #1, R15
+	BNE E_Fin.1
+	LOAD 6(GB), R15
+	CMP #1, R15
+	BEQ E_Fin.0
+E_Fin.1:
+	LOAD 5(GB), R15
+	CMP #1, R15
+	BNE else.2
+	LOAD 7(GB), R15
+	CMP #1, R15
+	BNE else.2
+E_Fin.0:
+	WSTR "Test 3: Yes"
+	WNL
+	BRA end.2
+else.2:
+	WSTR "Test 3: No"
+	WNL
+end.2:
+	LOAD 10(GB), R15
+	LOAD 9(GB), R14
+	REM R15, R14
+	BOV mod_zero
+	CMP #0, R14
+	BNE else.3
+	LOAD 10(GB), R14
+	LOAD 9(GB), R15
+	QUO R14, R15
+	BOV division_zero
+	CMP #3, R15
+	BNE else.3
+	WSTR "Test 4: Yes"
+	WNL
+	BRA end.3
+else.3:
+	WSTR "Test 4: No"
+	WNL
+end.3:
+	LOAD 14(GB), R15
+	CMP #1, R15
+	BEQ else.4
+	WSTR "Test 5: Yes"
+	WNL
+	BRA end.4
+else.4:
+	WSTR "Test 5: No"
+	WNL
+end.4:
+	LOAD 13(GB), R15
+	LOAD 12(GB), R14
+	SUB R15, R14
+	CMP #5, R14
+	BNE else.5
+	LOAD 12(GB), R14
+	LOAD 13(GB), R15
+	CMP R15, R14
+	BLE else.5
+	WSTR "Test 6: Yes"
+	WNL
+	BRA end.5
+else.5:
+	WSTR "Test 6: No"
+	WNL
+end.5:
+; End insts:
+	HALT
+; --------------------------------------------------
+;                End main program                 
+; --------------------------------------------------
+; -----------------------------------------------
+;                    Classe Object               
+; -----------------------------------------------
+code.object.equals:
+	LOAD -2(LB), R0
+	LOAD 0(R0), R0
+	LOAD -3(LB), R1
+	LOAD 0(R1), R1
+	CMP R0, R1
+	SEQ R0
+	RTS
+pile_pleine:
+	WSTR "Erreur : Débordement de la pile"
+	WNL
+	ERROR
+division_zero:
+	WSTR "Erreur : Division par zero"
+	WNL
+	ERROR
+mod_zero:
+	WSTR "Erreur : Modulo par zero"
+	WNL
+	ERROR
+ErreurLecture:
+	WSTR "Erreur : Erreur lecture"
+	WNL
+	ERROR
+overflow_float:
+	WSTR "Erreur : Débordement flottant"
+	WNL
+	ERROR
+heap_overflow:
+	WSTR "Erreur : Heap overflow"
+	WNL
+	ERROR
+derefNull:
+	WSTR "Erreur : Déréférencement null"
+	WNL
+	ERROR
+missing_return:
+	WSTR "Erreur : Return null dans fonction non void"
+	WNL
+	ERROR
+index_list_problem:
+	WSTR "Erreur : Dépassage de la taille du tableau"
+	WNL
+	ERROR
+index_list_nagative:
+	WSTR "Erreur : Indice négative d'un tableau"
+	WNL
+	ERROR
+allocation_problem:
+	WSTR "Erreur : allocation avec indice <= 0"
+	WNL
+	ERROR

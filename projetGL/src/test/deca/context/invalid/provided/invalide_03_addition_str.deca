@@ -1,0 +1,14 @@
+// Description Affectation et typage
+// affectation string <- float
+// Resultat : 
+// ERROR
+
+
+{
+    string char = "Deca World";
+
+    int a = 2003;
+
+    char = char + a;
+    
+}

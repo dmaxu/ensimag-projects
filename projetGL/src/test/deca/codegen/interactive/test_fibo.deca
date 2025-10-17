@@ -1,0 +1,24 @@
+// Description:
+//    Ce programme calcule le terme `u_n` d'une séquence où `u_0 = 0` et chaque terme est défini par une relation récurrente. 
+//    La valeur de `u_n` est affichée en fonction de l'entier `n` saisi par l'utilisateur.
+//
+// Resultats:
+//    fibo(10)=55
+    
+{
+    int n = readInt();
+    int u_n = 1,u_n_1=0, i = 2,j;
+    if (n > 0) {
+        while (i <= n) {
+            j=u_n;
+            u_n = u_n+u_n_1;
+            i=i+1;
+            u_n_1=j;
+        }
+        println("fibo(",n,")=",u_n);
+    } else if (n == 0) {
+        println("fibo(",n,")=",0);
+    } else {
+        println("il faut un entier positif");
+    }
+}

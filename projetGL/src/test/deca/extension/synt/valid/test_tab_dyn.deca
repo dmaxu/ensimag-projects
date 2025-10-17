@@ -1,0 +1,16 @@
+{
+    // Test de création dynamique
+    float[][] matrix;
+    float value;
+    matrix = createMatrix(2, 2); // Fonction personnalisée pour créer une matrice
+
+    // Initialisation
+    setElement(matrix, 0, 0, 1.5);
+    setElement(matrix, 0, 1, 2.5);
+    setElement(matrix, 1, 0, 3.5);
+    setElement(matrix, 1, 1, 4.5);
+
+    // Accès dynamique
+    value = matrix[1][0]; // Doit retourner 3.5
+    print("Dynamic element at (1, 0): " + value);
+}

@@ -1,0 +1,34 @@
+//Description: test while+operation arithmetique
+
+{
+    int a=15;
+    int b=1;
+    int x = 10;
+    int y = 3;
+    int compteur = 0;
+    int $a=5;
+    boolean continuer = true;
+
+    while (a > b || compteur < 20) {
+        a = a - 1;
+        compteur = compteur + 1;
+    }
+
+    println("Valeur finale de a : " + a);
+    println("Valeur finale de compteur : " + compteur);
+
+    // Description : Boucle où la condition dépend d'une opération
+    while (x - y == 0) {
+        x = x + 1;
+    }
+    println("Valeur finale de x : " + x);
+    println("Valeur de y : " + y);
+
+    // Description : Condition de sortie basée sur une variable booléenne
+    while (continuer) {
+        $a = $a - 1;
+        if ($a == 0) {
+            continuer = false;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+// Description : test 3 des operations logiques invalides
+
+// Sortie : 
+// ERROR  A MODIFIER
+
+{
+    float a;
+    boolean b;
+    a = a && b;
+
+}
